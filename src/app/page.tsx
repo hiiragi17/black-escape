@@ -1,17 +1,8 @@
 'use client';
-
-export const Background = ({ src }: { src: string }) => (
-  <div
-    className="absolute inset-0 bg-cover bg-center bg-no-repeat -z-20"
-    style={{ 
-      backgroundImage: `url(${src})`,
-      minHeight: '100vh',
-      minWidth: '100vw'
-    }}
-  />
-);
-import Link from 'next/link';
+import React from 'react';
 import { useState, useEffect } from 'react';
+import { Background } from '@/components/Background';
+import Link from 'next/link';
 
 export default function Home() {
   const [showContent, setShowContent] = useState(false);
