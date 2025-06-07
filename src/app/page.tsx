@@ -7,11 +7,35 @@ import Link from 'next/link';
 export default function Home() {
   const [showContent, setShowContent] = useState(false);
   const [showButtons, setShowButtons] = useState(false);
+  
+  // パーティクルエフェクト用の固定位置を生成
+  const [particles, setParticles] = useState<Array<{
+    left: string;
+    top: string;
+    delay: string;
+    duration: string;
+  }>>([]);
 
   useEffect(() => {
     // タイトルを段階的に表示
     const timer1 = setTimeout(() => setShowContent(true), 500);
     const timer2 = setTimeout(() => setShowButtons(true), 1500);
+    
+    // パーティクル初期化（クライアントサイドのみ）
+    const generateParticles = () => {
+      const newParticles = [];
+      for (let i = 0; i < 20; i++) {
+        newParticles.push({
+          left: `${Math.random() * 100}%`,
+          top: `${Math.random() * 100}%`,
+          delay: `${Math.random() * 3}s`,
+          duration: `${2 + Math.random() * 2}s`
+        });
+      }
+      setParticles(newParticles);
+    };
+
+    generateParticles();
     
     return () => {
       clearTimeout(timer1);
@@ -26,15 +50,15 @@ export default function Home() {
       
       {/* パーティクルエフェクト */}
       <div className="absolute inset-0 z-5">
-        {[...Array(20)].map((_, i) => (
+        {particles.map((particle, i) => (
           <div
             key={i}
             className="absolute w-1 h-1 bg-white rounded-full opacity-30 animate-pulse"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 2}s`
+              left: particle.left,
+              top: particle.top,
+              animationDelay: particle.delay,
+              animationDuration: particle.duration
             }}
           />
         ))}
