@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { storyData } from '@/data/story';
+import { XShareButton } from '@/components/XShareButton';
 
 interface SceneProps {
   scene: keyof typeof storyData;
@@ -14,8 +15,54 @@ export default function Scene({ scene, setScene }: SceneProps) {
   const [showChoices, setShowChoices] = useState(false);
   const [textDisplayed, setTextDisplayed] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  
+  // パーティクルエフェクト用の固定位置を生成
+  const [particles, setParticles] = useState<Array<{
+    left: string;
+    top: string;
+    delay: string;
+    duration: string;
+  }>>([]);
+
+  // パーティクル初期化（クライアントサイドのみ）
+  useEffect(() => {
+    const generateParticles = () => {
+      const newParticles = [];
+      for (let i = 0; i < 15; i++) {
+        newParticles.push({
+          left: `${Math.random() * 100}%`,
+          top: `${Math.random() * 100}%`,
+          delay: `${Math.random() * 5}s`,
+          duration: `${3 + Math.random() * 2}s`
+        });
+      }
+      setParticles(newParticles);
+    };
+
+    generateParticles();
+  }, []);
   const current = storyData[scene];
   const router = useRouter();
+
+  // エンディング判定
+  const isEnding = current.choices.length === 0;
+  
+  // エンディングタイプの判定
+  const getEndingInfo = () => {
+    if (!isEnding) return null;
+    
+    // シーン名からエンディングタイプを判定
+    if (scene === 'overwork-bad') {
+      return { type: 'bad' as const, route: 'overwork' as const };
+    } else if (scene === 'freedom-good') {
+      return { type: 'good' as const, route: 'freedom' as const };
+    }
+    
+    // デフォルト（万が一の場合）
+    return { type: 'good' as const, route: 'freedom' as const };
+  };
+
+  const endingInfo = getEndingInfo();
 
   // タイピングアニメーション
   useEffect(() => {
@@ -52,15 +99,15 @@ export default function Scene({ scene, setScene }: SceneProps) {
       
       {/* パーティクルエフェクト */}
       <div className="absolute inset-0">
-        {[...Array(15)].map((_, i) => (
+        {particles.map((particle, i) => (
           <div
             key={i}
             className="absolute w-1 h-1 bg-white/30 rounded-full animate-pulse"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${3 + Math.random() * 2}s`
+              left: particle.left,
+              top: particle.top,
+              animationDelay: particle.delay,
+              animationDuration: particle.duration
             }}
           />
         ))}
@@ -116,13 +163,22 @@ export default function Scene({ scene, setScene }: SceneProps) {
                 </div>
               ) : (
                 /* エンディング時のボタン */
-                <div className={`mt-8 flex justify-center transition-all duration-700 delay-500 ${showChoices ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+                <div className={`mt-8 flex flex-col items-center gap-4 transition-all duration-700 delay-500 ${showChoices ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+                  {/* X共有ボタン（エンディング時のみ） */}
+                  {endingInfo && (
+                    <XShareButton 
+                      endingType={endingInfo.type}
+                      routeType={endingInfo.route}
+                    />
+                  )}
+                  
+                  {/* タイトルに戻るボタン */}
                   <button
-                    className="px-10 py-5 bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 text-white text-xl font-bold rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300 border-2 border-gray-500/50 hover:border-gray-400/70"
+                    className="flex items-center justify-center gap-2 w-80 py-5 bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 text-white text-xl font-bold rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300 border-2 border-gray-500/50 hover:border-gray-400/70 whitespace-nowrap"
                     onClick={() => router.push('/')}
                   >
-                    <span className="mr-3">🏠</span>
-                    タイトルに戻る
+                    <span className="text-2xl">🏢</span>
+                    <span>タイトルに戻る</span>
                   </button>
                 </div>
               )}
