@@ -37,10 +37,9 @@ export const XShareButton = ({ endingType, routeType, customText }: ShareButtonP
   const handleShare = () => {
     const { text, url } = getShareText();
     const encodedText = encodeURIComponent(text);
-    const encodedUrl = encodeURIComponent(url);
     
-    // X（旧Twitter）のシェアURL
-    const shareUrl = `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`;
+    // X（旧Twitter）のシェアURL（URLパラメータとして別途指定）
+    const shareUrl = `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodeURIComponent(url)}`;
     
     // 新しいウィンドウで開く
     window.open(shareUrl, '_blank', 'width=550,height=420');
