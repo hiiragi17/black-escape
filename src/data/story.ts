@@ -4,18 +4,18 @@ export const storyData = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "出社する", "next": "overwork" },
-      { "text": "逃げる", "next": "freedom" }
+      { "text": "出社する", "next": "overwork-bad" },
+      { "text": "逃げる", "next": "freedom-good" }
     ]
   },
-  "overwork": {
+  "overwork-bad": {
     "text": "死ぬほど働かされてしまった。バッドエンド。",
     "background": "/images/bg/bad_end_office.jpg",
     "bgm": "/bgm/d6.mp3",
     "choices": []
   },
-  "freedom": {
-    "text": "あなたは逃げ切り、自由になった。Trueエンド。",
+  "freedom-good": {
+    "text": "あなたは逃げ切り、自由になった。グッドエンド。",
     "background": "/images/bg/beach.jpg",
     "bgm": "/bgm/n99.mp3",
     "choices": []
