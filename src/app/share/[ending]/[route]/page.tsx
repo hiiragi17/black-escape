@@ -62,6 +62,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function SharePage({ params }: Props) {
-  await params;
-  redirect("/");
+  const { ending, route } = await params
+  
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white p-8">
+      <div className="text-center space-y-6">
+        <h1 className="text-4xl font-bold">ブラック企業からの脱出</h1>
+        <p className="text-xl text-gray-300">
+          {ending === 'good' ? '脱出成功の結果をシェアしました！' : 'バッドエンドの結果をシェアしました...'}
+        </p>
+        <div className="space-y-4">
+          <a 
+            href="/novel"
+            className="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors"
+          >
+            🎮 ゲームをプレイする
+          </a>
+          <br />
+          <a 
+            href="/"
+            className="inline-block px-8 py-4 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg transition-colors"
+          >
+            🏠 トップページへ
+          </a>
+        </div>
+      </div>
+    </div>
+  )
 }
