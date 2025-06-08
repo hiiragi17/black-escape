@@ -65,24 +65,16 @@ export default async function SharePage({ params }: Props) {
       <div className="text-center space-y-6">
         <h1 className="text-4xl font-bold">ブラック企業からの脱出</h1>
         <p className="text-xl text-gray-300">
-          {ending === 'good' ? '脱出成功の結果をシェアしました！' : 'バッドエンドの結果をシェアしました...'}
+          {ending === 'good' ? '脱出成功の結果をシェアしました！他のエンドも是非見てください！' : '脱出失敗の結果をシェアしました……次こそ脱出だ！'}
         </p>
-        <div className="space-y-4">
-          <Link 
-            href="/novel"
-            className="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors"
-          >
-            🎮 ゲームをプレイする
-          </Link>
           <br />
           <Link 
             href="/"
             className="inline-block px-8 py-4 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg transition-colors"
           >
-            🏠 トップページへ
+            🏢 トップページへ
           </Link>
         </div>
       </div>
-    </div>
   )
 }
