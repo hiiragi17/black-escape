@@ -42,13 +42,11 @@ export async function GET(request: NextRequest) {
 
   try {
     const imageFileName = getImageFileName()
-    // すべて bg フォルダから取得するように統一
     const imagePath = join(process.cwd(), 'public', 'images', 'bg', imageFileName)
     
     console.log(`Loading OGP image: ${imagePath}`)
-
-    const imageBuffer = await readFile(imagePath)
     
+    const imageBuffer = await readFile(imagePath)
     const contentType = getContentType(imageFileName)
     
     return new NextResponse(imageBuffer, {
