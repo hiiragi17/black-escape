@@ -1,8 +1,40 @@
 'use client';
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { Background } from '@/components/Background';
+import { getEndingConfig } from '@/data/metadata-config';
 import Link from 'next/link';
+
+// SearchParamsを使用するコンポーネントを分離
+function ShareMessageContent() {
+  const searchParams = useSearchParams();
+  const ending = searchParams.get('ending');
+  const route = searchParams.get('route');
+  
+  // シェアメッセージの取得
+  const shareMessage = ending && route ? getEndingConfig(route, ending).shareMessage : null;
+
+  if (!shareMessage) return null;
+
+  return (
+    <div className="mb-6 transition-all duration-1000 bg-gradient-to-br from-blue-900/20 to-purple-900/20 rounded-xl p-6 backdrop-blur-md border-l-4 border-blue-500 shadow-2xl border border-white/20 opacity-100 translate-y-0">
+      <div className="text-center space-y-3">
+        <p className={`text-xl font-bold ${shareMessage.color} drop-shadow-lg`}>
+          {shareMessage.icon} {shareMessage.title}
+        </p>
+        <p className="text-base text-gray-200 font-medium drop-shadow-md">
+          {shareMessage.subtitle}
+        </p>
+        <div className="pt-2">
+          <p className="text-sm text-white/90 font-semibold bg-white/10 rounded-lg py-2 px-4 inline-block backdrop-blur-sm border border-white/20">
+            🎮 あなたも挑戦してみませんか？
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   const [showContent, setShowContent] = useState(false);
@@ -66,6 +98,11 @@ export default function Home() {
       
       {/* メインコンテンツ */}
       <div className="relative z-30 text-white px-4">
+        {/* シェア経由の場合の特別メッセージ */}
+        <Suspense fallback={null}>
+          <ShareMessageContent />
+        </Suspense>
+        
         {/* タイトルロゴ */}
         <div className={`mb-8 transition-all duration-1000 bg-gradient-to-br from-black/60 via-gray-900/50 to-black/60 rounded-xl p-8 backdrop-blur-md border border-white/10 shadow-2xl ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-yellow-300 to-orange-400 drop-shadow-2xl mb-4 tracking-wider animate-pulse filter drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">

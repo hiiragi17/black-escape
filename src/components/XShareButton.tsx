@@ -1,3 +1,5 @@
+import { getEndingConfig } from '@/data/metadata-config';
+
 interface ShareButtonProps {
   endingType: 'good' | 'bad';
   routeType: 'overwork' | 'freedom' | 'reform';
@@ -5,44 +7,28 @@ interface ShareButtonProps {
 }
 
 export const XShareButton = ({ endingType, routeType, customText }: ShareButtonProps) => {
-  // エンディング別のシェアテキスト
-  const getShareText = () => {
+  const handleShare = () => {
     const baseUrl = window.location.origin;
     
-    const endingMessages = {
-      'freedom-good': {
-        text: "残業地獄から転職で脱出成功！✨\n新しい環境で働けることになりました💪",
-        emoji: "🌟"
-      },
-      'overwork-bad': {
-        text: "過労で倒れてしまいました...💀\n無理は禁物ですね。体調管理は大切だと学びました😢",
-        emoji: "💀"
-      },
-    };
-
-    const key = `${routeType}-${endingType}` as keyof typeof endingMessages;
-    const ending = endingMessages[key] || {
-      text: "ブラック企業からの脱出に挑戦しました！",
-      emoji: "🎮"
-    };
-
-    const shareText = customText || ending.text;
+    // 設定ファイルからデータを取得
+    const config = getEndingConfig(routeType, endingType);
     
-    return {
-      text: `${ending.emoji} ${shareText}\n\n#ブラック企業からの脱出\n\nあなたも挑戦してみませんか？\n${baseUrl}`,
-      url: baseUrl
-    };
-  };
-
-  const handleShare = () => {
-    const { text, url } = getShareText();
-    const encodedText = encodeURIComponent(text);
+    // カスタムテキストまたは設定からのテキストを使用
+    const shareText = customText || config.shareText;
     
-    // X（旧Twitter）のシェアURL（URLパラメータとして別途指定）
-    const shareUrl = `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodeURIComponent(url)}`;
+    const fullText = `${config.emoji} ${shareText}\n\n#ブラック企業からの脱出\n\nあなたも挑戦してみませんか？`;
+    
+    // 短縮URL（メタデータ用）を使用
+    const shareUrl = `${baseUrl}/s/${routeType}/${endingType}`;
+    
+    const encodedText = encodeURIComponent(fullText);
+    const encodedUrl = encodeURIComponent(shareUrl);
+    
+    // X（旧Twitter）のシェアURL
+    const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`;
     
     // 新しいウィンドウで開く
-    window.open(shareUrl, '_blank', 'width=550,height=420');
+    window.open(twitterShareUrl, '_blank', 'width=550,height=420');
   };
 
   return (
