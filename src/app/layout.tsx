@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AudioProvider } from "@/components/AudioComponents";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'ブラック企業からの脱出',
     description: '逃げ切って自由を手に入れろ！ブラック企業から脱出するノベルゲーム',
-    url: 'https://your-domain.vercel.app',
+    url: 'https://black-escape.vercel.app',
     siteName: 'ブラック企業からの脱出',
     images: [
       {
@@ -30,7 +31,6 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://black-escape.vercel.app/'),
 }
 
-
 export default function RootLayout({
   children,
 }: {
@@ -38,7 +38,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body>{children}</body>
+      <body>
+        <AudioProvider>
+          {children}
+        </AudioProvider>
+      </body>
     </html>
   )
 }
