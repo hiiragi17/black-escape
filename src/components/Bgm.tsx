@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
+import { useAudio } from "@/components/AudioComponents";
 
 export function Bgm({ src }: { src: string }) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const { settings } = useAudio();
 
   useEffect(() => {
     // 新しいsrcが来た時の処理
@@ -11,10 +13,15 @@ export function Bgm({ src }: { src: string }) {
       audioRef.current.currentTime = 0;
     }
 
+    // BGMが無効な場合は何もしない
+    if (!settings.bgmEnabled) {
+      return;
+    }
+
     // 新しいAudioオブジェクトを作成
     audioRef.current = new Audio(src);
     audioRef.current.loop = true;
-    audioRef.current.volume = 0.5; // 音量を50%に設定
+    audioRef.current.volume = settings.bgmVolume;
 
     // 音声再生を試行
     const playAudio = async () => {
@@ -23,7 +30,6 @@ export function Bgm({ src }: { src: string }) {
         console.log(`BGM started: ${src}`);
       } catch (error) {
         console.error("BGM再生エラー:", error);
-        // ユーザーインタラクションが必要な場合のメッセージ
         console.log("ユーザーがページをクリックした後に音声が再生されます");
       }
     };
@@ -38,7 +44,25 @@ export function Bgm({ src }: { src: string }) {
         audioRef.current = null;
       }
     };
-  }, [src]);
+  }, [src, settings.bgmEnabled]);
+
+  // 音量変更の監視
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = settings.bgmVolume;
+    }
+  }, [settings.bgmVolume]);
+
+  // BGM ON/OFF の監視
+  useEffect(() => {
+    if (audioRef.current) {
+      if (settings.bgmEnabled) {
+        audioRef.current.play().catch(console.error);
+      } else {
+        audioRef.current.pause();
+      }
+    }
+  }, [settings.bgmEnabled]);
 
   return null;
 }
