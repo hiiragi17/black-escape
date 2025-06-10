@@ -1,4 +1,5 @@
 'use client';
+
 import React from 'react';
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
@@ -121,15 +122,23 @@ export default function Home() {
             className="block mx-auto w-64 py-4 px-8 bg-gradient-to-r from-blue-600/90 to-purple-600/90 hover:from-blue-700 hover:to-purple-700 text-white text-xl font-bold rounded-lg shadow-2xl transform hover:scale-110 transition-all duration-300 border border-white/20 hover:shadow-blue-500/50 backdrop-blur-sm"
           >
             ⚡ ゲームスタート
-          </Link> 
-          <button className="block mx-auto w-64 py-3 px-8 bg-gray-800/70 hover:bg-gray-700/80 text-white text-lg font-semibold rounded-lg shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-500/50 hover:border-gray-400/70 backdrop-blur-sm">
+          </Link>
+          <Link 
+            href="/settings"
+            className="block mx-auto w-64 py-3 px-8 bg-gray-800/70 hover:bg-gray-700/80 text-white text-lg font-semibold rounded-lg shadow-xl transform hover:scale-105 transition-all duration-300 border border-gray-500/50 hover:border-gray-400/70 backdrop-blur-sm"
+          >
             ⚙️ 設定
-          </button>
-        </div>
-        
-        {/* バージョン情報 */}
-        <div className="absolute bottom-8 right-8 text-gray-400 text-sm">
-          v1.0.0
+          </Link>
+          {/* 音楽の注意書き */}
+          <div className="mt-6 bg-amber-900/20 border border-amber-500/30 rounded-lg p-3 backdrop-blur-sm">
+            <div className="flex items-center justify-center space-x-2 text-amber-200">
+              <span className="text-lg">♫</span>
+              <div className="text-center">
+                <p className="text-sm font-medium">このゲームは音が出ます</p>
+                <p className="text-xs text-amber-300">設定画面で音量調整ができます</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       
