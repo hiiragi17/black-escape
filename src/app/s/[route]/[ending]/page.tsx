@@ -4,18 +4,17 @@ import { getEndingConfig } from '@/data/metadata-config'
 
 interface Props {
   params: Promise<{
-    ending: string
-    route: string
+    ending: string // endingIdとして使用
   }>
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { ending, route } = await params
-  const config = getEndingConfig(route, ending)
+  const { ending } = await params
+  const config = getEndingConfig(ending) // 1つの引数のみ
   
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://black-escape.vercel.app'
-  const ogImageUrl = `${baseUrl}/api/og?ending=${ending}&route=${route}`
-  const homeUrl = `${baseUrl}/?ending=${ending}&route=${route}`
+  const ogImageUrl = `${baseUrl}/api/og?ending=${ending}`
+  const homeUrl = `${baseUrl}/?ending=${ending}`
 
   return {
     title: config.title,
@@ -48,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     
     robots: {
-      index: false, // SEOでインデックスしない（リダイレクト用ページなので）
+      index: false,
       follow: false,
     },
     
@@ -62,8 +61,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function SharePage({ params }: Props) {
-  const { ending, route } = await params
+  const { ending } = await params
   
-  // トップページにリダイレクト（パラメータ付き）
-  redirect(`/?ending=${ending}&route=${route}`)
+  // endingIdのみを使用してリダイレクト
+  redirect(`/?ending=${ending}`)
 }

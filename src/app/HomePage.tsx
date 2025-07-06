@@ -14,7 +14,7 @@ function ShareMessageContent() {
   const route = searchParams.get('route');
   
   // シェアメッセージの取得
-  const shareMessage = ending && route ? getEndingConfig(route, ending).shareMessage : null;
+  const shareMessage = ending ? getEndingConfig(ending).shareMessage : null;
 
   if (!shareMessage) return null;
 
