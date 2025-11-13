@@ -12,9 +12,12 @@ function ShareMessageContent() {
   const searchParams = useSearchParams();
   const ending = searchParams.get('ending');
   const route = searchParams.get('route');
-  
+
+  // 必要なパラメータがない場合は何も表示しない
+  if (!ending || !route) return null;
+
   // シェアメッセージの取得
-  const shareMessage = ending && route ? getEndingConfig(route, ending).shareMessage : null;
+  const shareMessage = getEndingConfig(route, ending).shareMessage;
 
   if (!shareMessage) return null;
 

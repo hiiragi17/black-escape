@@ -44,14 +44,7 @@ export function Bgm({ src }: { src: string }) {
         audioRef.current = null;
       }
     };
-  }, [src, settings.bgmEnabled]);
-
-  // 音量変更の監視
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = settings.bgmVolume;
-    }
-  }, [settings.bgmVolume]);
+  }, [src, settings.bgmEnabled, settings.bgmVolume]);
 
   // BGM ON/OFF の監視
   useEffect(() => {
