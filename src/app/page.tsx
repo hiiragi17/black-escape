@@ -4,20 +4,20 @@ import { getEndingConfig } from '@/data/metadata-config'
 import HomePage from './HomePage'
 
 interface Props {
-  searchParams: { ending?: string, route?: string }
+  searchParams: Promise<{ ending?: string, route?: string }>
 }
 
 export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
-  const { ending, route } = searchParams
+  const { ending } = await searchParams
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://black-escape.vercel.app'
 
   // シェア経由の場合は動的メタデータ
-  if (ending && route) {
-    const config = getEndingConfig(route, ending)
-    const ogImageUrl = `${baseUrl}/api/og?ending=${ending}&route=${route}`
+  if (ending) {
+    const config = getEndingConfig(ending)
+    const ogImageUrl = `${baseUrl}/api/og?ending=${ending}`
 
-    console.log('🏠 Homepage dynamic metadata:', { ending, route, ogImageUrl })
+    console.log('🏠 Homepage dynamic metadata:', { ending, ogImageUrl })
 
     return {
       title: config.title,
@@ -82,6 +82,6 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 }
 
 // 既存のコンポーネントを使用
-export default function Page({ searchParams }: Props) {
+export default function Page() {
   return <HomePage />
 }

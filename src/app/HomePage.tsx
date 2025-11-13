@@ -11,8 +11,7 @@ import Link from 'next/link';
 function ShareMessageContent() {
   const searchParams = useSearchParams();
   const ending = searchParams.get('ending');
-  const route = searchParams.get('route');
-  
+
   // シェアメッセージの取得
   const shareMessage = ending ? getEndingConfig(ending).shareMessage : null;
 

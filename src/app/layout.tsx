@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { AudioProvider } from "@/components/AudioComponents";
 import "./globals.css";
 
