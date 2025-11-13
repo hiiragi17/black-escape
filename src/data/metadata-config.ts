@@ -38,6 +38,25 @@ export const endingConfig: Record<string, EndingConfig> = {
       borderColor: 'border-green-500'
     }
   },
+  'independence-good': {
+    // メタデータ
+    title: '独立成功！ - ブラック企業からの脱出',
+    description: 'フリーランスとして独立成功！🚀 自由な働き方を手に入れました✨',
+
+    // Xシェア
+    shareText: 'フリーランスとして独立成功！🚀\n自由な働き方を手に入れました✨',
+    emoji: '🚀',
+
+    // UI表示
+    shareMessage: {
+      icon: '🚀',
+      title: '誰かが独立して成功しました！',
+      subtitle: 'フリーランスとして自由を手に入れたようです✨',
+      color: 'text-green-300',
+      bgColor: 'from-green-900/20 to-emerald-900/20',
+      borderColor: 'border-green-500'
+    }
+  },
   'reform-good': {
     // メタデータ
     title: '社内改革成功！ - ブラック企業からの脱出',
@@ -57,61 +76,61 @@ export const endingConfig: Record<string, EndingConfig> = {
       borderColor: 'border-green-500'
     }
   },
-  'hasty-job': {
+  'hasty-bad': {
     // メタデータ
-    title: '転職したけど... - ブラック企業からの脱出',
-    description: '焦って転職したら、新しい会社も微妙でした...😅 でも前よりはマシかな？',
+    title: '転職失敗... - ブラック企業からの脱出',
+    description: '焦って転職したら、もっと酷いブラック企業でした...😱 地獄から地獄へ...',
 
     // Xシェア
-    shareText: '焦って転職したら、新しい会社も微妙でした...😅\nでも前よりはマシかな？',
-    emoji: '😅',
+    shareText: '焦って転職したら、もっと酷いブラック企業でした...😱\n地獄から地獄へ...',
+    emoji: '😱',
 
     // UI表示
     shareMessage: {
-      icon: '😅',
-      title: '誰かが転職しました',
-      subtitle: '新しい会社は...まあまあみたいです',
-      color: 'text-yellow-300',
-      bgColor: 'from-yellow-900/20 to-orange-900/20',
-      borderColor: 'border-yellow-500'
+      icon: '😱',
+      title: '誰かが転職に失敗しました...',
+      subtitle: '新しい会社は前より酷かったようです',
+      color: 'text-red-300',
+      bgColor: 'from-red-900/20 to-pink-900/20',
+      borderColor: 'border-red-500'
     }
   },
-  'survival-normal': {
+  'survival-bad': {
     // メタデータ
-    title: 'なんとか生き延びる - ブラック企業からの脱出',
-    description: '適度に手を抜いて生き延びることにしました💼 これも一つの生き方です',
+    title: '孤立と絶望... - ブラック企業からの脱出',
+    description: '手を抜いたら職場で孤立してしまいました...💔 心が壊れていきます',
 
     // Xシェア
-    shareText: '適度に手を抜いて生き延びることにしました💼\nこれも一つの生き方です',
-    emoji: '💼',
+    shareText: '手を抜いたら職場で孤立してしまいました...💔\n心が壊れていきます',
+    emoji: '💔',
 
     // UI表示
     shareMessage: {
-      icon: '💼',
-      title: '誰かが生き延びる道を選びました',
-      subtitle: '適度に手を抜いて生きていくようです',
-      color: 'text-yellow-300',
-      bgColor: 'from-yellow-900/20 to-orange-900/20',
-      borderColor: 'border-yellow-500'
+      icon: '💔',
+      title: '誰かが職場で孤立してしまいました...',
+      subtitle: '地獄のような環境に留まり続けているようです',
+      color: 'text-red-300',
+      bgColor: 'from-red-900/20 to-pink-900/20',
+      borderColor: 'border-red-500'
     }
   },
-  'jobless-normal': {
+  'jobless-bad': {
     // メタデータ
-    title: '無職だけど自由 - ブラック企業からの脱出',
-    description: '会社を辞めて自由になりました🌊 貯金を切り崩しながらじっくり次を考えます',
+    title: '無計画退職で困窮... - ブラック企業からの脱出',
+    description: '無計画に辞めて貯金も底をつきました...😭 実家に戻るしかない',
 
     // Xシェア
-    shareText: '会社を辞めて自由になりました🌊\n貯金を切り崩しながらじっくり次を考えます',
-    emoji: '🌊',
+    shareText: '無計画に辞めて貯金も底をつきました...😭\n実家に戻るしかない',
+    emoji: '😭',
 
     // UI表示
     shareMessage: {
-      icon: '🌊',
-      title: '誰かが会社を辞めました',
-      subtitle: '無職だけど自由を手に入れたようです',
-      color: 'text-blue-300',
-      bgColor: 'from-blue-900/20 to-cyan-900/20',
-      borderColor: 'border-blue-500'
+      icon: '😭',
+      title: '誰かが無計画に退職してしまいました...',
+      subtitle: '貯金が底をついて困窮しているようです',
+      color: 'text-red-300',
+      bgColor: 'from-red-900/20 to-pink-900/20',
+      borderColor: 'border-red-500'
     }
   },
   'overwork-bad': {

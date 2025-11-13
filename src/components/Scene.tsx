@@ -57,14 +57,8 @@ export default function Scene({ scene, setScene }: SceneProps) {
       return { type: 'good' as const, route: 'freedom' as const };
     } else if (scene === 'reform-good') {
       return { type: 'good' as const, route: 'reform' as const };
-    }
-    // Normal endings
-    else if (scene === 'hasty-job') {
-      return { type: 'normal' as const, route: 'hasty' as const };
-    } else if (scene === 'survival-normal') {
-      return { type: 'normal' as const, route: 'survival' as const };
-    } else if (scene === 'jobless-normal') {
-      return { type: 'normal' as const, route: 'jobless' as const };
+    } else if (scene === 'independence-good') {
+      return { type: 'good' as const, route: 'independence' as const };
     }
     // Bad endings
     else if (scene === 'overwork-bad') {
@@ -73,6 +67,12 @@ export default function Scene({ scene, setScene }: SceneProps) {
       return { type: 'bad' as const, route: 'regret' as const };
     } else if (scene === 'fired-bad') {
       return { type: 'bad' as const, route: 'fired' as const };
+    } else if (scene === 'hasty-bad') {
+      return { type: 'bad' as const, route: 'hasty' as const };
+    } else if (scene === 'survival-bad') {
+      return { type: 'bad' as const, route: 'survival' as const };
+    } else if (scene === 'jobless-bad') {
+      return { type: 'bad' as const, route: 'jobless' as const };
     }
 
     // デフォルト（万が一の場合）
