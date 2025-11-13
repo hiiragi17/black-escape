@@ -2,7 +2,7 @@ import { getEndingConfig } from '@/data/metadata-config';
 
 interface ShareButtonProps {
   endingType: 'good' | 'bad';
-  routeType: 'overwork' | 'freedom' | 'reform';
+  routeType: 'overwork' | 'freedom' | 'reform' | 'independence' | 'regret' | 'fired' | 'hasty' | 'survival' | 'jobless';
   customText?: string;
 }
 
