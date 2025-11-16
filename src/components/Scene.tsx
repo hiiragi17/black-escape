@@ -41,28 +41,22 @@ export default function Scene({ scene, setScene }: SceneProps) {
 
     generateParticles();
   }, []);
+  
   const current = storyData[scene];
   const router = useRouter();
 
   // エンディング判定
   const isEnding = current.choices.length === 0;
   
-  // エンディングタイプの判定
-  const getEndingInfo = () => {
+  // エンディングIDの取得（新しい構造）
+  const getEndingId = (): string | null => {
     if (!isEnding) return null;
     
-    // シーン名からエンディングタイプを判定
-    if (scene === 'overwork-bad') {
-      return { type: 'bad' as const, route: 'overwork' as const };
-    } else if (scene === 'freedom-good') {
-      return { type: 'good' as const, route: 'freedom' as const };
-    }
-    
-    // デフォルト（万が一の場合）
-    return { type: 'good' as const, route: 'freedom' as const };
+    // シーン名がそのままエンディングIDになる
+    return String(scene);
   };
 
-  const endingInfo = getEndingInfo();
+  const endingId = getEndingId();
 
   // タイピングアニメーション
   useEffect(() => {
@@ -165,10 +159,9 @@ export default function Scene({ scene, setScene }: SceneProps) {
                 /* エンディング時のボタン */
                 <div className={`mt-8 flex flex-col items-center gap-4 transition-all duration-700 delay-500 ${showChoices ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
                   {/* X共有ボタン（エンディング時のみ） */}
-                  {endingInfo && (
+                  {endingId && (
                     <XShareButton 
-                      endingType={endingInfo.type}
-                      routeType={endingInfo.route}
+                      endingId={endingId}
                     />
                   )}
                   

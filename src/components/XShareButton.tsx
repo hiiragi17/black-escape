@@ -1,25 +1,24 @@
 import { getEndingConfig } from '@/data/metadata-config';
 
 interface ShareButtonProps {
-  endingType: 'good' | 'bad';
-  routeType: 'overwork' | 'freedom' | 'reform';
+  endingId: string; // 新しい構造: endingIdのみ
   customText?: string;
 }
 
-export const XShareButton = ({ endingType, routeType, customText }: ShareButtonProps) => {
+export const XShareButton = ({ endingId, customText }: ShareButtonProps) => {
   const handleShare = () => {
     const baseUrl = window.location.origin;
     
-    // 設定ファイルからデータを取得
-    const config = getEndingConfig(routeType, endingType);
+    // 設定ファイルからデータを取得（1つの引数のみ）
+    const config = getEndingConfig(endingId);
     
     // カスタムテキストまたは設定からのテキストを使用
     const shareText = customText || config.shareText;
     
     const fullText = `${config.emoji} ${shareText}\n\n#ブラック企業からの脱出\n\nあなたも挑戦してみませんか？`;
     
-    // 短縮URL（メタデータ用）を使用
-    const shareUrl = `${baseUrl}/s/${routeType}/${endingType}`;
+    // 新しい構造のURL
+    const shareUrl = `${baseUrl}/share/${endingId}`;
     
     const encodedText = encodeURIComponent(fullText);
     const encodedUrl = encodeURIComponent(shareUrl);
