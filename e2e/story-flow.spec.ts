@@ -14,7 +14,7 @@ test.describe('ブラック企業からの脱出 - ストーリーフロー', ()
 
   test('トップページが正しく表示される', async ({ page }) => {
     // タイトルが表示されることを確認
-    await expect(page.getByText('ブラック企業からの脱出')).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'ブラック企業からの脱出' })).toBeVisible();
 
     // サブタイトルが表示されることを確認
     await expect(page.getByText('逃げ切って自由を手に入れろ！')).toBeVisible();
@@ -133,7 +133,7 @@ test.describe('ブラック企業からの脱出 - ストーリーフロー', ()
 
     // トップページに戻ったことを確認
     await expect(page).toHaveURL('/');
-    await expect(page.getByText('ブラック企業からの脱出')).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'ブラック企業からの脱出' })).toBeVisible();
   });
 
   test('グッドエンディングからタイトルに戻れる', async ({ page }) => {
@@ -158,7 +158,7 @@ test.describe('ブラック企業からの脱出 - ストーリーフロー', ()
 
     // トップページに戻ったことを確認
     await expect(page).toHaveURL('/');
-    await expect(page.getByText('ブラック企業からの脱出')).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'ブラック企業からの脱出' })).toBeVisible();
   });
 
   test('選択肢が正しく表示される', async ({ page }) => {
