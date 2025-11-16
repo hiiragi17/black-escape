@@ -34,7 +34,7 @@ test.describe('ブラック企業からの脱出 - ストーリーフロー', ()
     await expect(page).toHaveURL('/settings');
 
     // 設定ページのタイトルが表示されることを確認
-    await expect(page.getByText('設定')).toBeVisible();
+    await expect(page.getByRole('heading', { name: /⚙️ 設定/ })).toBeVisible();
   });
 
   test('ゲームを開始できる', async ({ page }) => {
@@ -78,7 +78,7 @@ test.describe('ブラック企業からの脱出 - ストーリーフロー', ()
     await expect(backButton).toBeVisible({ timeout: 10000 });
 
     // X共有ボタンが表示されることを確認
-    await expect(page.getByRole('button', { name: /結果をシェア/ })).toBeVisible();
+    await expect(page.getByRole('button', { name: /結果をXでシェアする/ })).toBeVisible();
   });
 
   test('グッドエンディングまでのフローが正常に動作する', async ({ page }) => {
@@ -108,7 +108,7 @@ test.describe('ブラック企業からの脱出 - ストーリーフロー', ()
     await expect(backButton).toBeVisible({ timeout: 10000 });
 
     // X共有ボタンが表示されることを確認
-    await expect(page.getByRole('button', { name: /結果をシェア/ })).toBeVisible();
+    await expect(page.getByRole('button', { name: /結果をXでシェアする/ })).toBeVisible();
   });
 
   test('バッドエンディングからタイトルに戻れる', async ({ page }) => {
