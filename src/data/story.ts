@@ -243,10 +243,12 @@ export const storyData: StoryDataType = {
   },
 
   "media_interview": {
-    "text": "地元テレビ局の取材を受けた。\n\n「残業代110円って、どんな気持ちでしたか？」\n\n「コンビニのバイトより安いです。23時まで働いても、残業パン一個も買えません」\n\n放送後、全国からの応援メッセージが殺到。\n\n会社は世間の批判に耐えきれず、労働環境の大幅な改善を発表した。\n\n【グッドエンド：メディア戦略で勝利】",
+    "text": "地元テレビ局の取材を受けた。\n\n「残業代110円って、どんな気持ちでしたか？」\n\n「コンビニのバイトより安いです。23時まで働いても、残業パン一個も買えません」\n\n放送後、全国からの応援メッセージが殺到。\n\n会社は世間の批判に耐えきれず、労働環境の大幅な改善を発表した。\n\nメディアの力で会社が変わり、労働環境が大幅に改善された。",
     "background": "/images/bg/beach.jpg",
     "bgm": "/bgm/n99.mp3",
-    "choices": []
+    "choices": [
+      { "text": "改善された会社で働き続ける", "next": "company_wide_union" }
+    ]
   },
 
   "consider_strike": {
@@ -259,10 +261,12 @@ export const storyData: StoryDataType = {
   },
 
   "continue_strike": {
-    "text": "ストライキを1週間継続した。\n\n会社の業務は完全に停止。取引先からも苦情が殺到。\n\n社長がついに姿を現した。\n\n「わかった、わかった。話し合おう」\n\n「今更ですか？最初から話し合いに応じてればこんなことにならなかったのに」\n\n交渉の結果、残業代の支払いと労働環境の改善が決定した。\n\n【グッドエンド：ストライキで完全勝利】",
+    "text": "ストライキを1週間継続した。\n\n会社の業務は完全に停止。取引先からも苦情が殺到。\n\n社長がついに姿を現した。\n\n「わかった、わかった。話し合おう」\n\n「今更ですか？最初から話し合いに応じてればこんなことにならなかったのに」\n\n交渉の結果、残業代の支払いと労働環境の改善が決定した。",
     "background": "/images/bg/company_front.jpg",
     "bgm": "/bgm/n99.mp3",
-    "choices": []
+    "choices": [
+      { "text": "ストライキで勝ち取った改善で働き続ける", "next": "company_wide_union" }
+    ]
   },
 
   "labor_inspection": {
@@ -270,8 +274,336 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "組合を結成して団体交渉する", "next": "form_union_three" }
+      { "text": "組合を結成して団体交渉する", "next": "form_union_three" },
+      { "text": "弁護士に相談するルートを選ぶ", "next": "consult_lawyer_first" },
+      { "text": "会社への匿名申告を検討する", "next": "plan_anonymous_report" }
     ]
+  },
+
+  "consult_lawyer_first": {
+    "text": "弁護士に相談することにした。\n\nブラック企業対応を得意とする弁護士事務所を見つけ、初回相談に申し込む。\n\n弁護士「残業代110円ですか？これは典型的な労基法違反ですね」\n\n「どうすればいいんでしょうか？」\n\n弁護士「いくつかの選択肢があります。個別に代理交渉することもできますし、労基署への申告をサポートすることもできます」",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "弁護士に団体交渉を依頼", "next": "lawyer_group_negotiation" },
+      { "text": "弁護士に代理人交渉を依頼", "next": "lawyer_individual_negotiation" },
+      { "text": "労基署申告に弁護士をつける", "next": "lawyer_with_labor_report" }
+    ]
+  },
+
+  "plan_anonymous_report": {
+    "text": "匿名申告について考えることにした。\n\n署員「申告者の特定は不要です。ただし、できれば証拠があると調査が進みやすくなります」\n\n「どんな証拠が必要ですか？」\n\n署員「給与明細、勤務時間の記録、パワハラの録音など、違反を証明するものなら何でもいいです」\n\n「準備して来月申告します」",
+    "background": "/images/bg/labor_office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "証拠を集める（慎重に進める）", "next": "gather_evidence_carefully" },
+      { "text": "給与明細だけで申告する（急ぐ）", "next": "report_with_minimal_evidence" },
+      { "text": "同期にも証拠集めを手伝ってもらう", "next": "gather_evidence_with_colleague" }
+    ]
+  },
+
+  "lawyer_group_negotiation": {
+    "text": "弁護士に団体交渉を依頼することにした。\n\n弁護士「同期の方にも協力してもらえますか？」\n「はい、二人で一緒に交渉してもらいたいです」\n\n弁護士「では労働組合を結成して、団体交渉権を得るという形式で行いましょう」\n\n数週間後、弁護士が会社と団体交渉を開始。会社側の代理人も弁護士を雇った。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "強気で全面的な改善を要求", "next": "lawyer_demanding_negotiation" },
+      { "text": "段階的改善案を提示", "next": "lawyer_gradual_plan" },
+      { "text": "会社の最初の提案を聞く", "next": "lawyer_listen_first" }
+    ]
+  },
+
+  "lawyer_individual_negotiation": {
+    "text": "弁護士に代理人交渉を依頼することにした。\n\n弁護士「会社に内容証明郵便で、未払い残業代の請求書を送ります」\n\n数日後、会社から連絡がきた。\n\n人事部「このような請求は聞いていません。話し合いで解決しましょう」\n\n弁護士を通じて交渉が始まる。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "全額請求を貫く", "next": "lawyer_demand_full_amount" },
+      { "text": "示談で和解する", "next": "lawyer_settlement" },
+      { "text": "裁判を辞さない姿勢を見せ交渉", "next": "lawyer_litigation_threat" }
+    ]
+  },
+
+  "lawyer_with_labor_report": {
+    "text": "労基署申告に弁護士をつけることにした。\n\n弁護士「申告内容に基づいて、さらに詳しい証拠を集めましょう」\n\n弁護士と一緒に細かく記録を整理し、労働基準監督署に申告書を提出。\n\n弁護士「会社が是正勧告に応じない場合は、さらに強い措置を取ります」",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "是正勧告の結果を待つ", "next": "wait_lawyer_investigation" },
+      { "text": "同時に社内での証拠集めを続ける", "next": "gather_evidence_while_waiting" }
+    ]
+  },
+
+  "gather_evidence_carefully": {
+    "text": "慎重に証拠を集めることにした。\n\n・給与明細をコピー\n・勤務時間の記録をつける\n・パワハラ発言を録音\n・メールでの不当な指示を保存\n\n1ヶ月かけて、しっかりした証拠を集めた。\n\n「これなら申告しても大丈夫だろう」",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "申告書を提出する", "next": "submit_evidence_report" },
+      { "text": "さらに追加で証拠を集める", "next": "gather_more_evidence" }
+    ]
+  },
+
+  "report_with_minimal_evidence": {
+    "text": "給与明細だけで申告することにした。\n\n「早く動いた方が得策だ」\n\n労働基準監督署に申告を提出。\n\n署員「証拠は給与明細だけですか？」\n「はい。他の証拠は...」\n\n「少し弱いですが、調査は開始します」\n\n会社への調査は始まったが、強制力は弱いかもしれない。",
+    "background": "/images/bg/labor_office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "追加の証拠をすぐに送る", "next": "rush_evidence_submission" },
+      { "text": "調査の進行を見守る", "next": "wait_investigation_results" }
+    ]
+  },
+
+  "gather_evidence_with_colleague": {
+    "text": "同期に証拠集めを手伝ってもらうことにした。\n\n同期「俺たちでやるんだ」\n「そう。一人より二人の方が証拠も集めやすいし」\n\n給与明細、勤務記録、録音、メール...\n\n二人で手分けして、2週間で十分な証拠を集めた。\n\n「これで大丈夫」",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "申告書を提出する", "next": "submit_evidence_report" },
+      { "text": "複数人で申告の力を強める", "next": "multi_person_report" }
+    ]
+  },
+
+  "lawyer_demanding_negotiation": {
+    "text": "強気で全面的な改善を要求することにした。\n\n弁護士「未払い残業代の全額支払い、パワハラ責任者の懲戒、労働環境の全面改善を要求します」\n\n会社側弁護士「そんな無茶な...」\n\n弁護士「労基法違反は明白です。応じなければ裁判も辞しません」\n\n会社側が青ざめる。数日後、会社から妥協案が来た。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "会社の妥協案を受け入れる", "next": "lawyer_accept_compromise" },
+      { "text": "さらに厳しい条件を要求する", "next": "lawyer_push_further" }
+    ]
+  },
+
+  "lawyer_gradual_plan": {
+    "text": "段階的改善案を提示することにした。\n\n弁護士「まずは来月から残業代の正規支払いから始めましょう。その後、パワハラ対策と有給取得の改善に進めます」\n\n会社側「それなら協力できそうだ」\n\n歩み寄りができた。段階的ですが、確実な改善が見込める。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "段階的改善を受け入れる", "next": "lawyer_gradual_success" },
+      { "text": "各段階の期限を明記させる", "next": "lawyer_set_deadlines" }
+    ]
+  },
+
+  "lawyer_listen_first": {
+    "text": "会社の最初の提案を聞くことにした。\n\n会社側弁護士「残業代については、計算方法の見直しで対応したいと思います」\n\n弁護士「どの程度の改善ですか？」\n\n会社側弁護士「月額2万円の補償で」\n\n弁護士「それは不十分です。法定賃金での全額支払いが必要です」\n\n交渉が本格化する。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "弁護士の指示で交渉を進める", "next": "follow_lawyer_advice" },
+      { "text": "自分の主張を強く出す", "next": "assert_own_demands" }
+    ]
+  },
+
+  "lawyer_demand_full_amount": {
+    "text": "全額請求を貫くことにした。\n\n弁護士「未払い残業代の全額約800万円の支払いを要求します」\n\n会社「そんなに払える訳ない」\n\n弁護士「では裁判ですね」\n\n会社が折れるまで交渉を続けた結果、最終的に600万円での和解に至った。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "和解金を受け取る", "next": "receive_settlement_money" },
+      { "text": "その後のキャリアについて考える", "next": "new_company_start" }
+    ]
+  },
+
+  "lawyer_settlement": {
+    "text": "示談で和解することにした。\n\n弁護士「相応の補償で和解しましょう」\n\n交渉の結果、400万円の補償と、今後の労働条件の改善で合意。\n\n「これでいいか...」\n\n裁判より早く決着がついた。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "和解金を受け取る", "next": "receive_settlement_money" }
+    ]
+  },
+
+  "lawyer_litigation_threat": {
+    "text": "裁判を辞さない姿勢を見せて交渉することにした。\n\n弁護士「これは明らかな労基法違反です。裁判になれば、会社は敗訴します」\n\n会社側弁護士「...了解しました。協議させてください」\n\n数日後、会社からは500万円での和解提案があった。\n\n「やった...」",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "和解を受け入れる", "next": "receive_settlement_money" },
+      { "text": "さらに交渉を続ける", "next": "lawyer_demand_full_amount" }
+    ]
+  },
+
+  "wait_lawyer_investigation": {
+    "text": "労働基準監督署の調査を待つことにした。\n\n弁護士「調査は1ヶ月ほどかかるでしょう」\n\n1ヶ月後、会社に是正勧告が出た。\n\n弁護士「さあ、これで交渉が有利になりました」\n\n是正勧告に従わない会社に対しては、さらに強い措置が取られる可能性もある。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "是正勧告に基づいて改善を要求", "next": "continue_improved_company" },
+      { "text": "さらに追加の慰謝料を請求", "next": "lawyer_additional_claim" }
+    ]
+  },
+
+  "gather_evidence_while_waiting": {
+    "text": "申告後も証拠集めを続けることにした。\n\n弁護士「いい判断ですね。さらに詳しい証拠があれば、調査がより強固になります」\n\nメールの記録、同僚との会話、パワハラの具体例...\n\n追加の証拠を2週間かけて集めた。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "追加証拠を申告書に添付", "next": "submit_additional_evidence" },
+      { "text": "調査結果を待つ", "next": "wait_lawyer_investigation" }
+    ]
+  },
+
+  "submit_evidence_report": {
+    "text": "十分な証拠を集めて申告書を提出した。\n\n署員「このような詳しい記録はいいですね。調査が進みやすくなります」\n\n2週間後、会社に是正勧告が届いた。\n\n会社側も無視できない状況になった。",
+    "background": "/images/bg/labor_office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "会社の改善状況を見守る", "next": "continue_improved_company" }
+    ]
+  },
+
+  "gather_more_evidence": {
+    "text": "さらに追加で証拠を集めることにした。\n\n弁護士に相談しながら、より詳しい記録を集める。\n\n・具体的な業務内容と時間\n・パワハラの詳細な記録\n・他の従業員の被害証言\n\nさらに1ヶ月かけて、圧倒的な証拠量を集めた。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "完全な証拠とともに申告", "next": "submit_evidence_report" }
+    ]
+  },
+
+  "rush_evidence_submission": {
+    "text": "追加の証拠をすぐに労働基準監督署に送ることにした。\n\n署員「ああ、これで強制力が出てきますね」\n\n追加の録音やメール記録で、会社の違法性が明確になった。\n\n署員「これは指導だけでは済みませんね。最低でも是正勧告を出します」",
+    "background": "/images/bg/labor_office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "是正勧告を見守る", "next": "continue_improved_company" }
+    ]
+  },
+
+  "multi_person_report": {
+    "text": "複数人での申告で力を強めることにした。\n\n同期の他に、後輩も申告に参加することにした。\n\n3人での申告により、労働基準監督署も全社調査に乗り出した。\n\n「複数人だと説得力が違う」",
+    "background": "/images/bg/labor_office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "全社調査の結果を待つ", "next": "company_wide_union" }
+    ]
+  },
+
+  "lawyer_accept_compromise": {
+    "text": "会社の妥協案を受け入れることにした。\n\n弁護士「未払い残業代300万円、パワハラ被害の慰謝料100万円、今後の労働環境改善でいかがでしょうか」\n\n会社側「それで」\n\n最終的に400万円での和解が成立した。完全な勝利ではないが、現実的な解決だ。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "和解金を受け取る", "next": "receive_settlement_money" }
+    ]
+  },
+
+  "lawyer_push_further": {
+    "text": "さらに厳しい条件を要求することにした。\n\n弁護士「450万円での和解が最低ラインです」\n\n会社側弁護士「それは...無理です」\n\n交渉が膠着状態に。弁護士は「裁判に持ち込むか、現在の提案で妥協するか」と言った。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "最終提案を受け入れる", "next": "lawyer_accept_compromise" },
+      { "text": "裁判を決行する", "next": "lawyer_litigation_threat" }
+    ]
+  },
+
+  "lawyer_gradual_success": {
+    "text": "段階的改善を受け入れることにした。\n\n第1段階：残業代の適正支払い開始\n第2段階（3ヶ月後）：パワハラ対策の強化\n第3段階（6ヶ月後）：有給取得率80%以上を実現\n\n実際に改善が進み始めた。段階的ですが、確実な前進だ。",
+    "background": "/images/bg/new_office.jpg",
+    "bgm": "/bgm/n99.mp3",
+    "choices": [
+      { "text": "会社の改善を見守る", "next": "continue_improved_company" }
+    ]
+  },
+
+  "lawyer_set_deadlines": {
+    "text": "各段階の期限を明記させることにした。\n\n弁護士「来月末までに残業代支払い、3ヶ月以内にパワハラ対策、6ヶ月以内に有給改善。期限を過ぎたら罰則と」\n\n会社側「わかりました」\n\nしっかりした契約書を作成。期限を逃すことはできない。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "改善の進捗を確認する", "next": "lawyer_gradual_success" }
+    ]
+  },
+
+  "follow_lawyer_advice": {
+    "text": "弁護士の指示で交渉を進めることにした。\n\n弁護士「法定賃金での全額支払い、これが最低条件です」\n\n交渉が何度も行われたが、最終的に500万円での和解が成立した。\n\n弁護士の専門的なアドバイスが功を奏した。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "和解金を受け取る", "next": "receive_settlement_money" }
+    ]
+  },
+
+  "assert_own_demands": {
+    "text": "自分の主張を強く出すことにした。\n\n「月2万円は馬鹿にしてる。法定通りに払え」\n\n会社側が怒った。\n\n弁護士「自分で交渉するのは避けた方が...」\n\n会社の対応が悪くなった。最終的に200万円での低い和解に留まった。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "低額の和解を受け入れる", "next": "lawyer_low_settlement" },
+      { "text": "交渉を打ち切る", "next": "lawyer_negotiation_breakdown" }
+    ]
+  },
+
+  "receive_settlement_money": {
+    "text": "和解金を受け取った。\n\n銀行口座に振り込まれた和解金。数百万円の金額に、思わず目を疑った。\n\n「これだけあれば...新しい人生を始められる」\n\n和解金を使って、新しい会社での新しいスタートを切ることにした。\n\n【グッドエンド：弁護士による和解成功】",
+    "background": "/images/bg/beach.jpg",
+    "bgm": "/bgm/n99.mp3",
+    "choices": []
+  },
+
+  "lawyer_additional_claim": {
+    "text": "是正勧告に基づいて、追加の慰謝料を請求することにした。\n\n弁護士「報復人事、セクハラ、パワハラ...それぞれに慰謝料請求ができます」\n\n追加で200万円の請求を会社に送付。\n\n会社「その他の要求は...」\n\n最終的に追加100万円での和解。合計で大きな金額を獲得した。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "和解金を受け取る", "next": "receive_settlement_money" }
+    ]
+  },
+
+  "submit_additional_evidence": {
+    "text": "追加証拠を申告書に添付して提出した。\n\n署員「ここまで詳しい証拠があれば、調査が大きく前に進みます」\n\n会社への調査が本格化。1ヶ月後、強い是正勧告が出た。\n\n「やった...」",
+    "background": "/images/bg/labor_office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "是正勧告への対応を見守る", "next": "continue_improved_company" }
+    ]
+  },
+
+  "lawyer_low_settlement": {
+    "text": "低額の和解を受け入れることにした。\n\n200万円...満足ではないが、これ以上交渉できない状況だ。\n\n弁護士「申し訳ありません。もう少し交渉の進め方が...」\n\n結局、自分の強い発言が交渉を悪くしてしまった。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "低額の和解金を受け取る", "next": "lawyer_low_settlement_accept" }
+    ]
+  },
+
+  "lawyer_negotiation_breakdown": {
+    "text": "交渉を打ち切ることにした。\n\n「法定通りに払わないなら裁判だ」\n\nしかし交渉をぶち壊してしまった。会社は弁護士を通さず、直接人事部に呼び出してきた。\n\n人事部「君、我が社に不満があるなら辞めてもらっていいよ」\n\n\"逆提案\"をされてしまった。\n\n【バッドエンド：交渉破裂で退職勧告】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "lawyer_low_settlement_accept": {
+    "text": "200万円の和解金を受け取った。\n\n「少ないけど、これ以上は無理か...」\n\n弁護士「本来ならもっと取れていたんですが...」\n\n和解金で転職活動をサポートしてもらい、新しい会社を探すことにした。",
+    "background": "/images/bg/beach.jpg",
+    "bgm": "/bgm/n99.mp3",
+    "choices": [
+      { "text": "和解金で新しい人生をスタート", "next": "receive_settlement_money" }
+    ]
+  },
+
+  "union_formation_failed": {
+    "text": "労働組合の結成がバレてしまった。\n\n部長「お前ら、何やってんだ」\n\n同期「逃げよう」\n\nしかし、既に会社は人事部に報告していた。\n\n翌日、人事部から呼び出された。\n\n人事「組合活動？ここはそういう会社じゃない。解雇だ」\n\n【バッドエンド：組合結成がバレて解雇】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "evidence_gathering_discovered": {
+    "text": "証拠集めが会社にバレてしまった。\n\n同期のメール記録を見ていた人事部が気づいた。\n\n人事部「勝手に会社の情報を集めるな。これは機密情報の窃盗だ」\n\n弁護士に相談したが、集め方が違法だったため、証拠として使えなくなった。\n\n「しまった...」\n\n証拠なしで労基に申告しても、調査は進まない。\n\n【バッドエンド：証拠集めの方法が違法で無効化】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "retaliation_spiral": {
+    "text": "匿名申告をしたはずなのに、バレてしまった。\n\n人事部「お前だろ。申告したのは」\n\n「そんな...」\n\nその後の報復は凄まじかった。\n\n・給料からの不正な控除\n・パワハラの激化\n・同僚からの孤立\n\n弁護士に相談しても、会社は否認し続ける。\n\n結局、精神的に追い詰められて退職を選ぶしかなかった。\n\n【バッドエンド：バレた匿名申告で報復地獄】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
   },
 
   "labor_inspection_first": {
@@ -353,10 +685,12 @@ export const storyData: StoryDataType = {
   },
 
   "monitor_company_improvement": {
-    "text": "会社の改善状況を監視することにした。\n\n・残業代の支払い: 完全に支払われるように改善\n・パワハラの相談窓口: 設置完了\n・有給取得率: 80%以上に改善\n\nようやく普通の労働環境になり始めた。\n\n「長い戦いだったけど、やっと勝った」\n\n【グッドエンド：労基署の是正勧告で改善】",
+    "text": "会社の改善状況を監視することにした。\n\n・残業代の支払い: 完全に支払われるように改善\n・パワハラの相談窓口: 設置完了\n・有給取得率: 80%以上に改善\n\nようやく普通の労働環境になり始めた。\n\n「長い戦いだったけど、やっと勝った」",
     "background": "/images/bg/new_office.jpg",
     "bgm": "/bgm/n99.mp3",
-    "choices": []
+    "choices": [
+      { "text": "改善された会社で働き続ける", "next": "company_wide_union" }
+    ]
   },
 
   "submit_additional_evidence": {
@@ -369,10 +703,12 @@ export const storyData: StoryDataType = {
   },
 
   "continue_improved_company": {
-    "text": "改善された会社で働き続けることにした。\n\n・月給が5万円アップ（適正な残業代支払い）\n・定時退社が当たり前に\n・有給取得率90%以上\n・ハラスメント防止体制の確立\n・働きやすい職場環境\n\n部長「お前のおかげで、この会社は良くなったな」\n\n「当たり前のことをしただけです」\n\n【グッドエンド：労基介入で会社完全改革】",
+    "text": "改善された会社で働き続けることにした。\n\n・月給が5万円アップ（適正な残業代支払い）\n・定時退社が当たり前に\n・有給取得率90%以上\n・ハラスメント防止体制の確立\n・働きやすい職場環境\n\n部長「お前のおかげで、この会社は良くなったな」\n\n「当たり前のことをしただけです」",
     "background": "/images/bg/new_office.jpg",
     "bgm": "/bgm/n99.mp3",
-    "choices": []
+    "choices": [
+      { "text": "改善された会社で新しいキャリアを築く", "next": "company_wide_union" }
+    ]
   },
 
   "procrastinate": {
@@ -460,10 +796,12 @@ export const storyData: StoryDataType = {
   },
 
   "endure_alone": {
-    "text": "一人で耐え抜くことにした。\n\n「絶対に負けない...」\n\n毎日の嫌がらせを詳細に記録。倉庫での孤独な作業も黙々とこなす。\n\n3ヶ月後、労働基準監督署の本格調査が始まった。\n\n監督官「報復人事の証拠もありますね。これは重大な違反です」\n\n耐え抜いた甲斐があった。会社は厳重注意を受け、環境が一変した。\n\n【グッドエンド：一人で耐え抜いて勝利】",
+    "text": "一人で耐え抜くことにした。\n\n「絶対に負けない...」\n\n毎日の嫌がらせを詳細に記録。倉庫での孤独な作業も黙々とこなす。\n\n3ヶ月後、労働基準監督署の本格調査が始まった。\n\n監督官「報復人事の証拠もありますね。これは重大な違反です」\n\n耐え抜いた甲斐があった。会社は厳重注意を受け、環境が一変した。",
     "background": "/images/bg/beach.jpg",
     "bgm": "/bgm/n99.mp3",
-    "choices": []
+    "choices": [
+      { "text": "耐え抜いて勝ち取った改善で働き続ける", "next": "company_wide_union" }
+    ]
   },
 
   "report_harassment_to_labor": {
@@ -492,10 +830,12 @@ export const storyData: StoryDataType = {
   },
 
   "consult_lawyer": {
-    "text": "弁護士に相談することにした。\n\n「報復人事は明らかな違法行為です。きちんと対応しましょう」\n\n弁護士のアドバイスで適切な証拠収集を行い、労働基準監督署と連携。\n\n会社は法的圧力に屈服し、全面的に改善することになった。\n\n「プロに相談して正解だった」\n\n弁護士費用はかかったが、確実に勝利できた。\n\n【グッドエンド：弁護士と連携して完全勝利】",
+    "text": "弁護士に相談することにした。\n\n「報復人事は明らかな違法行為です。きちんと対応しましょう」\n\n弁護士のアドバイスで適切な証拠収集を行い、労働基準監督署と連携。\n\n会社は法的圧力に屈服し、全面的に改善することになった。\n\n「プロに相談して正解だった」",
     "background": "/images/bg/beach.jpg",
     "bgm": "/bgm/n99.mp3",
-    "choices": []
+    "choices": [
+      { "text": "弁護士による勝利で和解金を受け取る", "next": "receive_settlement_money" }
+    ]
   },
 
   "run_away_quickly": {
@@ -735,20 +1075,20 @@ export const storyData: StoryDataType = {
   },
 
   "manufacturing_start": {
-    "text": "製造業での新しいスタートを切った。\n\n「毎日同じ製品を作るけど、それが積み重なって大きなものになるんだ」\n\n職人気質の先輩たちに丁寧に教えてもらい、ものづくりの楽しさを知った。\n\n「前の会社では何を作ってたんだろう...意味のない資料ばかりだった」",
+    "text": "製造業での新しいスタートを切った。\n\n「毎日同じ製品を作るけど、それが積み重なって大きなものになるんだ」\n\n職人気質の先輩たちに丁寧に教えてもらい、ものづくりの楽しさを知った。\n\n「前の会社では何を作ってたんだろう...意味のない資料ばかりだった」\n\n新しい会社で充実した日々を過ごしている。\n\n【グッドエンド：転職成功】",
     "background": "/images/bg/factory.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "新しい会社でスタートする", "next": "new_company_start" }
+      { "text": "新しい職場で新しい人生を歩む", "next": "new_company_start" }
     ]
   },
 
   "agent_company_start": {
-    "text": "エージェント推薦の会社で働き始めた。\n\n「エージェントの言う通り、本当に良い会社だった」\n\n・定時退社が当たり前\n・有給取得率95%\n・残業代完全支給\n・上司が部下を大切にする\n\n「転職エージェントに相談して正解だった」",
+    "text": "エージェント推薦の会社で働き始めた。\n\n「エージェントの言う通り、本当に良い会社だった」\n\n・定時退社が当たり前\n・有給取得率95%\n・残業代完全支給\n・上司が部下を大切にする\n\n「転職エージェントに相談して正解だった」\n\n新しい会社で新しい人生が始まった。\n\n【グッドエンド：転職成功】",
     "background": "/images/bg/new_office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "新しい会社でスタートする", "next": "new_company_start" }
+      { "text": "新しい会社で人生を再スタート", "next": "new_company_start" }
     ]
   },
   "notify_company": {
