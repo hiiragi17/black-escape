@@ -169,35 +169,21 @@ export const storyData: StoryDataType = {
   },
 
   "high_salary_resignation": {
-    "text": "「お世話になりました」\n\n部長「待てよ、お前がいなくなったら困る」\n\n「それは会社の問題です。僕の問題ではありません」\n\n有給消化もしっかりと取得。新しい会社での役職について、想像を膨らませる。",
+    "text": "「お世話になりました」\n\n部長「待てよ、お前がいなくなったら困る」\n\n「それは会社の問題です。僕の問題ではありません」\n\n有給消化もしっかりと取得。年収150万円アップの新しい会社でのスタートを切る。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "高待遇の会社でスタート", "next": "new_company_high_salary" }
+      { "text": "新しい会社でキャリアを積む", "next": "new_company_start" }
     ]
   },
 
   "worklife_balance_resignation": {
-    "text": "「お世話になりました」\n\n部長「ちょっと待て...」\n\n「これ以上何か？」と言わんばかりの態度で帰った。\n\n最後の日、同期に見送られる。自分の選択が正しかったと確信した。",
+    "text": "「お世話になりました」\n\n部長「ちょっと待て...」\n\n「これ以上何か？」と言わんばかりの態度で帰った。\n\n最後の日、同期に見送られる。自分の選択が正しかったと確信した。ワークライフバランス重視の新しい会社でのスタートを切る。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "ワークライフバランス重視の会社でスタート", "next": "new_company_worklife" }
+      { "text": "新しい会社でスタートする", "next": "new_company_start" }
     ]
-  },
-
-  "new_company_high_salary": {
-    "text": "新しい会社での初日。\n\n「昇進なども期待できます。頑張ってください」\n\n年収が150万円アップ。役職も上がった。\n\n「やはり、金銭面を優先させるのが正解だったか」\n\n充実したキャリアが待っている。\n\n【グッドエンド：転職成功 - キャリアアップ】",
-    "background": "/images/bg/beach.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": []
-  },
-
-  "new_company_worklife": {
-    "text": "新しい会社での初日。\n\n「今月は月5時間しか残業してません。今日も16時に帰って大丈夫ですよ」\n\n定時で帰ることができる喜び。\n\n「これが普通の会社か...今までの人生は何だったんだ」\n\n人生の時間を取り戻すことができた。\n\n【グッドエンド：転職成功 - ワークライフバランス重視】",
-    "background": "/images/bg/beach.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": []
   },
 
   "clean_resignation": {
