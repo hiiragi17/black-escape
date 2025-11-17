@@ -693,15 +693,6 @@ export const storyData: StoryDataType = {
     ]
   },
 
-  "submit_additional_evidence": {
-    "text": "さらに追加の証拠を提出することにした。\n\n・メールでの不当な指示\n・パワハラ発言の録音\n・給与明細と実際の勤務時間の記録\n\nこれらを全て労基署に提供した。\n\n「十分な証拠が揃いました。これで改善を求めることができます」",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "会社の改善を待つ", "next": "continue_improved_company" }
-    ]
-  },
-
   "continue_improved_company": {
     "text": "改善された会社で働き続けることにした。\n\n・月給が5万円アップ（適正な残業代支払い）\n・定時退社が当たり前に\n・有給取得率90%以上\n・ハラスメント防止体制の確立\n・働きやすい職場環境\n\n部長「お前のおかげで、この会社は良くなったな」\n\n「当たり前のことをしただけです」",
     "background": "/images/bg/new_office.jpg",
