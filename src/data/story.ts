@@ -60,9 +60,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "「冗談ですよ」とフォローする", "next": "cover_up_joke" },
-      { "text": "そのまま逃げる", "next": "run_away" },
-      { "text": "「事実を言っただけです」と開き直る", "next": "double_down" }
+      { "text": "そのまま逃げる", "next": "run_away_quickly" }
     ]
   },
 
@@ -71,9 +69,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "堂々と帰る", "next": "leave_confidently" },
-      { "text": "小走りで逃げる", "next": "run_away_quickly" },
-      { "text": "「体調悪いんで」と嘘をつく", "next": "fake_sick" }
+      { "text": "堂々と帰る", "next": "leave_confidently" }
     ]
   },
 
@@ -82,9 +78,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "タクシーで帰る（自腹）", "next": "taxi_home" },
-      { "text": "会社に泊まる", "next": "sleep_at_office" },
-      { "text": "歩いて帰る", "next": "walk_home" }
+      { "text": "タクシーで帰る（自腹）", "next": "taxi_home" }
     ]
   },
 
@@ -93,9 +87,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "「一緒に転職活動しない？」", "next": "joint_job_hunting" },
-      { "text": "「労働組合作ろうぜ」", "next": "create_union" },
-      { "text": "「後輩いびりでストレス発散する？」", "next": "bully_junior" }
+      { "text": "一緒に転職活動をする", "next": "joint_job_hunting" }
     ]
   },
 
@@ -104,9 +96,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "労働基準監督署に相談する", "next": "labor_inspection" },
-      { "text": "転職活動を本格化する", "next": "serious_job_hunting" },
-      { "text": "「残業代払わないなら働きません」", "next": "no_work_no_pay" }
+      { "text": "労働基準監督署に相談する", "next": "labor_inspection" }
     ]
   },
 
@@ -115,9 +105,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "副業を始める", "next": "start_side_job" },
-      { "text": "親に借金をお願いする", "next": "borrow_from_parents" },
-      { "text": "転職サイトに登録する", "next": "register_job_site" }
+      { "text": "転職活動を本格化する", "next": "serious_job_hunting" }
     ]
   },
 
@@ -126,9 +114,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "同じ会社に応募する", "next": "apply_same_company" },
-      { "text": "違う業界を狙う", "next": "different_industries" },
-      { "text": "転職エージェントに相談する", "next": "consult_agent" }
+      { "text": "本格的に転職活動を開始する", "next": "serious_job_hunting" }
     ]
   },
 
@@ -137,9 +123,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "内定をもらう", "next": "get_job_offer" },
-      { "text": "より良い条件を交渉する", "next": "negotiate_conditions" },
-      { "text": "複数内定をもらって選ぶ", "next": "multiple_offers" }
+      { "text": "内定をもらう", "next": "get_job_offer" }
     ]
   },
 
@@ -148,9 +132,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "きっぱりと退職する", "next": "clean_resignation" },
-      { "text": "引き留めを断る", "next": "refuse_retention" },
-      { "text": "後任の引き継ぎをしっかりする", "next": "proper_handover" }
+      { "text": "きっぱりと退職する", "next": "clean_resignation" }
     ]
   },
 
@@ -186,9 +168,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "まずは3人で組合を結成する", "next": "form_union_three" },
-      { "text": "もっと人数を集めてから行動する", "next": "gather_more_people" },
-      { "text": "外部の労働組合に加入する", "next": "join_external_union" }
+      { "text": "3人で組合を結成する", "next": "form_union_three" }
     ]
   },
 
@@ -197,9 +177,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "後輩と一緒に組合活動を始める", "next": "start_with_junior" },
-      { "text": "もっと慎重に仲間を探す", "next": "find_allies_carefully" },
-      { "text": "匿名で会社の問題を告発する", "next": "anonymous_report" }
+      { "text": "後輩と組合活動を始める", "next": "form_union_three" }
     ]
   },
 
@@ -208,9 +186,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "残業代の支払いを要求する", "next": "demand_overtime_pay" },
-      { "text": "労働環境の改善を要求する", "next": "demand_work_environment" },
-      { "text": "まずは会社に組合結成を通知する", "next": "notify_company" }
+      { "text": "残業代の支払いを要求する", "next": "demand_overtime_pay" }
     ]
   },
 
@@ -219,9 +195,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "「じゃあ役員報酬を削れ」と言う", "next": "cut_executive_pay" },
-      { "text": "労働基準監督署に申告する", "next": "report_to_labor_office" },
-      { "text": "ストライキを検討する", "next": "consider_strike" }
+      { "text": "「じゃあ役員報酬を削れ」と言う", "next": "cut_executive_pay" }
     ]
   },
 
@@ -230,9 +204,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "録音を武器に交渉を有利に進める", "next": "use_recording" },
-      { "text": "労働基準監督署に証拠として提出する", "next": "submit_evidence" },
-      { "text": "SNSで会社の実態を拡散する", "next": "social_media_expose" }
+      { "text": "録音を武器に交渉を有利に進める", "next": "use_recording" }
     ]
   },
 
@@ -241,9 +213,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "残業代の支払いを勝ち取る", "next": "win_overtime_pay" },
-      { "text": "さらに労働環境の改善も要求する", "next": "demand_more_improvements" },
-      { "text": "他の部署にも組合を拡大する", "next": "expand_union" }
+      { "text": "残業代の支払いを勝ち取る", "next": "win_overtime_pay" }
     ]
   },
 
@@ -268,9 +238,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "メディアの取材を受ける", "next": "media_interview" },
-      { "text": "会社が謝罪するまで戦う", "next": "fight_until_apology" },
-      { "text": "労働基準監督署の調査を待つ", "next": "wait_investigation" }
+      { "text": "メディアの取材を受ける", "next": "media_interview" }
     ]
   },
 
@@ -286,9 +254,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/beach.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "ストライキを継続する", "next": "continue_strike" },
-      { "text": "会社との交渉を再開する", "next": "resume_negotiation" },
-      { "text": "マスコミに取り上げてもらう", "next": "media_coverage" }
+      { "text": "ストライキを継続する", "next": "continue_strike" }
     ]
   },
 
@@ -300,13 +266,11 @@ export const storyData: StoryDataType = {
   },
 
   "labor_inspection": {
-    "text": "労働基準監督署に相談することにした。\n\n「残業代110円って...本当ですか？」\n「23時まで働いても残業パン一個買えません」\n\n監督官が驚いた顔をする。\n\n「それは明らかな法律違反ですね。詳しく聞かせてください」\n\n証拠を整理して、正式に申告することにした。",
+    "text": "労働基準監督署に相談することにした。\n\n「残業代110円というのは、どういう計算ですか？」\n\n署員「これはおかしいですね。法定の残業代をちゃんと計算してます？」\n\n「計算機で割るだけなので...」\n\n「それは違法です。最低でも25%割増が必要です」",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "残業代未払いを申告する", "next": "report_overtime_violation" },
-      { "text": "パワハラも同時に申告する", "next": "report_harassment_too" },
-      { "text": "匿名で申告する", "next": "anonymous_labor_report" }
+      { "text": "組合を結成して団体交渉する", "next": "form_union_three" }
     ]
   },
 
@@ -315,20 +279,18 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "残業代の問題を相談する", "next": "consult_overtime_issue" },
-      { "text": "労働環境全般を相談する", "next": "consult_work_environment" },
-      { "text": "どんな証拠が必要か聞く", "next": "ask_about_evidence" }
+      { "text": "残業代の問題を相談する", "next": "report_overtime_violation" },
+      { "text": "労働環境全般を相談する", "next": "report_overtime_violation" },
+      { "text": "どんな証拠が必要か聞く", "next": "report_overtime_violation" }
     ]
   },
 
   "report_overtime_violation": {
-    "text": "残業代未払いを正式に申告した。タイムカードのコピーや給与明細を証拠として提出。\n\n「残業代110円...これは酷いですね」\n\n1週間後、労働基準監督署から会社に調査の連絡が入った。\n\n部長「お前、労基に何か言ったのか？」\n\n「何のことですか？」\n\n会社がざわつき始めた。",
+    "text": "労働基準監督署に残業違反を申告することにした。\n\n「残業代が110円というのは...」\n\n署員「これは完全に違法ですね。弊署も調査を開始します」\n\n「これからどうなるんですか？」\n\n「会社に是正勧告を出します。改善されなければ、立件する可能性もあります」",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "知らないふりを続ける", "next": "play_innocent" },
-      { "text": "「法律違反だから当然です」と言う", "next": "admit_report" },
-      { "text": "他の同僚にも労基への相談を勧める", "next": "encourage_others_report" }
+      { "text": "調査の結果を待つ", "next": "wait_investigation_results" }
     ]
   },
 
@@ -338,52 +300,44 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "調査結果を待つ", "next": "wait_investigation_results" },
-      { "text": "同僚にも匿名申告を勧める", "next": "encourage_anonymous_reports" },
-      { "text": "追加の証拠集めをする", "next": "gather_more_evidence" }
+      { "text": "同僚にも匿名申告を勧める", "next": "wait_investigation_results" },
+      { "text": "追加の証拠集めをする", "next": "wait_investigation_results" }
     ]
   },
 
   "play_innocent": {
-    "text": "知らないふりを続けた。\n\n数日後、労働基準監督官が会社に立ち入り調査に入った。\n\n「労働基準監督署です。労働基準法違反の疑いで調査を行います」\n\n人事部が大慌て。タイムカードや給与台帳を慌てて確認している。\n\n部長の顔が真っ青になっている。",
+    "text": "「何のことですか？」と知らんぷりをすることにした。\n\n「この件について、僕は関係ありません」\n\nしかし労働基準監督署の調査は続く。\n\n労基署が他の同僚たちに聞き取り調査を始めたため、秘密は明かされてしまった。\n\n「お前、申告したの？」",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "調査に協力する", "next": "cooperate_investigation" },
-      { "text": "様子を見守る", "next": "observe_investigation" },
-      { "text": "同僚に調査のことを教える", "next": "inform_colleagues" }
+      { "text": "正直に認める", "next": "admit_report" }
     ]
   },
 
   "admit_report": {
-    "text": "「法律違反だから当然です」\n\n部長「お前...会社を裏切るのか？」\n\n「裏切ったのは会社の方でしょう。残業代110円って何ですか？」\n\n周りの同僚たちも注目している。\n\n「労働基準監督署が調査に来るそうですよ」\n\n部長、完全に言葉を失う。",
+    "text": "「はい、申告しました。」\n\n「なぜそんなことを？」\n\n「労働基準法を守らない会社だから、正式な手続きを通すしかないと思ったんです」\n\n同期たちも応援してくれた。\n\n「正しいことをしたんだ」",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "他の違反行為も暴露する", "next": "expose_other_violations" },
-      { "text": "調査に全面協力すると宣言する", "next": "declare_full_cooperation" },
-      { "text": "「みんなも権利を主張しよう」と呼びかける", "next": "call_for_rights" }
+      { "text": "調査に全面協力する", "next": "cooperate_investigation" }
     ]
   },
 
   "wait_investigation_results": {
-    "text": "2週間後、労働基準監督署から調査結果の連絡があった。\n\n「重大な労働基準法違反が確認されました。会社に是正勧告を行います」\n\n会社に労働基準法違反の是正勧告書が交付された。\n\n・残業代の適正支払い\n・労働時間の適正管理\n・安全衛生管理の改善\n\n会社は1ヶ月以内の改善を命じられた。",
-    "background": "/images/bg/labor_office.jpg",
+    "text": "労働基準監督署の調査が進んだ。\n\n2週間後、是正勧告が会社に届いた。\n\n「残業代の支払い、パワハラの改善、有給取得の推進」\n\n会社側も改善にようやく動き始めた。\n\n「組合の力、本当にすごいな」",
+    "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "会社の改善を見守る", "next": "monitor_company_improvement" },
-      { "text": "追加の申告を検討する", "next": "consider_additional_reports" },
-      { "text": "同僚に改善内容を伝える", "next": "share_improvement_news" }
+      { "text": "さらに改善を監視する", "next": "monitor_company_improvement" }
     ]
   },
 
   "cooperate_investigation": {
-    "text": "労働基準監督官の質問に正直に答えた。\n\n「残業時間の記録はありますか？」\n「はい、個人的につけていました」\n\n「残業代の支払い状況は？」\n「月100時間残業しても110円です」\n\n監督官が驚愕の表情を見せる。\n\n「これは重大な違反ですね」",
+    "text": "労働基準監督署の調査に全面的に協力することにした。\n\n「パワハラの具体例、残業代の記録、すべて提出します」\n\n署員「これは強い証拠ですね」\n\nしっかりとした記録を提供したことで、会社への是正勧告がより強力になった。\n\n「これでやっと変わるかもな」",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "パワハラの実態も伝える", "next": "report_harassment_during_investigation" },
-      { "text": "他の同僚の状況も説明する", "next": "explain_colleagues_situation" },
-      { "text": "会社の隠蔽工作を指摘する", "next": "point_out_cover_up" }
+      { "text": "追加の証拠を提出する", "next": "submit_additional_evidence" }
     ]
   },
 
@@ -393,26 +347,24 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "録音を労基に追加提出する", "next": "submit_additional_evidence" },
-      { "text": "同僚たちにも証言を求める", "next": "ask_colleague_testimony" },
-      { "text": "会社の体質改善を要求する", "next": "demand_culture_change" }
+      { "text": "同僚たちにも証言を求める", "next": "social_media_expose_harassment" },
+      { "text": "会社の体質改善を要求する", "next": "social_media_expose_harassment" }
     ]
   },
 
   "monitor_company_improvement": {
-    "text": "会社の改善状況を見守った。\n\n1ヶ月後、劇的な変化が起きていた。\n\n・残業代が法定通りに支払われるように\n・タイムカードによる正確な勤怠管理\n・飲み会の強制参加禁止\n・セクハラ・パワハラ防止研修の実施\n・有給取得の推奨\n\n「こんなに変わるんだ...」\n\n労働基準監督署の力は絶大だった。",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "改善された会社で働き続ける", "next": "continue_improved_company" }
-    ]
+    "text": "会社の改善状況を監視することにした。\n\n・残業代の支払い: 完全に支払われるように改善\n・パワハラの相談窓口: 設置完了\n・有給取得率: 80%以上に改善\n\nようやく普通の労働環境になり始めた。\n\n「長い戦いだったけど、やっと勝った」\n\n【グッドエンド：労基署の是正勧告で改善】",
+    "background": "/images/bg/new_office.jpg",
+    "bgm": "/bgm/n99.mp3",
+    "choices": []
   },
 
   "submit_additional_evidence": {
-    "text": "録音データを追加証拠として労働基準監督署に提出した。\n\n「パワハラやセクハラの録音もあるんですね」\n「はい、日常的に行われていました」\n\n労働基準監督署は会社に対してより厳しい指導を行った。\n\n・労働基準法違反の是正\n・職場環境改善計画の提出\n・定期的な監査の実施\n\n会社は完全に生まれ変わることになった。",
-    "background": "/images/bg/labor_office.jpg",
+    "text": "さらに追加の証拠を提出することにした。\n\n・メールでの不当な指示\n・パワハラ発言の録音\n・給与明細と実際の勤務時間の記録\n\nこれらを全て労基署に提供した。\n\n「十分な証拠が揃いました。これで改善を求めることができます」",
+    "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "会社の完全改革を見届ける", "next": "witness_complete_reform" }
+      { "text": "会社の改善を待つ", "next": "continue_improved_company" }
     ]
   },
 
@@ -424,24 +376,20 @@ export const storyData: StoryDataType = {
   },
 
   "procrastinate": {
-    "text": "「転職活動面倒だしなあ...」\n\n同期「わかる。履歴書書くのも面倒だし、面接とか緊張するし」\n\n「もうちょっとこの会社にいてもいいかな」\n\nそんな話をしていると、部長が近づいてきた。\n\n「何話してるんだ？仕事しろ仕事」\n\nまた今日も23時まで残業確定。",
+    "text": "転職活動は面倒だから、後回しにすることにした。\n\n「また今度でいいや」\n\n結局、毎日が単調な日々の繰り返し。部長からのセクハラ、パワハラは続く。\n\n気がつくと3年が経っていた。\n\n「あのとき転職しておけば...」",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "とりあえず今日も残業する", "next": "accept_overtime_daily" },
-      { "text": "「やっぱり転職考えようかな」", "next": "reconsider_job_change" },
-      { "text": "現実逃避して何もしない", "next": "escape_reality" }
+      { "text": "毎日残業を続ける", "next": "accept_overtime_daily" }
     ]
   },
 
   "accept_overtime_daily": {
-    "text": "今日も23時まで残業。残業パンを齧りながら意味のない資料作成。\n\n「なんで俺こんなことしてるんだろう...」\n\n終電がなくなり、またタクシー代5,000円。給料の大半がタクシー代で消える。\n\n家に帰ると疲れて何もできない。転職活動する気力もない。",
-    "background": "/images/bg/office_night.jpg",
+    "text": "毎日の残業を受け入れることにした。\n\n「残業は当たり前。これがサラリーマンの人生か」\n\n毎晩23時まで仕事。コンビニのパン、カップ麺が夕食。\n\n体は疲弊し始める。\n\n「肩も凝るし、頭痛も毎日...」\n\n健康診断では要検査判定が出た。",
+    "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "このまま続ける", "next": "continue_daily_grind" },
-      { "text": "体調を崩す", "next": "health_breakdown" },
-      { "text": "限界を感じる", "next": "reach_limit" }
+      { "text": "限界を感じる", "next": "health_breakdown" }
     ]
   },
 
@@ -460,13 +408,11 @@ export const storyData: StoryDataType = {
   },
 
   "union_route": {
-    "text": "「労働組合とかないのかなあ」\n\n同期「労働組合？この会社にそんなのあるわけないじゃん」\n\n「そっか...でも作れるんじゃない？」\n\n「やばくない？会社にバレたら...」\n\nその時、部長が現れた。なぜか話を聞いていたようだ。",
+    "text": "労働組合について考えてみることにした。\n\n「労働組合があれば、こんなことには...」\n\n同期「本当にそうだな。でも、作るのって難しくない？」\n\n「調べてみようぜ」\n\n労働組合について勉強を始めた。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "何でもないフリをする", "next": "pretend_nothing" },
-      { "text": "堂々と労働組合の話をする", "next": "openly_discuss_union" },
-      { "text": "話題を変える", "next": "change_topic" }
+      { "text": "労働組合について調べる", "next": "research_union" }
     ]
   },
 
@@ -477,7 +423,7 @@ export const storyData: StoryDataType = {
     "choices": [
       { "text": "正直に話す", "next": "confess_truth" },
       { "text": "嘘を重ねる", "next": "double_down_lie" },
-      { "text": "その場から逃げる", "next": "run_away_from_boss" }
+      { "text": "その場から逃げる", "next": "double_down_lie" }
     ]
   },
 
@@ -553,46 +499,38 @@ export const storyData: StoryDataType = {
   },
 
   "run_away_quickly": {
-    "text": "小走りで会社から逃げ出した。\n\n「あいつ、なんで走ってるんだ？」\n\n同僚たちの視線が痛い。でも気にしない。\n\n家に帰ってから冷静になると、明日からどう会社に行けばいいか分からなくなった。\n\n「やっちまった...」\n\n翌日、なんとなく気まずい雰囲気で出社することになった。",
+    "text": "小走りで部長の前から逃げた。\n\n「待てよ！」\n\n仕事を放り出してそのまま帰宅。\n\n翌日、人事部から呼び出された。\n\n「あの対応は何だ？」\n\n「...すみません」\n\n降格と給与カットが決定した。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "何事もなかったかのように振る舞う", "next": "act_normal" },
-      { "text": "部長に謝る", "next": "apologize_to_boss" },
-      { "text": "転職活動を始める", "next": "start_job_hunting_after_escape" }
+      { "text": "精神的に追い詰められる", "next": "mental_breakdown" }
     ]
   },
 
   "fake_sick": {
-    "text": "「すみません、体調悪いんで...」\n\n部長「またか？最近体調不良多いな」\n\n「はい...申し訳ありません」\n\n嘘をついて定時で帰った。でも罪悪感がある。\n\n家に帰ってから考えた。「このまま嘘をつき続けるのか？」",
+    "text": "「体調が悪いんで」と嘘をついて早退した。\n\n「風邪引いちゃって...」\n\n部長「そっか。でも明日までに資料完成させてよ」\n\n家に帰っても、仕事の心配で眠れない。\n\n「嘘ついても解決にならない」",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "嘘をつき続ける", "next": "continue_lying" },
-      { "text": "正直に残業したくないと言う", "next": "honest_about_overtime" },
-      { "text": "転職活動を本格化する", "next": "serious_job_hunting" }
+      { "text": "本格的に転職活動する", "next": "serious_job_hunting" }
     ]
   },
 
   "sleep_at_office": {
-    "text": "会社に泊まることにした。\n\n「お疲れ様です」\n\n警備員に挨拶して、デスクで仮眠。\n\n朝になると、早出してきた部長と鉢合わせした。\n\n「お前...まさか泊まったのか？」\n\n「はい...終電なくなったので」\n\n部長、複雑な表情を見せる。",
+    "text": "会社に泊まることにした。\n\n机の上に段ボールを敷いて、翌日も続ける準備をする。\n\n「これが普通の勤務なのか...」\n\n3日連続で会社に泊まると、体調が悪くなり始める。\n\n「限界だ...」",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "「これが普通ですよね？」と聞く", "next": "ask_if_normal" },
-      { "text": "「タクシー代がないので」と説明", "next": "explain_taxi_cost" },
-      { "text": "「労働環境を改善してください」と要求", "next": "demand_better_conditions" }
+      { "text": "健康を失う", "next": "health_breakdown" }
     ]
   },
 
   "walk_home": {
-    "text": "歩いて帰ることにした。\n\n深夜の街を2時間かけて歩く。コンビニの明かりだけが頼り。\n\n「俺の人生、何なんだろう...」\n\n歩きながら色々考えた。このままでいいのか。\n\n家に着く頃には朝の4時。2時間後にはまた出社。\n\n「もう限界だ」",
+    "text": "歩いて帰ることにした。23時発の終電を逃したので、歩くしかない。\n\n片道5km。歩いて1時間。\n\n翌日は寝不足のまま出社。\n\n「こんなの続けられない」\n\n毎日の睡眠不足と過労が蓄積する。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "限界だと部長に伝える", "next": "tell_boss_limit" },
-      { "text": "転職活動を始める", "next": "start_job_hunting_desperate" },
-      { "text": "体調を崩す", "next": "health_breakdown" }
+      { "text": "体調が悪くなる", "next": "health_breakdown" }
     ]
   },
 
@@ -608,9 +546,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "残業時間の改善を話し合う", "next": "discuss_overtime_reduction" },
-      { "text": "他の問題も相談する", "next": "discuss_other_issues" },
-      { "text": "感謝して普通に働く", "next": "work_normally_grateful" }
+      { "text": "残業時間の改善を話し合う", "next": "cooperate_investigation" },
+      { "text": "他の問題も相談する", "next": "cooperate_investigation" },
+      { "text": "感謝して普通に働く", "next": "continue_daily_grind" }
     ]
   },
 
@@ -626,20 +564,18 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "嫌がらせの責任を追及する", "next": "pursue_harassment_responsibility" },
+      { "text": "嫌がらせの責任を追及する", "next": "social_media_expose_harassment" },
       { "text": "会社の改善を見守る", "next": "monitor_company_improvement" },
-      { "text": "転職を検討する", "next": "consider_transfer_after_fight" }
+      { "text": "転職を検討する", "next": "serious_job_hunting" }
     ]
   },
 
   "bully_junior": {
-    "text": "「後輩いびりでストレス発散する？」\n\n同期「それはちょっと...」\n\n「冗談だよ冗談」\n\nでも実際、後輩に八つ当たりしてしまうことが増えた。\n\n「なんで俺ばっかり...」\n\n後輩に理不尽な仕事を押し付けたり、きつく当たったり。\n\n気がつくと、嫌な先輩になってしまっていた。",
+    "text": "「後輩いびりでストレス発散する？」と同期に提案した。\n\n「いいね、やろうぜ」\n\nその後、後輩への嫌がらせが始まった。\n\n・無理な業務を押し付ける\n・失敗をことさら責める\n・飲み会で無理やり酒を飲ませる\n\n後輩は次第に出社できなくなっていった。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "後輩に謝る", "next": "apologize_to_junior" },
-      { "text": "このまま続ける", "next": "continue_bullying" },
-      { "text": "自分を見つめ直す", "next": "self_reflection" }
+      { "text": "いびりを続ける", "next": "continue_bullying" }
     ]
   },
 
@@ -998,19 +934,17 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "普通に仕事を続ける", "next": "" },
-      { "text": "やっぱり気になって謝る", "next": "apologize_to_boss" },
+      { "text": "やっぱり気になって謝る", "next": "mental_breakdown" },
       { "text": "転職を考え始める", "next": "serious_job_hunting" }
     ]
   },
 
   "anonymous_report": {
-    "text": "匿名で会社の問題を告発することにした。\n\n「内部告発サイトに投稿してみよう」\n\n残業代未払い、パワハラ、労働環境の実態を詳しく書く。\n\n「これで世間に知ってもらえる」\n\n数日後、投稿が話題になり始めた。\n\n「会社、大丈夫かな...」",
+    "text": "匿名で会社の問題を労働基準監督署に告発することにした。\n\n「誰が告発したのか分からなければ、報復もされないはず」\n\n後輩にも知らせずに、独断で行動した。\n\n数日後、労基署が会社に調査に入った。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "さらに詳しい証拠を公開", "next": "social_media_expose" },
-      { "text": "労働基準監督署にも通報", "next": "report_overtime_violation" },
-      { "text": "様子を見守る", "next": "wait_investigation_results" }
+      { "text": "調査の進行を見守る", "next": "wait_investigation_results" }
     ]
   },
 
@@ -1031,7 +965,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "部長と労働環境について話し合う", "next": "use_recording" },
-      { "text": "人事部も交えて正式に相談", "next": "explain_to_hr_first" },
+      { "text": "人事部も交えて正式に相談", "next": "cooperate_investigation" },
       { "text": "やっぱり労働組合を作る", "next": "create_union" }
     ]
   },
@@ -1041,7 +975,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "労働環境の改善を提案", "next": "no_work_no_pay" },
+      { "text": "労働環境の改善を提案", "next": "health_breakdown" },
       { "text": "他の会社の話を聞く", "next": "serious_job_hunting" },
       { "text": "とりあえず様子を見る", "next": "" }
     ]
@@ -1052,7 +986,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "残業代の見直しを要求", "next": "no_work_no_pay" },
+      { "text": "残業代の見直しを要求", "next": "health_breakdown" },
       { "text": "労働時間の短縮を提案", "next": "use_recording" },
       { "text": "転職を検討していると伝える", "next": "serious_job_hunting" }
     ]
