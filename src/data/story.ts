@@ -123,17 +123,81 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "内定をもらう", "next": "get_job_offer" }
+      { "text": "内定をもらう", "next": "get_job_offer" },
+      { "text": "面接が上手くいかない（運が悪い）", "next": "interview_failure" },
+      { "text": "転職活動に疲れ始めている", "next": "job_search_burnout" }
     ]
   },
 
   "get_job_offer": {
-    "text": "ついに内定をもらった！年収は100万円アップ、残業は月20時間以内、完全週休二日制。\n\n「これが普通の会社か...」\n\n退職願を出すため、部長に面談を申し込む。\n\n「退職？お前、どこに行くつもりだ？」\n\n「より良い環境で働きたいんです」",
+    "text": "ついに内定をもらった！年収は100万円アップ、残業は月20時間以内、完全週休二日制。\n\n「これが普通の会社か...」\n\nしかし複数の企業から内定をもらっている。どこを選ぼうか...",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "きっぱりと退職する", "next": "clean_resignation" }
+      { "text": "最初の内定企業に決める（安定重視）", "next": "choose_first_offer" },
+      { "text": "年収が最も高い企業を選ぶ（収入重視）", "next": "choose_highest_salary" },
+      { "text": "ワークライフバランスが最高の企業を選ぶ（生活重視）", "next": "choose_best_worklife" }
     ]
+  },
+
+  "choose_first_offer": {
+    "text": "最初にもらった内定企業に決めることにした。\n\n「年収100万円アップ、残業月20時間。十分だ」\n\n退職願を出すため、部長に面談を申し込む。\n\n「退職？お前、どこに行くつもりだ？」\n\n「より良い環境で働きたいんです」",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "きっぱりと退職する", "next": "clean_resignation" },
+      { "text": "内定企業の突然の連絡を待つ", "next": "offer_retracted" }
+    ]
+  },
+
+  "choose_highest_salary": {
+    "text": "年収が最も高い企業を選ぶことにした。年収は150万円アップ、役職も上。\n\n「給料が全て。キャリアアップだ」\n\n部長に退職を申し出る。\n\n「150万円も？いい話だな。羨ましいぞ」\n\n部長の態度が一変した。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "新しい会社でキャリアを積む", "next": "high_salary_resignation" }
+    ]
+  },
+
+  "choose_best_worklife": {
+    "text": "ワークライフバランスが最高の企業を選ぶことにした。\n\n「給料より自由な時間が欲しい。人生は仕事だけじゃない」\n\n面接官「完全に定時で帰れます。土日も休めますし、リモートも可」\n\n部長に退職を申し出る。\n\n「何？リモート？昭和の時代に戻りたいのか？」",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "新しい環境でリスタートする", "next": "worklife_balance_resignation" }
+    ]
+  },
+
+  "high_salary_resignation": {
+    "text": "「お世話になりました」\n\n部長「待てよ、お前がいなくなったら困る」\n\n「それは会社の問題です。僕の問題ではありません」\n\n有給消化もしっかりと取得。新しい会社での役職について、想像を膨らませる。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "高待遇の会社でスタート", "next": "new_company_high_salary" }
+    ]
+  },
+
+  "worklife_balance_resignation": {
+    "text": "「お世話になりました」\n\n部長「ちょっと待て...」\n\n「これ以上何か？」と言わんばかりの態度で帰った。\n\n最後の日、同期に見送られる。自分の選択が正しかったと確信した。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "ワークライフバランス重視の会社でスタート", "next": "new_company_worklife" }
+    ]
+  },
+
+  "new_company_high_salary": {
+    "text": "新しい会社での初日。\n\n「昇進なども期待できます。頑張ってください」\n\n年収が150万円アップ。役職も上がった。\n\n「やはり、金銭面を優先させるのが正解だったか」\n\n充実したキャリアが待っている。\n\n【グッドエンド：転職成功 - キャリアアップ】",
+    "background": "/images/bg/beach.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": []
+  },
+
+  "new_company_worklife": {
+    "text": "新しい会社での初日。\n\n「今月は月5時間しか残業してません。今日も16時に帰って大丈夫ですよ」\n\n定時で帰ることができる喜び。\n\n「これが普通の会社か...今までの人生は何だったんだ」\n\n人生の時間を取り戻すことができた。\n\n【グッドエンド：転職成功 - ワークライフバランス重視】",
+    "background": "/images/bg/beach.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": []
   },
 
   "clean_resignation": {
@@ -284,7 +348,8 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "申告書を提出する", "next": "submit_evidence_report" },
-      { "text": "さらに追加で証拠を集める", "next": "gather_more_evidence" }
+      { "text": "さらに追加で証拠を集める", "next": "gather_more_evidence" },
+      { "text": "証拠集めがバレてしまう", "next": "evidence_discovered" }
     ]
   },
 
@@ -304,7 +369,8 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "申告書を提出する", "next": "submit_evidence_report" },
-      { "text": "複数人で申告の力を強める", "next": "multi_person_report" }
+      { "text": "複数人で申告の力を強める", "next": "multi_person_report" },
+      { "text": "複数人での証拠集めがバレてしまう", "next": "evidence_discovered" }
     ]
   },
 
@@ -605,5 +671,33 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/d6.mp3",
     "choices": []
   },
-  
+
+  "interview_failure": {
+    "text": "面接の結果が返ってきた。\n\nメール：「誠に申し訳ございませんが、今回は見送らせていただくことになりました」\n\n「え？落ちた？」\n\n他の企業にも応募しているが、どの企業からも不採用通知が届く。\n\n「実務経験がない。スキルが不足している。どの企業も同じコメント...」\n\n転職活動を続けるしかないが、モチベーションが下がり始めた。\n\n【バッドエンド：面接不合格で転職失敗】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "job_search_burnout": {
+    "text": "転職活動を3ヶ月続けた。面接、筆記試験、経歴書の修正...\n\n「疲れた...」\n\nモチベーションが完全に消えてしまった。\n\n「どんな仕事でもいい。今の会社で我慢するしかない」\n\n転職活動を放棄。結局、何も変わらないまま、毎日の残業地獄に戻った。\n\n現状に対する怒りも薄れ、諦めだけが残った。\n\n【バッドエンド：転職活動に疲弊して諦める】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "offer_retracted": {
+    "text": "内定をもらった企業から連絡がきた。\n\n「申し訳ございませんが...事業計画の変更により、内定を取り消させていただくことになりました」\n\n「え？なぜ...」\n\n一度手に入れた希望が、一瞬にして消え去った。\n\n現在の会社に戻ったが、退職の話をしていたため、居づらい雰囲気に。\n\n転職活動を再開するしかないが、心が折れている。\n\n【バッドエンド：内定取消で希望喪失】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "evidence_discovered": {
+    "text": "証拠集めをしていたことが、ついに会社にバレた。\n\n人事部「給与明細のコピー、勤務記録、録音...何のつもりだ？」\n\n「...それは...」\n\n人事部長「君は我が社の秘密を外部に漏らそうとしている。もう来なくていい」\n\n退職勧告を突きつけられた。証拠を集めようとしたことが、逆に自分の首を締めた。\n\n【バッドエンド：証拠集めがバレて退職勧告】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
 }
