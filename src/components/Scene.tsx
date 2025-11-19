@@ -124,7 +124,7 @@ export default function Scene({ scene, setScene }: SceneProps) {
               </div>
               
               {/* テキスト表示エリア */}
-              <div className="min-h-[140px] flex items-center">
+              <div className="h-[200px] flex items-start overflow-y-auto">
                 <p className="text-white text-xl md:text-2xl leading-relaxed font-medium tracking-wide">
                   {textDisplayed}
                   {isTyping && (
@@ -135,7 +135,7 @@ export default function Scene({ scene, setScene }: SceneProps) {
               
               {/* 選択肢エリア */}
               {current.choices.length > 0 ? (
-                <div className={`mt-8 space-y-4 transition-all duration-700 delay-500 ${showChoices ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+                <div className={`mt-8 h-[320px] space-y-4 transition-all duration-700 delay-500 ${showChoices ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
                   <div className="text-gray-300 text-sm mb-4 font-medium">▼ 選択してください</div>
                   {current.choices.map((choice, index) => (
                     <button
@@ -157,7 +157,7 @@ export default function Scene({ scene, setScene }: SceneProps) {
                 </div>
               ) : (
                 /* エンディング時のボタン */
-                <div className={`mt-8 flex flex-col items-center gap-4 transition-all duration-700 delay-500 ${showChoices ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+                <div className={`mt-8 h-[320px] flex flex-col items-center justify-center gap-4 transition-all duration-700 delay-500 ${showChoices ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
                   {/* X共有ボタン（エンディング時のみ） */}
                   {endingId && (
                     <XShareButton 
