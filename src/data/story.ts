@@ -16,189 +16,168 @@ interface StoryDataType {
 
 export const storyData: StoryDataType = {
   "start": {
-    "text": "ここは片田舎のとある会社。8時出社で20時就業がデフォルト。定時は5時。どうしようもない上司と訳のわからない人しかいない、変人の巣窟。給料は安く、残業時間は多い。なのに売上は伸びていないらしい。\n\n同期が囁く。「今週土曜日も出勤だけど、そんな売上ないのに、何のために出社してるんだろうなあ」\n\n本当にそうだ。こんな会社辞めてやりたい。",
+    "text": "ここは片田舎のとある会社。8時出社で20時就業がデフォルト。定時は17時。どうしようもない上司と訳のわからない人しかいない、変人の巣窟。給料は安く、残業時間は多い。なのに売上は伸びていないらしい。\n\n同期が囁く。「今週土曜日も出勤だけど、そんな売上ないのに、何のために出社してるんだろうなあ」\n\n本当にそうだ。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "そろそろ転職かなあ", "next": "consider_job_change" },
+      { "text": "やっぱり転職しかないかあ", "next": "consider_job_transfer" },
       { "text": "転職活動面倒だしなあ", "next": "procrastinate" },
-      { "text": "労働組合とかないのかなあ", "next": "union_route" }
+      { "text": "専務に相談かなあ", "next": "consult_director" }
     ]
   },
-  
-  "consider_job_change": {
-    "text": "転職を考えていると、部長が声をかけてきた。\n\n「お前今年で何歳だっけ」\n「25歳っす」\n「あ〜そうなのか。お前もそんな若くないんだな」\n\nは？40後半のおじさんに言われたくないが。こいつ絶対に定時で帰る人だし、タバコ休憩で1時間以上帰ってこないくせに。",
+
+  "consider_job_transfer": {
+    "text": "このところずっと脳内にちらついていた。でもまだ3年経っていないのに転職なんてできるのだろうか。新卒で入ってまだ2年ちょっと。市場価値なんてそんなになさそうだ。けれどこのままこの会社にいても……。つい溜息を吐く。そんな時部長に声を掛けられる。「おい！」ようやく煙草休憩から帰ってきたようだ。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "なんですか", "next": "talk_to_boss_first_encounter" },
+      { "text": "えらく長い休憩でしたね", "next": "talk_to_boss_comment_break" },
+      { "text": "気がつかないフリをする", "next": "talk_to_boss_ignore" }
+    ]
+  },
+
+  "consult_director": {
+    "text": "「専務に相談〜？あいつ何もしてくれないだろ。部長の言うがままじゃん」そう呟くと、同期は鼻で笑った。役職的には専務の方上のはずだが強く出れないらしい。「将来あいつが社長になるだろうけど、何も変わらないどころか悪化しそうだよなあ」",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "社内改革するしかないのか", "next": "procrastinate" },
+      { "text": "やっぱり転職しかないかあ", "next": "consider_job_transfer" },
+      { "text": "労基に相談してみるか", "next": "labor_inspection" }
+    ]
+  },
+
+  "talk_to_boss_first_encounter": {
+    "text": "渋々部長の元へ行く。どうせいつもの無茶振りだ。自分はいつも遅れてくるくせに、社員の遅刻は許さなくて。それでいて出社したと思ったらすぐ煙草休憩だ。この人は仕事をしていないのに、部長職でいばり散らかしている。こんなんだからこの会社は良くならないんだよ。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "今日中にこの資料をまとめろ", "next": "receive_document_task" },
+      { "text": "夏の忘年会の準備、手伝ってやれ", "next": "procrastinate" },
+      { "text": "お前まだ書類提出してないぞ", "next": "procrastinate" }
+    ]
+  },
+
+  "talk_to_boss_comment_break": {
+    "text": "渋々部長の元へ行く。どうせいつもの無茶振りだ。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "今日中にこの資料をまとめろ", "next": "receive_document_task" }
+    ]
+  },
+
+  "talk_to_boss_ignore": {
+    "text": "渋々部長の元へ行く。どうせいつもの無茶振りだ。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "今日中にこの資料をまとめろ", "next": "receive_document_task" }
+    ]
+  },
+
+  "receive_document_task": {
+    "text": "「……えっ」渡されたのは大量の資料。もう既に14時。定時まで後3時間だ。一人で作業したらどれくらい時間がかかってしまうか。そもそも他に暇そうな奴がいるのに、なんで既に仕事をしている人に依頼するんだ。おかしいだろ。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "わかりました……", "next": "accept_task_reluctantly" },
+      { "text": "なぜ今日中なんですか？", "next": "procrastinate" },
+      { "text": "無理です", "next": "procrastinate" }
+    ]
+  },
+
+  "accept_task_reluctantly": {
+    "text": "とはいえ自分に拒否権などあるわけがない。仕事を引き受けるしかなかった。その場を去ろうとすると、部長が後ろから声を掛けてくる。「お前今年で何歳だっけ」「……25歳っす」「あ〜そうなのか。お前もそんな若くないんだなw」はっ？40後半のおじさんに言われたくないんだが。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "よし殴ろう", "next": "punch_boss" },
-      { "text": "曖昧に笑って誤魔化す", "next": "awkward_smile" },
-      { "text": "「部長こそお疲れ様です」と皮肉を込めて言う", "next": "sarcastic_reply" }
+      { "text": "適当に笑って誤魔化す", "next": "laugh_off_and_work" },
+      { "text": "無視して仕事に戻る", "next": "laugh_off_and_work" }
     ]
   },
 
-  "punch_boss": {
-    "text": "カッとなって部長に拳を振り上げた瞬間...!\n\n「おい、何やってんだお前！」\n\n即座に人事部に連れて行かれ、懲戒解雇が決定。履歴書に傷がついてしまった。\n\n「あー、やっちまった...」\n\n【バッドエンド：衝動的解雇】",
+  "laugh_off_and_work": {
+    "text": "「ははは……そうですね」と適当に笑って誤魔化す。何か言い返したところでろくな目に合わないことはわかっている。「じゃあお前ちゃんとやれよ？」そう言い残して部長はまた部屋を出ていく。何度目の煙草休憩だよ。お前がやれよ。喉まで出かかった言葉を押さえ付けて、書類を自分の机に運んだ。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "一人で終わりそうもない。後輩の手も借りよう。", "next": "ask_junior_for_help" },
+      { "text": "一人で終わりそうもない。同期の手も借りよう。", "next": "ask_colleague_for_help" },
+      { "text": "一人で終わりそうもない。けど一人でやるしかない。", "next": "work_alone_suffer" }
+    ]
+  },
+
+  "ask_junior_for_help": {
+    "text": "今年入ったばかりの新人で、気立てが良い。けれど少し要領が悪いこともあって、部長の使いっ走りにさせられていることが多い。しかし今日の部長は彼には仕事を与えていないようで、先ほどから彼は雑用ばかりしていた。少しくらい手を借りても大丈夫だろう。\n\n「ちょっと手を借りてもいいか？」「勿論っすよ。俺に出来ることなら」なんで部長の目の敵にされてるんだろうなあ。本当なら他の暇そうな人に声を掛けても良かった。でもあいつらは定時になった瞬間に帰るのだ。そしてそれに対して部長は何も言わない。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "一緒に作業して仕上げる", "next": "work_with_junior" }
+    ]
+  },
+
+  "ask_colleague_for_help": {
+    "text": "同期に相談する。「一緒にやるか」「そうしよう」と、同期も手伝ってくれることになった。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "一緒に作業して仕上げる", "next": "work_with_junior" }
+    ]
+  },
+
+  "work_alone_suffer": {
+    "text": "一人で黙々と作業した。肩も凝り始めた。0時を過ぎても終わらない。1時を過ぎてもまだある。もう限界だ。こんなことをやっていて、何の意味があるのだろう。この会社にいても、何も変わらない。人生がどんどん無駄になっていく気がする。\n\n「もう無理だ。こんな会社、辞めよう」\n\n翌日、転職活動を本格的に始めることにしたが、すでにメンタルが限界だった。面接でも上手く話すことができず、次々と不採用になった。心が折れた。\n\n【バッドエンド：過労で限界に達する】",
     "background": "/images/bg/bad_end_office.jpg",
     "bgm": "/bgm/d6.mp3",
     "choices": []
   },
 
-  "awkward_smile": {
-    "text": "「あはは...そうですね」と曖昧に笑って誤魔化した。\n\n部長「そんな若くないよな。アラサーじゃんww」\n\n完全にセクハラまがいの発言だが、ここで反論すると面倒なことになりそう。\n\n今日も23時まで仕事が確定している。残業代は110円。昨日の残業パンがまだ残ってる...",
+  "work_with_junior": {
+    "text": "結局0時前までかかって、部長に資料を提出する。「おお、やるじゃないか」部長が褒めるが全く嬉しくない。やっと終わった。これで帰れる。終電に間に合うかな……。そう考えていた時、驚くような言葉が部長から飛び出た。「よし。明日休みだし飲み行くか」……はっ？",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "今日こそ定時で帰る", "next": "leave_on_time" },
-      { "text": "残業パンを食べながら耐える", "next": "eat_overtime_bread" },
-      { "text": "同期に愚痴る", "next": "complain_to_colleague" }
+      { "text": "断固として断る", "next": "procrastinate" },
+      { "text": "仕方なく付き合う", "next": "attend_drinking_with_boss" },
+      { "text": "30分だけなら", "next": "thirty_minutes_condition" }
     ]
   },
 
-  "sarcastic_reply": {
-    "text": "「部長こそお疲れ様です。今日もタバコ休憩、頑張ってくださいね」\n\n部長の顔が一瞬ピクリと動く。\n\n「...何だその言い方は」\n\n空気が険悪になった。これはまずい。でも言ってしまったものは仕方ない。",
+  "attend_drinking_with_boss": {
+    "text": "ここで断ったら面倒なことになる。俺は後輩と共に渋々飲み会へ付き合った。昔の武勇伝をご機嫌に語られた後、なぜか入る説教タイム。「もっとお前頑張れよな〜今日だってもっと早くできただろ」「俺の若い頃なんてもっと……」なんで俺は、夜遅くまで一生懸命働いた後、部長に説教をされないといけないのだろう。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "そのまま逃げる", "next": "run_away_quickly" }
+      { "text": "反論する", "next": "procrastinate" },
+      { "text": "黙って聞く", "next": "listen_silently_to_lecture" },
+      { "text": "席を立つ", "next": "procrastinate" }
     ]
   },
 
-  "leave_on_time": {
-    "text": "今日こそ定時で帰ろうと決意した。17時になった瞬間、パソコンを閉じて帰る準備をする。\n\n「お疲れ様でした〜」\n\n部長「おい、まだ仕事残ってるだろ？」\n\n「明日やります」\n\n周りの視線が痛い。でも帰る。",
+  "thirty_minutes_condition": {
+    "text": "「30分〜？意味わからんこと言うなよな。じゃあもういい。おい、お前付き合え」「は、はい……」震える声で連行される後輩。俺が残業に付き合わせたばっかりに。でもここから俺が行きますとは言えなかった。だって俺はもう家に帰りたかったから。そして週明け、後輩はメンタルの不調により退職してしまっていた。俺が後輩を見捨てたんだ……。\n\n【バッドエンド：部下を潰す】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "listen_silently_to_lecture": {
+    "text": "結局黙って聞き、空が明るくなる少し前に解散になった。部長は繁華街に消えていき、とっくに電車がないため、後輩と一緒に歩いて帰ることにした。\n\n「先輩、今日もお疲れ様でした」\n\n「お疲れ様。君も遅くまで付き合わせてごめんな」\n\n本当は心の中はボロボロだけど、後輩の前では先輩らしくいないと。\n\n「この会社、けっこう大変ですよね...」\n\n「まあ、どこの会社も大変だよ。君は真面目だから大丈夫」\n\n本当は俺も限界なんだけど、後輩を不安にさせたくない。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "堂々と帰る", "next": "leave_confidently" }
+      { "text": "お互い頑張ろうな", "next": "parting_and_cry_then_jobhunt" },
+      { "text": "こんな会社もう嫌だ", "next": "procrastinate" }
     ]
   },
 
-  "eat_overtime_bread": {
-    "text": "残業パンを齧りながら23時まで仕事をした。コンビニのパンが夕食代わり。\n\n「今月のボーナスカットで、もうカップ麺生活確定だな...」\n\n会社は赤字経営らしいが、なぜか重役は高級車に乗っている。\n\n帰る頃には終電がなくなっていた。",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "タクシーで帰る（自腹）", "next": "taxi_home" }
-    ]
-  },
-
-  "complain_to_colleague": {
-    "text": "同期に愚痴った。\n\n「あの部長、マジでムカつくよな」\n「わかる。この前なんて飲み会で俺らを潰そうとしてきたし」\n「あー、あの時か。違う部署の部長を追い込んでたのも引いたわ」\n\n「でも転職活動、面倒だよなあ...」",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "一緒に転職活動をする", "next": "joint_job_hunting" }
-    ]
-  },
-
-  "leave_confidently": {
-    "text": "堂々と帰った。翌日、部長に呼び出された。\n\n「昨日はなんだったんだ？」\n「定時で帰っただけです」\n「みんな残業してるのに、お前だけ帰るなんて協調性がない」\n\n「じゃあ残業代ちゃんと払ってください」\n\n部長、言葉に詰まる。",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "労働基準監督署に相談する", "next": "labor_inspection" }
-    ]
-  },
-
-  "taxi_home": {
-    "text": "タクシーで帰宅。料金は5,000円。\n\n「残業代110円なのに、タクシー代5,000円って何の罰ゲームだよ...」\n\n家に着いて通帳を見ると、残高が危険水域。\n\n「このままじゃ生活できない」",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "転職活動を本格化する", "next": "serious_job_hunting" }
-    ]
-  },
-
-  "joint_job_hunting": {
-    "text": "同期と一緒に転職活動を始めることにした。\n\n「お互い情報交換しながらやろうぜ」\n「そうしよう。一人だとサボりそうだし」\n\n二人で転職サイトに登録。お互いの履歴書をチェックし合う。\n\n「意外と俺たち、市場価値あるかもよ？」",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "本格的に転職活動を開始する", "next": "serious_job_hunting" }
-    ]
-  },
-
-  "serious_job_hunting": {
-    "text": "本格的に転職活動を開始。定時で帰る習慣をつけ、面接のスケジュールを組む。\n\n1週間で5社の書類選考を通過。\n\n「あれ？俺、思ったより需要あるじゃん」\n\n面接で現在の会社の労働環境を説明すると、面接官が驚く。\n\n「それは酷いですね...うちはちゃんと残業代出ますよ」",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "内定をもらう", "next": "get_job_offer" },
-      { "text": "面接が上手くいかない（運が悪い）", "next": "interview_failure" },
-      { "text": "転職活動に疲れ始めている", "next": "job_search_burnout" }
-    ]
-  },
-
-  "get_job_offer": {
-    "text": "ついに内定をもらった！年収は100万円アップ、残業は月20時間以内、完全週休二日制。\n\n「これが普通の会社か...」\n\nしかし複数の企業から内定をもらっている。どこを選ぼうか...",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "最初の内定企業に決める（安定重視）", "next": "choose_first_offer" },
-      { "text": "年収が最も高い企業を選ぶ（収入重視）", "next": "choose_highest_salary" },
-      { "text": "ワークライフバランスが最高の企業を選ぶ（生活重視）", "next": "choose_best_worklife" }
-    ]
-  },
-
-  "choose_first_offer": {
-    "text": "最初にもらった内定企業に決めることにした。\n\n「年収100万円アップ、残業月20時間。十分だ」\n\n退職願を出すため、部長に面談を申し込む。\n\n「退職？お前、どこに行くつもりだ？」\n\n「より良い環境で働きたいんです」",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "きっぱりと退職する", "next": "clean_resignation" },
-      { "text": "内定企業の突然の連絡を待つ", "next": "offer_retracted" }
-    ]
-  },
-
-  "choose_highest_salary": {
-    "text": "年収が最も高い企業を選ぶことにした。年収は150万円アップ、役職も上。\n\n「給料が全て。キャリアアップだ」\n\n部長に退職を申し出る。\n\n「150万円も？いい話だな。羨ましいぞ」\n\n部長の態度が一変した。",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "新しい会社でキャリアを積む", "next": "high_salary_resignation" }
-    ]
-  },
-
-  "choose_best_worklife": {
-    "text": "ワークライフバランスが最高の企業を選ぶことにした。\n\n「給料より自由な時間が欲しい。人生は仕事だけじゃない」\n\n面接官「完全に定時で帰れます。土日も休めますし、リモートも可」\n\n部長に退職を申し出る。\n\n「何？リモート？昭和の時代に戻りたいのか？」",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "新しい環境でリスタートする", "next": "worklife_balance_resignation" }
-    ]
-  },
-
-  "high_salary_resignation": {
-    "text": "「お世話になりました」\n\n部長「待てよ、お前がいなくなったら困る」\n\n「それは会社の問題です。僕の問題ではありません」\n\n有給消化もしっかりと取得。年収150万円アップの新しい会社でのスタートを切る。",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "新しい会社でキャリアを積む", "next": "new_company_start" }
-    ]
-  },
-
-  "worklife_balance_resignation": {
-    "text": "「お世話になりました」\n\n部長「ちょっと待て...」\n\n「これ以上何か？」と言わんばかりの態度で帰った。\n\n最後の日、同期に見送られる。自分の選択が正しかったと確信した。ワークライフバランス重視の新しい会社でのスタートを切る。",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "新しい会社でスタートする", "next": "new_company_start" }
-    ]
-  },
-
-  "clean_resignation": {
-    "text": "「お世話になりました」\n\n部長「待てよ、お前がいなくなったら困る」\n\n「それは会社の問題です。僕の問題ではありません」\n\n有給消化もしっかりと取得。最後の日、同期が見送ってくれた。\n\n「お前、変わったな」\n\n「当たり前だろ。人生変えるんだから」",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "新しい会社でスタートする", "next": "new_company_start" }
-    ]
-  },
-
-  "new_company_start": {
-    "text": "新しい会社での初日。\n\n「定時で帰れるって本当ですか？」\n「もちろんです。残業する時はちゃんと申請してもらいますし、代休も取れますよ」\n\n「...本当に？」\n\n昼休みは1時間きっちり。コーヒーも無料。WiFiも爆速。\n\n「これが普通の会社か...今までの苦労はなんだったんだ」\n\n【グッドエンド：転職成功】",
+  "parting_and_cry_then_jobhunt": {
+    "text": "「お互い頑張ろうな」\n\n後輩が角を曲がって見えなくなった。\n\nその瞬間俺は泣き崩れた。\n\n限界だった。この会社にいては、自分も後輩も潰れてしまう。\n\n何日か経った後、決断した。もう、この会社には居られない。\n\n転職活動を本格的に始めることにした。書類作成、面接の準備、企業研究……。後輩のためにも、自分のためにも、やり抜くしかない。\n\n【グッドエンド：転職決意】",
     "background": "/images/bg/beach.jpg",
-    "bgm": "/bgm/n43.mp3",
+    "bgm": "/bgm/n99.mp3",
     "choices": []
   },
 
