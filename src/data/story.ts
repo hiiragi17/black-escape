@@ -20,31 +20,171 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "やっぱり転職しかないかあ", "next": "consider_job_transfer" },
+      { "text": "そろそろ転職かなあ", "next": "consider_job_change" },
       { "text": "転職活動面倒だしなあ", "next": "procrastinate" },
-      { "text": "専務に相談かなあ", "next": "consult_director" }
+      { "text": "労働組合とかないのかなあ", "next": "union_route" }
     ]
   },
 
-  "consider_job_transfer": {
+  "consider_job_change": {
     "text": "このところずっと脳内にちらついていた。でもまだ3年経っていないのに転職なんてできるのだろうか。新卒で入ってまだ2年ちょっと。市場価値なんてそんなになさそうだ。けれどこのままこの会社にいても……。つい溜息を吐く。そんな時部長に声を掛けられる。「おい！」ようやく煙草休憩から帰ってきたようだ。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "なんですか", "next": "talk_to_boss_first_encounter" },
-      { "text": "えらく長い休憩でしたね", "next": "talk_to_boss_comment_break" },
-      { "text": "気がつかないフリをする", "next": "talk_to_boss_ignore" }
+      { "text": "曖昧に笑って誤魔化す", "next": "awkward_smile" },
+      { "text": "「部長こそお疲れ様です」と皮肉を込めて言う", "next": "sarcastic_reply" },
+      { "text": "よし殴ろう", "next": "punch_boss" }
     ]
   },
 
-  "consult_director": {
-    "text": "「専務に相談〜？あいつ何もしてくれないだろ。部長の言うがままじゃん」そう呟くと、同期は鼻で笑った。役職的には専務の方上のはずだが強く出れないらしい。「将来あいつが社長になるだろうけど、何も変わらないどころか悪化しそうだよなあ」",
+  "awkward_smile": {
+    "text": "「部長お疲れ様です」と適当に笑って誤魔化す。何か言い返したところでろくな目に合わないことはわかっている。「じゃあお前ちゃんとやれよ？」そう言い残して部長はまた部屋を出ていく。何度目の煙草休憩だよ。お前がやれよ。喉まで出かかった言葉を押さえ付けて、もう一度溜息をついた。今日も定時退社は無理そうだ。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "社内改革するしかないのか", "next": "procrastinate" },
-      { "text": "やっぱり転職しかないかあ", "next": "consider_job_transfer" },
-      { "text": "労基に相談してみるか", "next": "labor_inspection" }
+      { "text": "今日こそ定時で帰る", "next": "leave_on_time" },
+      { "text": "残業パンを食べながら耐える", "next": "eat_overtime_bread" },
+      { "text": "同期に愚痴る", "next": "complain_to_colleague" }
+    ]
+  },
+
+  "sarcastic_reply": {
+    "text": "「部長こそお疲れ様です」と皮肉を込めて言う。部長の顔が一瞬固まった。「なんだそれは？」空気が凍りつく。やばい、言い過ぎた。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "そのまま逃げる", "next": "run_away_quickly" }
+    ]
+  },
+
+  "leave_on_time": {
+    "text": "「今日こそ定時で帰る」そう心に決めた。もう我慢の限界だ。17時になった瞬間、パソコンを閉じて退社の準備を始める。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "堂々と帰る", "next": "leave_confidently" }
+    ]
+  },
+
+  "leave_confidently": {
+    "text": "「お先に失礼します」と言って堂々と帰る。部長が何か言いかけたが、無視した。外に出ると、久しぶりに明るい時間の空気を吸うことができた。「これが普通なんだよな...」",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "労働基準監督署に相談する", "next": "labor_inspection" }
+    ]
+  },
+
+  "eat_overtime_bread": {
+    "text": "コンビニで買った残業パンを食べながら仕事を続ける。窓の外はもう真っ暗だ。時計を見ると22時を回っている。「今日も遅くなるな...」",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "タクシーで帰る（自腹）", "next": "taxi_home" }
+    ]
+  },
+
+  "taxi_home": {
+    "text": "終電を逃したのでタクシーで帰ることにした。もちろん自腹だ。「今月もまた赤字か...」車窓から見える街の灯りがぼやけて見える。疲れているんだな。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "転職活動を本格化する", "next": "serious_job_hunting" }
+    ]
+  },
+
+  "serious_job_hunting": {
+    "text": "本格的に転職活動を始めることにした。転職サイトに登録し、履歴書を書き、面接の準備をする。「今度こそ、まともな会社に...」",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "内定をもらう", "next": "get_job_offer" },
+      { "text": "面接が上手くいかない（運が悪い）", "next": "interview_failure" },
+      { "text": "転職活動に疲れ始めている", "next": "job_search_burnout" }
+    ]
+  },
+
+  "get_job_offer": {
+    "text": "いくつかの企業から内定をもらうことができた。「やった！これで脱出できる！」どの企業を選ぶか悩む。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "最初の内定企業に決める（安定重視）", "next": "choose_first_offer" },
+      { "text": "年収が最も高い企業を選ぶ（収入重視）", "next": "choose_highest_salary" },
+      { "text": "ワークライフバランスが最高の企業を選ぶ（生活重視）", "next": "choose_best_worklife" }
+    ]
+  },
+
+  "choose_first_offer": {
+    "text": "最初に内定をくれた企業に決めた。「ここなら安定してそうだ」退職届を出す準備を始める。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "きっぱりと退職する", "next": "clean_resignation" },
+      { "text": "内定企業の突然の連絡を待つ", "next": "offer_retracted" }
+    ]
+  },
+
+  "choose_highest_salary": {
+    "text": "年収が最も高い企業を選んだ。「これで生活が楽になる」退職届を出す準備を始める。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "新しい会社でキャリアを積む", "next": "high_salary_resignation" }
+    ]
+  },
+
+  "high_salary_resignation": {
+    "text": "高年収の企業への転職が決まった。退職届を提出し、新しい職場へ。「やっと人間らしい生活ができる」",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "新しい会社でキャリアを積む", "next": "new_company_start" }
+    ]
+  },
+
+  "choose_best_worklife": {
+    "text": "ワークライフバランスが最高の企業を選んだ。「定時退社、有給取得率90%...夢のようだ」退職届を出す準備を始める。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "新しい環境でリスタートする", "next": "worklife_balance_resignation" }
+    ]
+  },
+
+  "worklife_balance_resignation": {
+    "text": "ワークライフバランスを重視した企業への転職が決まった。退職届を提出し、新しい職場へ。「これで人生が変わる」",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "新しい会社でスタートする", "next": "new_company_start" }
+    ]
+  },
+
+  "clean_resignation": {
+    "text": "きっぱりと退職届を提出した。部長は何か言いたそうだったが、もう関係ない。「お世話になりました」そう言って会社を後にした。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "新しい会社でスタートする", "next": "new_company_start" }
+    ]
+  },
+
+  "complain_to_colleague": {
+    "text": "同期に愚痴をこぼした。「部長、本当にひどいよな」「わかる。もう限界だよ」二人で転職について話し合うことにした。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "一緒に転職活動をする", "next": "joint_job_hunting" }
+    ]
+  },
+
+  "joint_job_hunting": {
+    "text": "同期と一緒に転職活動を始めることにした。「お互い情報共有しよう」「そうだな」励まし合いながら活動を続ける。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "本格的に転職活動を開始する", "next": "serious_job_hunting" }
     ]
   },
 
