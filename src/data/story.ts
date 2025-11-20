@@ -53,7 +53,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "そのまま逃げる", "next": "run_away_quickly" }
+      { "text": "そのまま逃げる", "next": "run_away_quickly" },
+      { "text": "「冗談です」と取り繕う", "next": "awkward_smile" },
+      { "text": "「何でもありません」と下を向く", "next": "awkward_smile" }
     ]
   },
 
@@ -62,7 +64,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "堂々と帰る", "next": "leave_confidently" }
+      { "text": "堂々と帰る", "next": "leave_confidently" },
+      { "text": "部長の顔色を伺う", "next": "awkward_smile" },
+      { "text": "「ちょっと用事が」と言い訳する", "next": "leave_confidently" }
     ]
   },
 
@@ -71,7 +75,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "労働基準監督署に相談する", "next": "labor_inspection" }
+      { "text": "労働基準監督署に相談する", "next": "labor_inspection" },
+      { "text": "そのまま転職活動を始める", "next": "serious_job_hunting" },
+      { "text": "今日の解放感を噛み締める", "next": "eat_overtime_bread" }
     ]
   },
 
@@ -80,7 +86,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "タクシーで帰る（自腹）", "next": "taxi_home" }
+      { "text": "タクシーで帰る（自腹）", "next": "taxi_home" },
+      { "text": "終電で帰る", "next": "taxi_home" },
+      { "text": "同期に愚痴をこぼす", "next": "complain_to_colleague" }
     ]
   },
 
@@ -89,7 +97,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "転職活動を本格化する", "next": "serious_job_hunting" }
+      { "text": "転職活動を本格化する", "next": "serious_job_hunting" },
+      { "text": "労働組合について調べる", "next": "research_union" },
+      { "text": "このまま我慢し続ける", "next": "procrastinate" }
     ]
   },
 
@@ -130,7 +140,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "新しい会社でキャリアを積む", "next": "high_salary_resignation" }
+      { "text": "新しい会社でキャリアを積む", "next": "high_salary_resignation" },
+      { "text": "他の企業と比較し直す", "next": "choose_first_offer" },
+      { "text": "労働条件を再確認する", "next": "high_salary_resignation" }
     ]
   },
 
@@ -139,7 +151,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "新しい会社でキャリアを積む", "next": "new_company_start" }
+      { "text": "新しい会社でキャリアを積む", "next": "new_company_start" },
+      { "text": "引き止めにあって悩む", "next": "clean_resignation" },
+      { "text": "部長に辞意を伝える", "next": "new_company_start" }
     ]
   },
 
@@ -148,7 +162,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "新しい環境でリスタートする", "next": "worklife_balance_resignation" }
+      { "text": "新しい環境でリスタートする", "next": "worklife_balance_resignation" },
+      { "text": "年収面で不安になる", "next": "choose_highest_salary" },
+      { "text": "すぐに退職届を出す", "next": "worklife_balance_resignation" }
     ]
   },
 
@@ -157,7 +173,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "新しい会社でスタートする", "next": "new_company_start" }
+      { "text": "新しい会社でスタートする", "next": "new_company_start" },
+      { "text": "退職交渉が難航する", "next": "clean_resignation" },
+      { "text": "最後の挨拶を済ませる", "next": "new_company_start" }
     ]
   },
 
@@ -166,7 +184,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "新しい会社でスタートする", "next": "new_company_start" }
+      { "text": "新しい会社でスタートする", "next": "new_company_start" },
+      { "text": "引き継ぎに専念する", "next": "new_company_start" },
+      { "text": "有給消化期間を楽しむ", "next": "new_company_start" }
     ]
   },
 
@@ -175,7 +195,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "一緒に転職活動をする", "next": "joint_job_hunting" }
+      { "text": "一緒に転職活動をする", "next": "joint_job_hunting" },
+      { "text": "労働組合について調べる", "next": "research_union" },
+      { "text": "まずは自分だけで行動する", "next": "serious_job_hunting" }
     ]
   },
 
@@ -184,7 +206,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "本格的に転職活動を開始する", "next": "serious_job_hunting" }
+      { "text": "本格的に転職活動を開始する", "next": "serious_job_hunting" },
+      { "text": "転職エージェントに相談する", "next": "serious_job_hunting" },
+      { "text": "まず労働環境改善を試みる", "next": "research_union" }
     ]
   },
 
@@ -204,7 +228,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "今日中にこの資料をまとめろ", "next": "receive_document_task" }
+      { "text": "今日中にこの資料をまとめろ", "next": "receive_document_task" },
+      { "text": "夏の忘年会の準備を手伝え", "next": "receive_document_task" },
+      { "text": "お前まだ書類提出してない", "next": "receive_document_task" }
     ]
   },
 
@@ -213,7 +239,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "今日中にこの資料をまとめろ", "next": "receive_document_task" }
+      { "text": "今日中にこの資料をまとめろ", "next": "receive_document_task" },
+      { "text": "急ぎのプレゼン資料作れ", "next": "receive_document_task" },
+      { "text": "週末出社して仕事しろ", "next": "receive_document_task" }
     ]
   },
 
@@ -255,7 +283,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "一緒に作業して仕上げる", "next": "work_with_junior" }
+      { "text": "一緒に作業して仕上げる", "next": "work_with_junior" },
+      { "text": "やっぱり一人でやることにする", "next": "work_alone_suffer" },
+      { "text": "他の先輩にも声をかける", "next": "ask_colleague_for_help" }
     ]
   },
 
@@ -264,7 +294,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "一緒に作業して仕上げる", "next": "work_with_junior" }
+      { "text": "一緒に作業して仕上げる", "next": "work_with_junior" },
+      { "text": "後輩も巻き込んで3人で仕上げる", "next": "work_with_junior" },
+      { "text": "やっぱり迷惑かけたくない", "next": "work_alone_suffer" }
     ]
   },
 
@@ -326,7 +358,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "3人で組合を結成する", "next": "form_union_three" }
+      { "text": "3人で組合を結成する", "next": "form_union_three" },
+      { "text": "やっぱり転職の方が安全かも", "next": "serious_job_hunting" },
+      { "text": "労基署に相談してみる", "next": "labor_inspection" }
     ]
   },
 
@@ -335,7 +369,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "残業代の支払いを要求する", "next": "demand_overtime_pay" }
+      { "text": "残業代の支払いを要求する", "next": "demand_overtime_pay" },
+      { "text": "まず他の社員にも声をかける", "next": "demand_overtime_pay" },
+      { "text": "労基署に相談してから動く", "next": "labor_inspection" }
     ]
   },
 
@@ -344,7 +380,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "「じゃあ役員報酬を削れ」と言う", "next": "cut_executive_pay" }
+      { "text": "「じゃあ役員報酬を削れ」と言う", "next": "cut_executive_pay" },
+      { "text": "弁護士を同席させる", "next": "consult_lawyer_first" },
+      { "text": "労基署への申告を示唆する", "next": "cut_executive_pay" }
     ]
   },
 
@@ -353,7 +391,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "録音を武器に交渉を有利に進める", "next": "use_recording" }
+      { "text": "録音を武器に交渉を有利に進める", "next": "use_recording" },
+      { "text": "労基署に申告すると宣言する", "next": "use_recording" },
+      { "text": "穏便に話し合いを続ける", "next": "use_recording" }
     ]
   },
 
@@ -362,7 +402,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "残業代の支払いを勝ち取る", "next": "win_overtime_pay" }
+      { "text": "残業代の支払いを勝ち取る", "next": "win_overtime_pay" },
+      { "text": "弁護士を入れて正式な交渉に移る", "next": "consult_lawyer_first" },
+      { "text": "即座に労基署に申告する", "next": "labor_inspection" }
     ]
   },
 
@@ -371,7 +413,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "労働組合を全社に拡大する", "next": "company_wide_union" }
+      { "text": "労働組合を全社に拡大する", "next": "company_wide_union" },
+      { "text": "組合活動に専念する", "next": "company_wide_union" },
+      { "text": "他の問題にも取り組む", "next": "company_wide_union" }
     ]
   },
 
@@ -524,7 +568,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "和解金を受け取る", "next": "receive_settlement_money" }
+      { "text": "和解金を受け取る", "next": "receive_settlement_money" },
+      { "text": "もう少し交渉を続ける", "next": "lawyer_demand_full_amount" },
+      { "text": "これで決着とする", "next": "receive_settlement_money" }
     ]
   },
 
@@ -572,7 +618,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "完全な証拠とともに申告", "next": "submit_evidence_report" }
+      { "text": "完全な証拠とともに申告", "next": "submit_evidence_report" },
+      { "text": "弁護士に相談して提出する", "next": "consult_lawyer_first" },
+      { "text": "同僚と共に複数人で申告", "next": "multi_person_report" }
     ]
   },
 
@@ -680,7 +728,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "低額の和解金を受け取る", "next": "lawyer_low_settlement_accept" }
+      { "text": "低額の和解金を受け取る", "next": "lawyer_low_settlement_accept" },
+      { "text": "最後にもう一度交渉を試みる", "next": "lawyer_demand_full_amount" },
+      { "text": "諦めてこれで終わりにする", "next": "lawyer_low_settlement_accept" }
     ]
   },
 
