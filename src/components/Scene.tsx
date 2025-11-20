@@ -11,7 +11,6 @@ interface SceneProps {
 }
 
 export default function Scene({ scene, setScene }: SceneProps) {
-  const [showText, setShowText] = useState(false);
   const [showChoices, setShowChoices] = useState(false);
   const [textDisplayed, setTextDisplayed] = useState('');
   const [isTyping, setIsTyping] = useState(false);
@@ -60,13 +59,10 @@ export default function Scene({ scene, setScene }: SceneProps) {
 
   // タイピングアニメーション
   useEffect(() => {
-    setShowText(false);
     setShowChoices(false);
     setTextDisplayed('');
     setIsTyping(true);
-    
-    const timer1 = setTimeout(() => setShowText(true), 500);
-    
+
     // タイピング効果
     let index = 0;
     const typingTimer = setInterval(() => {
@@ -79,9 +75,8 @@ export default function Scene({ scene, setScene }: SceneProps) {
         setTimeout(() => setShowChoices(true), 800);
       }
     }, 40);
-    
+
     return () => {
-      clearTimeout(timer1);
       clearInterval(typingTimer);
     };
   }, [scene, current.text]);
@@ -110,7 +105,7 @@ export default function Scene({ scene, setScene }: SceneProps) {
       {/* メインコンテンツエリア */}
       <div className="flex-1 flex items-end justify-center pb-8 px-4 relative z-10">
         {/* テキストボックス */}
-        <div className={`w-full max-w-5xl transition-all duration-700 ${showText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className="w-full max-w-5xl opacity-100 translate-y-0">
           <div className="relative">
             {/* メインテキストボックス */}
             <div className="bg-gradient-to-br from-black/90 via-gray-900/85 to-black/90 border-2 border-gray-300/40 rounded-2xl p-8 shadow-2xl backdrop-blur-md">
@@ -182,12 +177,7 @@ export default function Scene({ scene, setScene }: SceneProps) {
           </div>
         </div>
       </div>
-      
-      {/* UI情報 */}
-      <div className="absolute top-6 left-6 text-white/60 text-sm font-mono bg-black/50 px-3 py-2 rounded">
-        Scene: {scene}
-      </div>
-      
+
       {/* コーナー装飾 */}
       <div className="absolute top-0 left-0 w-20 h-20 border-l-2 border-t-2 border-white/20 rounded-tl-lg" />
       <div className="absolute top-0 right-0 w-20 h-20 border-r-2 border-t-2 border-white/20 rounded-tr-lg" />
