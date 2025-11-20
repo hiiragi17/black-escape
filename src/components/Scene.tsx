@@ -129,47 +129,53 @@ export default function Scene({ scene, setScene }: SceneProps) {
               </div>
               
               {/* 選択肢エリア */}
-              {current.choices.length > 0 ? (
-                <div className={`mt-8 h-[320px] space-y-4 transition-all duration-700 delay-500 ${showChoices ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-                  <div className="text-gray-300 text-sm mb-4 font-medium">▼ 選択してください</div>
-                  {current.choices.map((choice, index) => (
-                    <button
-                      key={index}
-                      className="group block w-full text-left p-5 bg-gradient-to-r from-blue-600/70 to-purple-600/70 hover:from-blue-500/80 hover:to-purple-500/80 text-white text-lg font-semibold rounded-xl shadow-xl transform hover:scale-[1.02] transition-all duration-300 border border-white/20 hover:border-white/50 hover:shadow-blue-500/20"
-                      onClick={() => setScene(choice.next as keyof typeof storyData)}
-                      style={{ animationDelay: `${index * 100}ms` }}
-                    >
-                      <div className="flex items-center">
-                        <span className="text-blue-200 mr-4 text-xl group-hover:text-white transition-colors duration-300">
-                          {String.fromCharCode(65 + index)}.
-                        </span>
-                        <span className="group-hover:translate-x-1 transition-transform duration-300">
-                          {choice.text}
-                        </span>
+              <div className="mt-8 h-[320px]">
+                {showChoices && (
+                  <>
+                    {current.choices.length > 0 ? (
+                      <div className="space-y-4 animate-in fade-in duration-700">
+                        <div className="text-gray-300 text-sm mb-4 font-medium">▼ 選択してください</div>
+                        {current.choices.map((choice, index) => (
+                          <button
+                            key={index}
+                            className="group block w-full text-left p-5 bg-gradient-to-r from-blue-600/70 to-purple-600/70 hover:from-blue-500/80 hover:to-purple-500/80 text-white text-lg font-semibold rounded-xl shadow-xl transform hover:scale-[1.02] transition-all duration-300 border border-white/20 hover:border-white/50 hover:shadow-blue-500/20"
+                            onClick={() => setScene(choice.next as keyof typeof storyData)}
+                            style={{ animationDelay: `${index * 100}ms` }}
+                          >
+                            <div className="flex items-center">
+                              <span className="text-blue-200 mr-4 text-xl group-hover:text-white transition-colors duration-300">
+                                {String.fromCharCode(65 + index)}.
+                              </span>
+                              <span className="group-hover:translate-x-1 transition-transform duration-300">
+                                {choice.text}
+                              </span>
+                            </div>
+                          </button>
+                        ))}
                       </div>
-                    </button>
-                  ))}
-                </div>
-              ) : (
-                /* エンディング時のボタン */
-                <div className={`mt-8 h-[320px] flex flex-col items-center justify-center gap-4 transition-all duration-700 delay-500 ${showChoices ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-                  {/* X共有ボタン（エンディング時のみ） */}
-                  {endingId && (
-                    <XShareButton 
-                      endingId={endingId}
-                    />
-                  )}
-                  
-                  {/* タイトルに戻るボタン */}
-                  <button
-                    className="flex items-center justify-center gap-2 w-80 py-5 bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 text-white text-xl font-bold rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300 border-2 border-gray-500/50 hover:border-gray-400/70 whitespace-nowrap"
-                    onClick={() => router.push('/')}
-                  >
-                    <span className="text-2xl">🏢</span>
-                    <span>タイトルに戻る</span>
-                  </button>
-                </div>
-              )}
+                    ) : (
+                      /* エンディング時のボタン */
+                      <div className="flex flex-col items-center justify-center h-full gap-4 animate-in fade-in duration-700">
+                        {/* X共有ボタン（エンディング時のみ） */}
+                        {endingId && (
+                          <XShareButton
+                            endingId={endingId}
+                          />
+                        )}
+
+                        {/* タイトルに戻るボタン */}
+                        <button
+                          className="flex items-center justify-center gap-2 w-80 py-5 bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 text-white text-xl font-bold rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300 border-2 border-gray-500/50 hover:border-gray-400/70 whitespace-nowrap"
+                          onClick={() => router.push('/')}
+                        >
+                          <span className="text-2xl">🏢</span>
+                          <span>タイトルに戻る</span>
+                        </button>
+                      </div>
+                    )}
+                  </>
+                )}
+              </div>
             </div>
             
             {/* 装飾的な影 */}
