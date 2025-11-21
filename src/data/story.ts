@@ -44,7 +44,8 @@ export const storyData: StoryDataType = {
     "choices": [
       { "text": "今日こそ定時で帰る", "next": "leave_on_time" },
       { "text": "残業パンを食べながら耐える", "next": "eat_overtime_bread" },
-      { "text": "同期に愚痴る", "next": "complain_to_colleague" }
+      { "text": "同期に愚痴る", "next": "complain_to_colleague" },
+      { "text": "しばらくして部長に呼ばれる", "next": "talk_to_boss_first_encounter" }
     ]
   },
 
@@ -55,7 +56,8 @@ export const storyData: StoryDataType = {
     "choices": [
       { "text": "そのまま逃げる", "next": "run_away_quickly" },
       { "text": "「冗談です」と取り繕う", "next": "awkward_smile" },
-      { "text": "「何でもありません」と下を向く", "next": "awkward_smile" }
+      { "text": "「何でもありません」と下を向く", "next": "awkward_smile" },
+      { "text": "部長の元へ呼ばれる", "next": "talk_to_boss_ignore" }
     ]
   },
 
@@ -88,7 +90,8 @@ export const storyData: StoryDataType = {
     "choices": [
       { "text": "タクシーで帰る（自腹）", "next": "taxi_home" },
       { "text": "終電で帰る", "next": "taxi_home" },
-      { "text": "同期に愚痴をこぼす", "next": "complain_to_colleague" }
+      { "text": "同期に愚痴をこぼす", "next": "complain_to_colleague" },
+      { "text": "部長に呼ばれる", "next": "talk_to_boss_comment_break" }
     ]
   },
 
