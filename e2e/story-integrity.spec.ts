@@ -19,14 +19,6 @@ import {
 
 test.describe('ストーリーデータの完全性チェック', () => {
 
-  // validateStoryData()は内部でgetAllStoryPaths()を呼び出すためメモリ不足
-  // 代わりに個別の検証テストを使用
-  test.skip('ストーリーデータが有効である（スキップ: メモリ不足）', () => {
-    // このテストは check-story-all.sh で実行してください
-    console.log('⚠️  このテストはメモリ不足のためスキップされます');
-    console.log('代わりに: ./check-story-all.sh を実行してください');
-  });
-
   test('存在しないシーンへの参照がない', () => {
     const invalidRefs = getInvalidReferences();
 
@@ -71,13 +63,6 @@ test.describe('ストーリーデータの完全性チェック', () => {
   test('startシーンが存在する', () => {
     const allScenes = getAllSceneKeys();
     expect(allScenes).toContain('start');
-  });
-
-  // getAllStoryPaths()はメモリ不足でクラッシュするためスキップ
-  test.skip('少なくとも1つの完全なストーリーパスが存在する（スキップ: メモリ不足）', () => {
-    // このテストは check-story-all.sh で実行してください
-    console.log('⚠️  このテストはメモリ不足のためスキップされます');
-    console.log('代わりに: ./check-story-all.sh を実行してください');
   });
 });
 
