@@ -612,7 +612,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/labor_office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "会社の改善状況を見守る", "next": "continue_improved_company" }
+      { "text": "会社の改善状況を見守る", "next": "continue_improved_company" },
+      { "text": "弁護士を雇って追加請求する", "next": "lawyer_additional_claim" },
+      { "text": "この機会に転職活動を始める", "next": "serious_job_hunting" }
     ]
   },
 
@@ -632,7 +634,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/labor_office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "是正勧告を見守る", "next": "continue_improved_company" }
+      { "text": "是正勧告を見守る", "next": "continue_improved_company" },
+      { "text": "弁護士に依頼して慰謝料請求", "next": "consult_lawyer_first" },
+      { "text": "労働組合を結成する", "next": "form_union_three" }
     ]
   },
 
@@ -641,7 +645,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/labor_office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "全社調査の結果を待つ", "next": "company_wide_union" }
+      { "text": "全社調査の結果を待つ", "next": "company_wide_union" },
+      { "text": "この機会に労働組合を結成", "next": "form_union_three" },
+      { "text": "弁護士を立てて団体交渉", "next": "lawyer_group_negotiation" }
     ]
   },
 
@@ -650,7 +656,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "和解金を受け取る", "next": "receive_settlement_money" }
+      { "text": "和解金を受け取る", "next": "receive_settlement_money" },
+      { "text": "和解金で転職活動を始める", "next": "serious_job_hunting" },
+      { "text": "改善された会社で働き続ける", "next": "continue_improved_company" }
     ]
   },
 
@@ -669,7 +677,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/new_office.jpg",
     "bgm": "/bgm/n99.mp3",
     "choices": [
-      { "text": "会社の改善を見守る", "next": "continue_improved_company" }
+      { "text": "会社の改善を見守る", "next": "continue_improved_company" },
+      { "text": "労働組合を全社に拡大する", "next": "company_wide_union" },
+      { "text": "改善の進捗を監視し続ける", "next": "monitor_company_improvement" }
     ]
   },
 
@@ -678,7 +688,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "改善の進捗を確認する", "next": "lawyer_gradual_success" }
+      { "text": "改善の進捗を確認する", "next": "lawyer_gradual_success" },
+      { "text": "毎月の監視体制を整える", "next": "monitor_company_improvement" },
+      { "text": "期限を待つ間に転職も検討", "next": "serious_job_hunting" }
     ]
   },
 
@@ -687,7 +699,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "和解金を受け取る", "next": "receive_settlement_money" }
+      { "text": "和解金を受け取る", "next": "receive_settlement_money" },
+      { "text": "和解金で新しいキャリアを", "next": "new_company_start" },
+      { "text": "改善された会社に残る", "next": "continue_improved_company" }
     ]
   },
 
@@ -713,7 +727,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "和解金を受け取る", "next": "receive_settlement_money" }
+      { "text": "和解金を受け取る", "next": "receive_settlement_money" },
+      { "text": "さらなる請求を検討する", "next": "lawyer_demand_full_amount" },
+      { "text": "和解して新しい人生へ", "next": "new_company_start" }
     ]
   },
 
@@ -722,7 +738,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/labor_office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "是正勧告への対応を見守る", "next": "continue_improved_company" }
+      { "text": "是正勧告への対応を見守る", "next": "continue_improved_company" },
+      { "text": "弁護士を雇って和解交渉", "next": "consult_lawyer_first" },
+      { "text": "労働組合を結成して交渉", "next": "form_union_three" }
     ]
   },
 
@@ -749,7 +767,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/beach.jpg",
     "bgm": "/bgm/n99.mp3",
     "choices": [
-      { "text": "和解金で新しい人生をスタート", "next": "receive_settlement_money" }
+      { "text": "和解金で新しい人生をスタート", "next": "receive_settlement_money" },
+      { "text": "転職活動を本格的に始める", "next": "serious_job_hunting" },
+      { "text": "改善された会社に残る", "next": "continue_improved_company" }
     ]
   },
 
@@ -758,7 +778,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "さらに改善を監視する", "next": "monitor_company_improvement" }
+      { "text": "さらに改善を監視する", "next": "monitor_company_improvement" },
+      { "text": "労働組合を全社に拡大", "next": "company_wide_union" },
+      { "text": "改善された会社で働き続ける", "next": "continue_improved_company" }
     ]
   },
 
@@ -767,7 +789,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/new_office.jpg",
     "bgm": "/bgm/n99.mp3",
     "choices": [
-      { "text": "改善された会社で働き続ける", "next": "company_wide_union" }
+      { "text": "改善された会社で働き続ける", "next": "company_wide_union" },
+      { "text": "組合活動を全社に拡大", "next": "company_wide_union" },
+      { "text": "新しい環境を求めて転職", "next": "serious_job_hunting" }
     ]
   },
 
@@ -776,7 +800,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/new_office.jpg",
     "bgm": "/bgm/n99.mp3",
     "choices": [
-      { "text": "改善された会社で新しいキャリアを築く", "next": "company_wide_union" }
+      { "text": "改善された会社で新しいキャリアを築く", "next": "company_wide_union" },
+      { "text": "労働組合活動に専念する", "next": "company_wide_union" },
+      { "text": "この経験を活かして転職", "next": "new_company_start" }
     ]
   },
 
@@ -785,7 +811,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "毎日残業を続ける", "next": "accept_overtime_daily" }
+      { "text": "毎日残業を続ける", "next": "accept_overtime_daily" },
+      { "text": "今からでも転職活動を始める", "next": "serious_job_hunting" },
+      { "text": "労働組合を作ろうと決意", "next": "research_union" }
     ]
   },
 
@@ -794,7 +822,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "限界を感じる", "next": "health_breakdown" }
+      { "text": "限界を感じる", "next": "health_breakdown" },
+      { "text": "今すぐ転職活動を始める", "next": "serious_job_hunting" },
+      { "text": "労働基準監督署に相談", "next": "labor_inspection" }
     ]
   },
 
@@ -810,7 +840,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "労働組合について調べる", "next": "research_union" }
+      { "text": "労働組合について調べる", "next": "research_union" },
+      { "text": "転職した方が早いかも", "next": "serious_job_hunting" },
+      { "text": "まず労基署に相談", "next": "labor_inspection" }
     ]
   },
 
@@ -819,7 +851,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "精神的に追い詰められる", "next": "mental_breakdown" }
+      { "text": "精神的に追い詰められる", "next": "mental_breakdown" },
+      { "text": "不当処分として弁護士に相談", "next": "consult_lawyer_first" },
+      { "text": "この機に転職を決意", "next": "serious_job_hunting" }
     ]
   },
 
