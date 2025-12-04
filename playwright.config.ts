@@ -22,8 +22,8 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
 
-  /* 並列実行するワーカー数 */
-  workers: process.env.CI ? 1 : undefined,
+  /* 並列実行するワーカー数（メモリ使用量を抑えるため1に制限） */
+  workers: 1,
 
   /* レポーター設定 */
   reporter: 'html',
@@ -61,33 +61,36 @@ export default defineConfig({
       },
     },
 
-    {
-      name: 'firefox',
-      use: {
-        ...devices['Desktop Firefox'],
-        launchOptions: {
-          firefoxUserPrefs: {
-            'media.autoplay.default': 0,
-            'media.autoplay.blocking_policy': 0
-          }
-        }
-      },
-    },
+    // メモリ使用量を削減するため、他のブラウザはコメントアウト
+    // 必要に応じて個別に有効化してください
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: {
+    //     ...devices['Desktop Firefox'],
+    //     launchOptions: {
+    //       firefoxUserPrefs: {
+    //         'media.autoplay.default': 0,
+    //         'media.autoplay.blocking_policy': 0
+    //       }
+    //     }
+    //   },
+    // },
 
-    /* モバイルビューポートのテスト */
-    {
-      name: 'Mobile Chrome',
-      use: { ...devices['Pixel 5'] },
-    },
-    {
-      name: 'Mobile Safari',
-      use: { ...devices['iPhone 12'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
+
+    // /* モバイルビューポートのテスト */
+    // {
+    //   name: 'Mobile Chrome',
+    //   use: { ...devices['Pixel 5'] },
+    // },
+    // {
+    //   name: 'Mobile Safari',
+    //   use: { ...devices['iPhone 12'] },
+    // },
   ],
 
   /* 開発サーバーの起動設定 */
