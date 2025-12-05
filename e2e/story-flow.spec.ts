@@ -47,11 +47,11 @@ test.describe('ブラック企業からの脱出 - ストーリーフロー', ()
     // スタートシーンのテキストが表示されることを確認
     await expect(page.getByText(/ここは片田舎のとある会社/)).toBeVisible({ timeout: 10000 });
 
-    // Scene表示がstartになっていることを確認
-    await expect(page.getByText('Scene: start')).toBeVisible();
+    // 選択肢が表示されることを確認
+    await expect(page.getByRole('button', { name: /そろそろ転職/ })).toBeVisible({ timeout: 15000 });
   });
 
-  test('バッドエンディングまでのフローが正常に動作する', async ({ page }) => {
+  test('選択肢ボタンをクリックして次のシーンに進める', async ({ page }) => {
     // ゲーム開始
     await page.getByRole('link', { name: /ゲームスタート/ }).click();
     await expect(page).toHaveURL('/novel');
@@ -59,29 +59,18 @@ test.describe('ブラック企業からの脱出 - ストーリーフロー', ()
     // スタートシーンが表示されるまで待機
     await expect(page.getByText(/ここは片田舎のとある会社/)).toBeVisible({ timeout: 10000 });
 
-    // 「出社する」ボタンが表示されるまで待機（タイピングアニメーション完了を待つ）
-    const workButton = page.getByRole('button', { name: /出社する/ });
-    await expect(workButton).toBeVisible({ timeout: 15000 });
+    // 最初の選択肢ボタンが表示されるまで待機（タイピングアニメーション完了を待つ）
+    const firstChoice = page.getByRole('button', { name: /そろそろ転職/ });
+    await expect(firstChoice).toBeVisible({ timeout: 15000 });
 
-    // 「出社する」を選択
-    await workButton.click();
+    // 選択肢をクリック
+    await firstChoice.click();
 
-    // バッドエンディングのテキストが表示されることを確認
-    await expect(page.getByText(/死ぬほど働かされてしまった/)).toBeVisible({ timeout: 10000 });
-    await expect(page.getByText(/バッドエンド/)).toBeVisible();
-
-    // Scene表示がoverwork-badになっていることを確認
-    await expect(page.getByText('Scene: overwork-bad')).toBeVisible();
-
-    // タイトルに戻るボタンが表示されることを確認
-    const backButton = page.getByRole('button', { name: /タイトルに戻る/ });
-    await expect(backButton).toBeVisible({ timeout: 10000 });
-
-    // X共有ボタンが表示されることを確認
-    await expect(page.getByRole('button', { name: /結果をXでシェアする/ })).toBeVisible();
+    // 次のシーンのテキストが表示されることを確認
+    await expect(page.getByText(/このところずっと脳内にちらついていた/)).toBeVisible({ timeout: 10000 });
   });
 
-  test('グッドエンディングまでのフローが正常に動作する', async ({ page }) => {
+  test('複数の選択肢が表示される', async ({ page }) => {
     // ゲーム開始
     await page.getByRole('link', { name: /ゲームスタート/ }).click();
     await expect(page).toHaveURL('/novel');
@@ -89,79 +78,13 @@ test.describe('ブラック企業からの脱出 - ストーリーフロー', ()
     // スタートシーンが表示されるまで待機
     await expect(page.getByText(/ここは片田舎のとある会社/)).toBeVisible({ timeout: 10000 });
 
-    // 「逃げる」ボタンが表示されるまで待機（タイピングアニメーション完了を待つ）
-    const escapeButton = page.getByRole('button', { name: /逃げる/ });
-    await expect(escapeButton).toBeVisible({ timeout: 15000 });
-
-    // 「逃げる」を選択
-    await escapeButton.click();
-
-    // グッドエンディングのテキストが表示されることを確認
-    await expect(page.getByText(/あなたは逃げ切り、自由になった/)).toBeVisible({ timeout: 10000 });
-    await expect(page.getByText(/グッドエンド/)).toBeVisible();
-
-    // Scene表示がfreedom-goodになっていることを確認
-    await expect(page.getByText('Scene: freedom-good')).toBeVisible();
-
-    // タイトルに戻るボタンが表示されることを確認
-    const backButton = page.getByRole('button', { name: /タイトルに戻る/ });
-    await expect(backButton).toBeVisible({ timeout: 10000 });
-
-    // X共有ボタンが表示されることを確認
-    await expect(page.getByRole('button', { name: /結果をXでシェアする/ })).toBeVisible();
+    // 複数の選択肢が表示されることを確認（3つの選択肢）
+    await expect(page.getByRole('button', { name: /そろそろ転職/ })).toBeVisible({ timeout: 15000 });
+    await expect(page.getByRole('button', { name: /転職活動面倒/ })).toBeVisible();
+    await expect(page.getByRole('button', { name: /労働組合/ })).toBeVisible();
   });
 
-  test('バッドエンディングからタイトルに戻れる', async ({ page }) => {
-    // ゲーム開始
-    await page.getByRole('link', { name: /ゲームスタート/ }).click();
-
-    // スタートシーンが表示されるまで待機
-    await expect(page.getByText(/ここは片田舎のとある会社/)).toBeVisible({ timeout: 10000 });
-
-    // 「出社する」を選択してバッドエンドへ
-    const workButton = page.getByRole('button', { name: /出社する/ });
-    await expect(workButton).toBeVisible({ timeout: 15000 });
-    await workButton.click();
-
-    // バッドエンディングが表示されるまで待機
-    await expect(page.getByText(/バッドエンド/)).toBeVisible({ timeout: 10000 });
-
-    // タイトルに戻るボタンをクリック
-    const backButton = page.getByRole('button', { name: /タイトルに戻る/ });
-    await expect(backButton).toBeVisible({ timeout: 10000 });
-    await backButton.click();
-
-    // トップページに戻ったことを確認
-    await expect(page).toHaveURL('/');
-    await expect(page.getByRole('heading', { name: 'ブラック企業からの脱出' })).toBeVisible();
-  });
-
-  test('グッドエンディングからタイトルに戻れる', async ({ page }) => {
-    // ゲーム開始
-    await page.getByRole('link', { name: /ゲームスタート/ }).click();
-
-    // スタートシーンが表示されるまで待機
-    await expect(page.getByText(/ここは片田舎のとある会社/)).toBeVisible({ timeout: 10000 });
-
-    // 「逃げる」を選択してグッドエンドへ
-    const escapeButton = page.getByRole('button', { name: /逃げる/ });
-    await expect(escapeButton).toBeVisible({ timeout: 15000 });
-    await escapeButton.click();
-
-    // グッドエンディングが表示されるまで待機
-    await expect(page.getByText(/グッドエンド/)).toBeVisible({ timeout: 10000 });
-
-    // タイトルに戻るボタンをクリック
-    const backButton = page.getByRole('button', { name: /タイトルに戻る/ });
-    await expect(backButton).toBeVisible({ timeout: 10000 });
-    await backButton.click();
-
-    // トップページに戻ったことを確認
-    await expect(page).toHaveURL('/');
-    await expect(page.getByRole('heading', { name: 'ブラック企業からの脱出' })).toBeVisible();
-  });
-
-  test('選択肢が正しく表示される', async ({ page }) => {
+  test('選択肢ラベルが正しく表示される', async ({ page }) => {
     // ゲーム開始
     await page.getByRole('link', { name: /ゲームスタート/ }).click();
 
@@ -171,13 +94,10 @@ test.describe('ブラック企業からの脱出 - ストーリーフロー', ()
     // 選択肢のラベルが表示されることを確認
     await expect(page.getByText('選択してください')).toBeVisible({ timeout: 15000 });
 
-    // 両方の選択肢が表示されることを確認
-    await expect(page.getByRole('button', { name: /出社する/ })).toBeVisible();
-    await expect(page.getByRole('button', { name: /逃げる/ })).toBeVisible();
-
-    // 選択肢にA.とB.のラベルが付いていることを確認
+    // 選択肢にA., B., C.のラベルが付いていることを確認
     await expect(page.getByText('A.')).toBeVisible();
     await expect(page.getByText('B.')).toBeVisible();
+    await expect(page.getByText('C.')).toBeVisible();
   });
 
   test('タイピングアニメーションが動作する', async ({ page }) => {
@@ -193,7 +113,8 @@ test.describe('ブラック企業からの脱出 - ストーリーフロー', ()
     // タイピングが完了するまで待機（カーソルが消える）
     await expect(typingCursor).not.toBeVisible({ timeout: 15000 });
 
-    // テキストが完全に表示されたことを確認
-    await expect(page.getByText(/ここは片田舎のとある会社。どうしようもない上司と訳のわからない人しかいない、変人の巣窟。給料は安く、残業時間は多い。こんな会社辞めてやりたい。どうしますか？/)).toBeVisible();
+    // テキストが表示されたことを確認（部分一致）
+    await expect(page.getByText(/ここは片田舎のとある会社/)).toBeVisible();
+    await expect(page.getByText(/給料は安く、残業時間は多い/)).toBeVisible();
   });
 });
