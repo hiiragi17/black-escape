@@ -274,64 +274,202 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "3人で組合を結成する", "next": "form_union_three" },
+      { "text": "慎重にメンバーを集める", "next": "union_member_recruitment" },
       { "text": "やっぱり転職の方が安全かも", "next": "job_search_burnout" },
       { "text": "労基署に相談してみる", "next": "labor_inspection" }
     ]
   },
 
-  "form_union_three": {
-    "text": "同期と後輩の3人で労働組合を結成することにした。\n\n「組合名はどうする？」\n「『○○会社労働組合』でいいんじゃない？」\n\n組合規約を作成し、役員を決める。委員長は俺がやることになった。\n\n「いよいよ会社と交渉するのか...」\n\n緊張と期待が入り混じる。",
+  "union_member_recruitment": {
+    "text": "組合を作るには、信頼できるメンバーが必要だ。\n\n誰を誘うべきか...。\n\n同期「俺も残業代の件で困ってるんだ。やろうぜ」\n後輩「僕も協力します！」\n\nでも、人数が多すぎると情報が漏れるリスクがある。慎重に進めないと...。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "残業代の支払いを要求する", "next": "demand_overtime_pay" },
-      { "text": "まず他の社員にも声をかける", "next": "demand_overtime_pay" },
+      { "text": "信頼できる3人だけで始める", "next": "union_preparation_meeting" },
+      { "text": "すぐに大人数を集めて力を見せる", "next": "union_info_leak" },
+      { "text": "一人で始めるのが一番安全", "next": "work_alone_suffer" }
+    ]
+  },
+
+  "union_preparation_meeting": {
+    "text": "3人で密かに準備会議を開いた。\n\n同期「でも法律のことよく分からないよな」\n後輩「間違えたら会社に訴えられるんじゃ...」\n\n「確かに...労働組合法とか、ちゃんと勉強しないとマズイかも」\n\nどうする？",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "労働法の勉強会を開く", "next": "union_registration_process" },
+      { "text": "勉強は後回し、すぐに行動", "next": "union_legal_mistake" },
+      { "text": "会社に事前相談して認めてもらう", "next": "union_crushed_early" }
+    ]
+  },
+
+  "union_registration_process": {
+    "text": "労働法を勉強し、組合規約を作成した。\n\n「労働組合として正式に登録すべきかな？」\n\n同期「登録しないとダメなの？」\n\n「登録しないと団体交渉権が認められない可能性がある。でも登録すると会社にバレるリスクも...」",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "正式に労働組合として登録する", "next": "form_union_three" },
+      { "text": "非公式なグループのまま進める", "next": "informal_group_failure" },
+      { "text": "登録は後回しにして先に行動", "next": "company_union_busting" }
+    ]
+  },
+
+  "form_union_three": {
+    "text": "正式に労働組合を結成した！\n\n「組合名は『○○会社労働組合』で登録したぞ」\n「よし、これで団体交渉権がある」\n\n組合規約を作成し、役員を決める。委員長は俺がやることになった。\n\n数日後...会社の様子がおかしい。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "様子を見る", "next": "company_union_busting" },
+      { "text": "すぐに団体交渉を申し入れる", "next": "company_union_busting" },
       { "text": "労基署に相談してから動く", "next": "labor_inspection" }
     ]
   },
 
-  "demand_overtime_pay": {
-    "text": "団体交渉で残業代の支払いを要求することにした。\n\n人事部長「残業代110円？そんなの払ってるじゃないか」\n\n「110円って何の冗談ですか？法定の残業代を支払ってください」\n\n人事部長、タバコ休憩で1時間以上席を外してから戻ってきて...\n\n「うちは赤字経営だから無理だ」",
+  "company_union_busting": {
+    "text": "人事部長が組合員を個別に呼び出し始めた。\n\n後輩が真っ青な顔で戻ってきた。\n\n後輩「『組合なんかやめて、真面目に仕事しろ』って...脅されました」\n\n「それ完全に不当労働行為じゃん！」\n\nどう対応する？",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": [
+      { "text": "不当労働行為として詳細に記録する", "next": "union_member_wavering" },
+      { "text": "怒って人事部長に詰め寄る", "next": "violent_confrontation" },
+      { "text": "怖くなって組合を解散する", "next": "union_dissolution" }
+    ]
+  },
+
+  "union_member_wavering": {
+    "text": "不当労働行為を記録していたところ、さらに事態が悪化した。\n\n同期「実は...人事部長から課長職への昇進を提示された。ただし組合を抜ける条件で」\n\n後輩「僕もです...ボーナス増額の話をされました」\n\n会社の分断工作だ。どうする？",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": [
+      { "text": "冷静に組合の意義を説明する", "next": "gather_union_evidence" },
+      { "text": "『昇進を受けていいよ』と勧める", "next": "union_split" },
+      { "text": "感情的に『裏切り者！』と非難", "next": "union_internal_conflict" }
+    ]
+  },
+
+  "gather_union_evidence": {
+    "text": "「みんな、冷静に考えよう。会社は俺たちを分断しようとしてる」\n\n「今ここで負けたら、この会社は何も変わらない」\n\n同期「...そうだな。一緒にやろう」\n後輩「僕も最後まで付き合います」\n\n「よし、不当労働行為の証拠を組織的に集めよう」",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "「じゃあ役員報酬を削れ」と言う", "next": "cut_executive_pay" },
-      { "text": "弁護士を同席させる", "next": "consult_lawyer_first" },
-      { "text": "労基署への申告を示唆する", "next": "cut_executive_pay" }
+      { "text": "組合員全員で組織的に証拠収集", "next": "union_legal_support" },
+      { "text": "自分一人で証拠を集める", "next": "evidence_discovered" },
+      { "text": "証拠なしですぐ交渉開始", "next": "union_legal_mistake" }
+    ]
+  },
+
+  "union_legal_support": {
+    "text": "証拠を集めたが、法的な知識が不足している。\n\n同期「労働組合専門の弁護士がいるって聞いたけど」\n\n「費用がかかるけど...ここは専門家の力を借りるべきかも」",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "労働組合専門の弁護士に依頼", "next": "demand_overtime_pay" },
+      { "text": "自力で法律を解釈して進める", "next": "union_legal_mistake" },
+      { "text": "費用をケチって一般の弁護士", "next": "weak_union_settlement" }
+    ]
+  },
+
+  "demand_overtime_pay": {
+    "text": "ついに団体交渉の日が来た。\n\n弁護士と一緒に会議室へ。人事部長、取締役、そして会社側の弁護士も同席している。\n\n「それでは、残業代の全額支払いを要求します」\n\n人事部長「残業代110円は支払ってる。これ以上は無理だ」\n\nどう切り出す？",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "弁護士同席で冷静に法的根拠を説明", "next": "first_negotiation_tactics" },
+      { "text": "感情的に怒りをぶつける", "next": "lawyer_negotiation_breakdown" },
+      { "text": "低い金額から交渉開始する", "next": "weak_union_settlement" }
+    ]
+  },
+
+  "first_negotiation_tactics": {
+    "text": "弁護士「労働基準法第37条に基づき、時間外労働は25%以上の割増賃金が必要です」\n\n「我々の計算では、過去2年分の未払い残業代は1人あたり約300万円です」\n\n会社側弁護士「そんな金額は払えない。会社が潰れます」\n\n人事部長が組合員の一人に目配せをした...。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "会社の分断工作を警戒する", "next": "company_divide_strategy" },
+      { "text": "交渉を続行する", "next": "company_divide_strategy" }
+    ]
+  },
+
+  "company_divide_strategy": {
+    "text": "休憩時間、人事部長が後輩を別室に呼び出した。\n\n30分後、後輩が戻ってきた。\n\n後輩「実は...個別に100万円で和解してくれって言われました」\n\n「それ、組合を分断する作戦だぞ！」\n\nどう対応する？",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": [
+      { "text": "団結を守り、個別交渉を拒否", "next": "cut_executive_pay" },
+      { "text": "『個別交渉してもいいよ』と言う", "next": "union_split" },
+      { "text": "強硬姿勢で即座に交渉打ち切り", "next": "lawyer_negotiation_breakdown" }
     ]
   },
 
   "cut_executive_pay": {
-    "text": "「赤字なら役員報酬を削ったらどうですか？重役の高級車代を残業代に回してください」\n\n人事部長の顔が真っ赤になる。\n\n「生意気な口を叩くな！」\n\n「これはパワハラですね。録音してますから」\n\nスマホを取り出すと、人事部長が慌てる。\n\n「ちょ、ちょっと待て...」",
+    "text": "「赤字経営なら、まず役員報酬を削減すべきでは？」\n\n人事部長の顔が真っ赤になる。\n\n「生意気な口を叩くな！お前らなんか...」\n\n弁護士が止めに入るが、人事部長は続ける。\n\n「クビにしてやる！」\n\n録音してて良かった...。この発言、いつ出すべきか？",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "録音を武器に交渉を有利に進める", "next": "use_recording" },
-      { "text": "労基署に申告すると宣言する", "next": "use_recording" },
-      { "text": "穏便に話し合いを続ける", "next": "use_recording" }
+      { "text": "交渉が膠着した時まで待つ", "next": "recording_evidence_timing" },
+      { "text": "今すぐ録音を提示して優位に立つ", "next": "evidence_backfire" },
+      { "text": "録音を隠したまま交渉継続", "next": "union_legal_mistake" }
     ]
   },
 
-  "use_recording": {
-    "text": "録音を武器に交渉を有利に進めた。\n\n「この録音が労働基準監督署に提出されたらどうなるか、お分かりですよね？」\n\n人事部長、完全に青ざめる。\n\n「わ、分かった...残業代については検討する」\n\n「検討じゃなくて、いつから支払うんですか？」\n\n組合の力を実感した瞬間だった。",
+  "recording_evidence_timing": {
+    "text": "交渉は膠着状態に。会社は150万円の一部支払いを提案。\n\n「それでは不十分です」\n\n会社側弁護士「これ以上は無理だ。裁判になってもいいのか？」\n\n「分かりました...では、これを聞いてください」\n\n録音を流す。人事部長の「クビにしてやる！」という音声が響く。\n\n会社側、完全に青ざめた。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "残業代の支払いを勝ち取る", "next": "win_overtime_pay" },
-      { "text": "弁護士を入れて正式な交渉に移る", "next": "consult_lawyer_first" },
-      { "text": "即座に労基署に申告する", "next": "labor_inspection" }
+      { "text": "この機会に全額支払いを要求", "next": "negotiation_final_stage" }
+    ]
+  },
+
+  "negotiation_final_stage": {
+    "text": "録音証拠の威力は絶大だった。\n\n会社側弁護士「...分かりました。250万円で和解しませんか？」\n\n弁護士「いえ、全額300万円の支払いを求めます」\n\n会社側「それは...」\n\nここが正念場だ。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "全額300万円まで粘る", "next": "win_overtime_pay" },
+      { "text": "妥協して250万円で合意", "next": "weak_union_settlement" },
+      { "text": "さらに慰謝料も請求する", "next": "lawyer_negotiation_breakdown" }
     ]
   },
 
   "win_overtime_pay": {
-    "text": "ついに残業代の支払いを勝ち取った！\n\n「月給が5万円も上がった...」\n「組合作って本当に良かった」\n\n同期「他の人たちも羨ましがってるよ。組合に入りたいって」\n\n会社側も労働環境の改善に取り組み始めた。飲み会の強制参加も禁止になった。\n\n「俺たちが会社を変えたんだ」",
+    "text": "ついに残業代全額300万円の支払いを勝ち取った！\n\n「月給が5万円も上がった...」\n「組合作って本当に良かった」\n\n同期「他の部署の人たちも羨ましがってるよ。組合に入りたいって10人以上から連絡来てる」\n\n「これは...組合を全社に広げるチャンスかも」\n\nでも、慎重に進めないと管理職の反発が...。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "労働組合を全社に拡大する", "next": "company_wide_union" },
-      { "text": "組合活動に専念する", "next": "company_wide_union" },
-      { "text": "他の問題にも取り組む", "next": "company_wide_union" }
+      { "text": "慎重に他部署に声をかける", "next": "union_expansion_planning" },
+      { "text": "勢いで全社に呼びかける", "next": "premature_expansion" },
+      { "text": "3人のままで満足する", "next": "small_union_success" }
+    ]
+  },
+
+  "union_expansion_planning": {
+    "text": "他部署に慎重にアプローチした。\n\n営業部「俺も残業代欲しい。組合入れてくれ」\n企画部「パワハラも問題になってる。一緒に戦いたい」\n\n1ヶ月で組合員は20人に増えた。\n\nしかし、管理職たちが緊急会議を開いているという情報が...。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "管理職の動きを警戒する", "next": "management_resistance" }
+    ]
+  },
+
+  "management_resistance": {
+    "text": "管理職たちが組合拡大に激しく抵抗し始めた。\n\n課長「組合なんか作って、会社を潰す気か！」\n部長「お前らのせいで俺の評価が下がったんだぞ！」\n\n他部署の組合員が脅されている...。どう対応する？",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": [
+      { "text": "労基署と連携して不当労働行為で対抗", "next": "company_reform_negotiation" },
+      { "text": "管理職と直接対決する", "next": "union_internal_conflict" },
+      { "text": "引き下がって3人体制に戻る", "next": "small_union_success" }
+    ]
+  },
+
+  "company_reform_negotiation": {
+    "text": "労基署と連携し、不当労働行為として正式に申告。\n\n労基署の調査が入り、管理職のパワハラも明るみに出た。\n\n会社「...分かりました。全社的な労働環境改善に取り組みます」\n\n組合と会社の間で、包括的な改革案が協議された。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "段階的な改革案を提示する", "next": "company_wide_union" },
+      { "text": "一気に全ての要求を押し通す", "next": "premature_expansion" },
+      { "text": "現状維持で妥協する", "next": "small_union_success" }
     ]
   },
 
@@ -354,13 +492,64 @@ export const storyData: StoryDataType = {
   },
 
   "consult_lawyer_first": {
-    "text": "弁護士に相談することにした。\n\nブラック企業対応を得意とする弁護士事務所を見つけ、初回相談に申し込む。\n\n弁護士「残業代110円ですか？これは典型的な労基法違反ですね」\n\n「どうすればいいんでしょうか？」\n\n弁護士「いくつかの選択肢があります。個別に代理交渉することもできますし、労基署への申告をサポートすることもできます」",
+    "text": "弁護士に相談することにした。\n\nでも、どの弁護士がいいんだろう？\n\nネットで検索すると、たくさん出てくる。「初回相談無料」「ブラック企業対応」「勝率95%」...。\n\n値段もピンキリだ。安い弁護士、高い弁護士、専門家、非専門家...。\n\n慎重に選ばないと。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "弁護士に団体交渉を依頼", "next": "lawyer_group_negotiation" },
-      { "text": "弁護士に代理人交渉を依頼", "next": "lawyer_individual_negotiation" },
-      { "text": "労基署申告に弁護士をつける", "next": "lawyer_with_labor_report" }
+      { "text": "労働問題専門の弁護士を探す", "next": "research_lawyers" },
+      { "text": "安い弁護士を選ぶ", "next": "incompetent_lawyer" },
+      { "text": "知人の紹介で適当に決める", "next": "lawyer_initial_consultation_bad" }
+    ]
+  },
+
+  "research_lawyers": {
+    "text": "労働問題専門の弁護士事務所を慎重にリサーチした。\n\n口コミサイト、実績、料金体系をチェック。\n\n「この事務所、ブラック企業案件の実績が多いな」\n\n費用は高めだが、専門性があるほうが安心だ。\n\n初回相談を予約した。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "初回相談に行く", "next": "lawyer_initial_consultation" }
+    ]
+  },
+
+  "lawyer_initial_consultation": {
+    "text": "弁護士事務所を訪れた。\n\n弁護士「残業代110円？これは悪質な労基法違反ですね」\n\n「証拠はどのくらい必要ですか？」\n\n弁護士「給与明細、勤務記録、パワハラの録音など、多いほど有利です」\n\nどのくらい詳しく説明しようか？",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "詳細に状況を説明し証拠も見せる", "next": "evidence_collection_phase" },
+      { "text": "曖昧な説明だけにする", "next": "lawyer_refuses_case" },
+      { "text": "感情的に訴える", "next": "lawyer_initial_consultation_bad" }
+    ]
+  },
+
+  "evidence_collection_phase": {
+    "text": "弁護士「まずは徹底的に証拠を集めましょう」\n\n「どのくらい時間をかけるべきですか？」\n\n弁護士「1ヶ月かけて完璧に集めるか、2週間で基本的な証拠だけ集めるか、選択肢はあります」\n\n「ただし、証拠が多いほど交渉は有利になります」",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "1ヶ月かけて徹底的に証拠収集", "next": "lawyer_strategy_meeting" },
+      { "text": "2週間で基本的な証拠のみ", "next": "lawyer_strategy_meeting_rushed" },
+      { "text": "すぐに交渉開始してほしい", "next": "quick_low_settlement" }
+    ]
+  },
+
+  "lawyer_strategy_meeting": {
+    "text": "1ヶ月後、十分な証拠を集めて再び弁護士事務所へ。\n\n弁護士「素晴らしい。これだけあれば、かなり有利に交渉できます」\n\n「戦略はどうしますか？」\n\n弁護士「強気で全額請求するか、現実的な金額で早期和解するか...」",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "弁護士の戦略に完全に従う", "next": "lawyer_individual_negotiation" },
+      { "text": "自分の意見を強く主張する", "next": "client_lawyer_conflict" },
+      { "text": "消極的で任せきりにする", "next": "lawyer_strategy_meeting_rushed" }
+    ]
+  },
+
+  "lawyer_strategy_meeting_rushed": {
+    "text": "2週間で集めた証拠を弁護士に見せた。\n\n弁護士「...まあ、これでも交渉はできます。ただ、もう少し証拠があれば...」\n\n「でも、これで進めますか？」\n\n弁護士「はい、できる範囲でやりましょう」\n\n少し不安だが、進めるしかない。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "この条件で交渉開始", "next": "lawyer_individual_negotiation" }
     ]
   },
 
@@ -387,13 +576,64 @@ export const storyData: StoryDataType = {
   },
 
   "lawyer_individual_negotiation": {
-    "text": "弁護士に代理人交渉を依頼することにした。\n\n弁護士「会社に内容証明郵便で、未払い残業代の請求書を送ります」\n\n数日後、会社から連絡がきた。\n\n人事部「このような請求は聞いていません。話し合いで解決しましょう」\n\n弁護士を通じて交渉が始まる。",
+    "text": "弁護士「会社に内容証明郵便で、未払い残業代600万円の請求書を送りました」\n\n数日後、会社から連絡がきた。\n\n会社「証拠不十分です。こんな金額は払えません」\n\nどう対応する？",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "全額請求を貫く", "next": "lawyer_demand_full_amount" },
-      { "text": "示談で和解する", "next": "lawyer_settlement" },
-      { "text": "裁判を辞さない姿勢を見せ交渉", "next": "lawyer_litigation_threat" }
+      { "text": "追加証拠を冷静に提示", "next": "company_initial_response" },
+      { "text": "感情的に反論する", "next": "lawyer_negotiation_breakdown" },
+      { "text": "引き下がって妥協する", "next": "quick_low_settlement" }
+    ]
+  },
+
+  "company_initial_response": {
+    "text": "弁護士が追加の証拠を会社に送付した。\n\n給与明細、タイムカード、パワハラの録音...\n\n会社側弁護士「...これは確かに問題ですね。ただ、600万円は過大です」\n\n弁護士「では、いくらなら妥当だとお考えですか？」\n\n会社「200万円で和解しませんか？」",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "交渉を続ける", "next": "negotiation_pressure_tactics" }
+    ]
+  },
+
+  "negotiation_pressure_tactics": {
+    "text": "交渉が進む中、会社側が圧力をかけてきた。\n\n人事部長「これ以上騒ぐなら、退職勧告もあり得るぞ」\n\n弁護士「それは脅迫です。記録しておきます」\n\nどう対応する？",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": [
+      { "text": "脅迫として記録し交渉継続", "next": "settlement_amount_negotiation" },
+      { "text": "怖くなって妥協する", "next": "intimidation_success" },
+      { "text": "激怒して交渉打ち切り", "next": "lawyer_negotiation_breakdown" }
+    ]
+  },
+
+  "settlement_amount_negotiation": {
+    "text": "脅迫を記録したことで、会社側の態度が軟化した。\n\n会社「...では、300万円ではどうでしょうか？」\n\n弁護士「我々は500万円を提案します」\n\n会社「それは...」\n\nどこまで粘る？",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "弁護士と相談して450万円で合意", "next": "company_counteroffer" },
+      { "text": "すぐに300万円で受け入れる", "next": "quick_low_settlement" },
+      { "text": "絶対に600万円を譲らない", "next": "lawyer_negotiation_breakdown" }
+    ]
+  },
+
+  "company_counteroffer": {
+    "text": "弁護士「450万円で合意しましょう。これ以上は時間がかかるだけです」\n\n会社「...分かりました。400万円+労働環境改善の約束ではどうですか？」\n\n弁護士「十分な条件です。受け入れましょう」\n\n和解契約書が作成された。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n43.mp3",
+    "choices": [
+      { "text": "弁護士と一緒に契約書を精査", "next": "settlement_agreement_review" },
+      { "text": "ざっと読んで即座に署名", "next": "unfair_contract_terms" },
+      { "text": "契約に不満で拒否する", "next": "lawyer_negotiation_breakdown" }
+    ]
+  },
+
+  "settlement_agreement_review": {
+    "text": "弁護士と一緒に和解契約書を細かくチェックした。\n\n弁護士「不利な条項はありません。これで署名して大丈夫です」\n\n「本当に...終わるんですね」\n\n契約書に署名。数日後、400万円が振り込まれた。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/n99.mp3",
+    "choices": [
+      { "text": "和解金を受け取り新しい人生へ", "next": "receive_settlement_money" }
     ]
   },
 
@@ -789,6 +1029,139 @@ export const storyData: StoryDataType = {
 
   "punch_boss": {
     "text": "「あ〜そうなのか。お前もそんな若くないんだなw」\n\nその一言で、堪忍袋の緒が切れた。\n\n衝動に駆られて、部長の顔面に拳を叩きつける。\n\n部長「ぐあ！」\n\nそれは一瞬の満足感だったが、すぐに現実が打ちつけた。\n\n翌日、警察から連絡があった。暴行罪で訴えると。\n\n弁護士費用、示談金、そして職場での立場......全てが失われた。\n\n【バッドエンド：衝動的暴行で人生破綻】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "union_info_leak": {
+    "text": "大人数に声をかけたところ、その中に会社のスパイがいた。\n\n翌日、人事部長に呼び出される。\n\n人事部長「労働組合を作ろうとしてるそうだな？」\n\n「それは...」\n\n「会社の和を乱す行為は許さない。配置転換だ」\n\n組合結成前に、メンバーは全員バラバラの部署に飛ばされてしまった。\n\n【バッドエンド：情報漏洩で組合が潰される】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "union_legal_mistake": {
+    "text": "法律の知識がないまま交渉を進めた結果、重大なミスを犯してしまった。\n\n会社側弁護士「あなた方の要求は法的根拠がありません」\n\n「え？でもネットには...」\n\n「それは誤った情報です。むしろ業務妨害で訴えることもできますよ」\n\n法的知識不足で、組合活動は失敗に終わった。\n\n【バッドエンド：法的知識不足で組合活動失敗】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "union_crushed_early": {
+    "text": "「労働組合を作りたいんですが...」と会社に相談したところ。\n\n人事部長「労働組合？そんなもの必要ない。うちには社員会があるだろう」\n\n「でも、団体交渉権が...」\n\n「会社の方針に従えないなら、辞めてもらって構わない」\n\n会社に先手を打たれ、組合結成は頓挫。メンバーは脅されて全員が退職を選んだ。\n\n【バッドエンド：会社に先手を打たれて組合潰される】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "informal_group_failure": {
+    "text": "正式な登録をせず、非公式なグループとして活動を続けた。\n\n団体交渉を申し入れたが...\n\n会社側弁護士「あなた方は労働組合として登録していません。団体交渉権はありません」\n\n「え？でも3人以上いれば...」\n\n「登録のない任意団体に団体交渉権は認められません」\n\n法的な保護を受けられず、活動は失敗に終わった。\n\n【バッドエンド：非公式グループで団体交渉権なし】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "violent_confrontation": {
+    "text": "人事部長の部屋に怒鳴り込んだ。\n\n「組合員を脅すのはやめろ！」\n\n人事部長「何を言ってるんだ？」\n\n怒りで冷静さを失い、人事部長を突き飛ばしてしまった。\n\n翌日、警察から連絡。暴行容疑で被害届が出された。\n\n組合活動どころか、刑事事件に発展してしまった。\n\n【バッドエンド：暴力沙汰で解雇・刑事事件化】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "union_dissolution": {
+    "text": "会社の圧力が想像以上に激しく、怖くなってしまった。\n\n後輩「もう無理です...家族もあるし、クビになったら困ります」\n同期「俺も...正直、怖い」\n\n「...分かった。組合、解散しよう」\n\n数日後、3人とも会社の「自主退職プログラム」に応募することに。\n\n会社の圧力に屈した。\n\n【バッドエンド：会社の圧力に屈して組合解散】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "union_split": {
+    "text": "「昇進のチャンスなら、受けてもいいよ」\n\n同期「え？本当に？」\n\n「うん、無理に組合に縛る必要はないし」\n\n数日後、同期は組合を脱退し、課長に昇進した。\n\n後輩「僕も...ボーナスの話、断れないです」\n\n組合は分裂し、力を失った。残ったのは俺一人だけ。\n\n【バッドエンド：組合分裂で孤立無援】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "union_internal_conflict": {
+    "text": "「裏切り者！お前ら組合の意義を分かってるのか！」\n\n同期「ちょっと待てよ！俺だって悩んでるんだ！」\n後輩「そんな言い方ないじゃないですか！」\n\n感情的な対立がエスカレートし、組合内で大きな亀裂が生じた。\n\nメンバー同士の信頼関係が崩壊し、組合活動は機能不全に。\n\n結局、内部対立で組合は崩壊した。\n\n【バッドエンド：内部対立で組合崩壊】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "weak_union_settlement": {
+    "text": "「250万円で合意します...」\n\n弁護士「え？もう少し粘れば全額取れますよ」\n\n「いえ、もうこれでいいです。疲れました」\n\n妥協した和解で、組合の威信は失墜。\n\n他の社員たちからも「結局その程度か」と失望される。\n\n組合は名ばかりの存在となり、会社の労働環境は何も変わらなかった。\n\n【バッドエンド：不利な和解で組合の威信失墜】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "evidence_backfire": {
+    "text": "「録音があります！聞いてください！」と交渉の冒頭で切り札を出してしまった。\n\n会社側弁護士「...なるほど。無断録音ですね」\n\n「え？」\n\n「労働組合法の正当な組合活動の範囲を超えた、違法な盗聴行為と見なすこともできます」\n\n逆に会社側に法的攻撃の材料を与えてしまった。\n\n証拠のタイミングを誤り、交渉は決裂した。\n\n【バッドエンド：証拠提示のタイミングミスで逆効果】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "premature_expansion": {
+    "text": "勢いに乗って、全社に一気に組合拡大を呼びかけた。\n\n「みんな！労働組合に入ろう！」\n\n管理職たちが一斉に反発。会社は組合潰しの専門コンサルタントを雇い、組織的な対抗策を開始。\n\n準備不足のまま拡大した組合は、会社の反撃に対応できず崩壊。\n\n拙速な拡大が命取りとなった。\n\n【バッドエンド：拙速な拡大で管理職の反撃】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "small_union_success": {
+    "text": "3人だけの小さな組合のままで満足することにした。\n\n「俺たちは残業代をもらえたし、これでいいか」\n\n他の部署の労働環境は何も変わらないまま。\n\n後輩が過労で倒れたという噂も聞こえてくるが、もう関わらないことにした。\n\n「結局、自分たちだけ助かればいいのか...」\n\n心のどこかで罪悪感を感じながら、毎日を過ごしている。\n\n【バッドエンド：小さな成功に満足して全社改革を放棄】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "incompetent_lawyer": {
+    "text": "安い弁護士に依頼した。\n\n弁護士「まあ、やってみますよ」\n\n交渉が始まったが、弁護士の知識が明らかに不足している。\n\n会社側弁護士「労働基準法第何条ですか？」\n弁護士「え、と...」\n\n会社にいいようにあしらわれ、結局10万円の和解金で終了。\n\n安物買いの銭失いだった。\n\n【バッドエンド：無能な弁護士で大損失】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "lawyer_refuses_case": {
+    "text": "弁護士に曖昧な説明だけをした。\n\n弁護士「...具体的な証拠はありますか？」\n\n「いえ、まだ集めてないんですが...」\n\n弁護士「申し訳ありませんが、証拠がない案件は受任できません」\n\n「え？」\n\n「勝訴の見込みが低いですし、費用倒れになる可能性が高いです」\n\n弁護士に断られてしまった。\n\n【バッドエンド：準備不足で弁護士に受任拒否される】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "lawyer_initial_consultation_bad": {
+    "text": "知人の紹介で適当に決めた弁護士に相談した。\n\n弁護士「ふむ、労働問題ですか。専門外なんですけどね」\n\n「え？でも紹介されて...」\n\n「まあ、やれるだけやってみますよ」\n\n専門外の弁護士では、会社側に太刀打ちできず、交渉は失敗。\n\n弁護士費用だけ取られて終わった。\n\n【バッドエンド：専門外の弁護士で失敗】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "client_lawyer_conflict": {
+    "text": "弁護士の戦略に納得できず、自分の意見を強く主張した。\n\n「私は絶対に全額請求したいんです！」\n\n弁護士「しかし、現実的には...」\n\n「弁護士なら勝たせてください！それが仕事でしょ！」\n\n弁護士「...申し訳ありませんが、この案件から降ります」\n\n弁護士との関係が破綻し、契約解除。\n\n新しい弁護士を探す羽目に。\n\n【バッドエンド：弁護士と対立して契約解除】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "intimidation_success": {
+    "text": "会社の脅迫に怖くなってしまった。\n\n人事部長「退職勧告だぞ？家族は大丈夫か？」\n\n「...分かりました。和解します」\n\n弁護士「ちょっと待ってください！」\n\n「もういいんです...」\n\n結局、50万円の低額和解で終了。\n\n会社の脅迫に屈してしまった。\n\n【バッドエンド：会社の脅迫に屈して低額和解】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "quick_low_settlement": {
+    "text": "「早く終わらせたいので、この金額で合意します」\n\n弁護士「え？もっと粘れば倍以上取れますよ」\n\n「いえ、もう疲れました...」\n\n結局、100万円の低額和解で終了。\n\n弁護士「もったいない...」\n\n本来なら400万円は取れたはずなのに、安易に妥協してしまった。\n\n【バッドエンド：安易な妥協で大幅に損をする】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "unfair_contract_terms": {
+    "text": "和解契約書をざっと読んで署名した。\n\n弁護士「ちょっと待って、まだ確認が...」\n\n「もう大丈夫です。早く終わらせたいので」\n\n数日後、和解金が振り込まれたが...\n\n弁護士「契約書に『今後一切の請求権を放棄する』という条項が...これ、追加の慰謝料請求ができませんよ」\n\n「え...」\n\n不利な条項を見落とし、後悔が残る和解となった。\n\n【バッドエンド：契約書の不利な条項を見落とす】",
     "background": "/images/bg/bad_end_office.jpg",
     "bgm": "/bgm/d6.mp3",
     "choices": []
