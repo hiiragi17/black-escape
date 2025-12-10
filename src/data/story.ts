@@ -637,16 +637,6 @@ export const storyData: StoryDataType = {
     ]
   },
 
-  "lawyer_with_labor_report": {
-    "text": "労基署申告に弁護士をつけることにした。\n\n弁護士「申告内容に基づいて、さらに詳しい証拠を集めましょう」\n\n弁護士と一緒に細かく記録を整理し、労働基準監督署に申告書を提出。\n\n弁護士「会社が是正勧告に応じない場合は、さらに強い措置を取ります」",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "是正勧告の結果を待つ", "next": "wait_lawyer_investigation" },
-      { "text": "同時に社内での証拠集めを続ける", "next": "gather_evidence_while_waiting" }
-    ]
-  },
-
   "gather_evidence_carefully": {
     "text": "慎重に証拠を集めることにした。\n\n・給与明細をコピー\n・勤務時間の記録をつける\n・パワハラ発言を録音\n・メールでの不当な指示を保存\n\n1ヶ月かけて、しっかりした証拠を集めた。\n\n「これなら申告しても大丈夫だろう」",
     "background": "/images/bg/office.jpg",
@@ -718,17 +708,6 @@ export const storyData: StoryDataType = {
     ]
   },
 
-  "lawyer_settlement": {
-    "text": "示談で和解することにした。\n\n弁護士「相応の補償で和解しましょう」\n\n交渉の結果、400万円の補償と、今後の労働条件の改善で合意。\n\n「これでいいか...」\n\n裁判より早く決着がついた。",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "和解金を受け取る", "next": "receive_settlement_money" },
-      { "text": "もう少し交渉を続ける", "next": "lawyer_demand_full_amount" },
-      { "text": "これで決着とする", "next": "receive_settlement_money" }
-    ]
-  },
-
   "lawyer_litigation_threat": {
     "text": "裁判を辞さない姿勢を見せて交渉することにした。\n\n弁護士「これは明らかな労基法違反です。裁判になれば、会社は敗訴します」\n\n会社側弁護士「...了解しました。協議させてください」\n\n数日後、会社からは500万円での和解提案があった。\n\n「やった...」",
     "background": "/images/bg/office.jpg",
@@ -736,26 +715,6 @@ export const storyData: StoryDataType = {
     "choices": [
       { "text": "和解を受け入れる", "next": "receive_settlement_money" },
       { "text": "さらに交渉を続ける", "next": "lawyer_demand_full_amount" }
-    ]
-  },
-
-  "wait_lawyer_investigation": {
-    "text": "労働基準監督署の調査を待つことにした。\n\n弁護士「調査は1ヶ月ほどかかるでしょう」\n\n1ヶ月後、会社に是正勧告が出た。\n\n弁護士「さあ、これで交渉が有利になりました」\n\n是正勧告に従わない会社に対しては、さらに強い措置が取られる可能性もある。",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "是正勧告に基づいて改善を要求", "next": "continue_improved_company" },
-      { "text": "さらに追加の慰謝料を請求", "next": "lawyer_additional_claim" }
-    ]
-  },
-
-  "gather_evidence_while_waiting": {
-    "text": "申告後も証拠集めを続けることにした。\n\n弁護士「いい判断ですね。さらに詳しい証拠があれば、調査がより強固になります」\n\nメールの記録、同僚との会話、パワハラの具体例...\n\n追加の証拠を2週間かけて集めた。",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "追加証拠を申告書に添付", "next": "submit_additional_evidence" },
-      { "text": "調査結果を待つ", "next": "wait_lawyer_investigation" }
     ]
   },
 
@@ -880,17 +839,6 @@ export const storyData: StoryDataType = {
     "choices": [
       { "text": "和解金を受け取る", "next": "receive_settlement_money" },
       { "text": "さらなる請求を検討する", "next": "lawyer_demand_full_amount" }
-    ]
-  },
-
-  "submit_additional_evidence": {
-    "text": "追加証拠を申告書に添付して提出した。\n\n署員「ここまで詳しい証拠があれば、調査が大きく前に進みます」\n\n会社への調査が本格化。1ヶ月後、強い是正勧告が出た。\n\n「やった...」",
-    "background": "/images/bg/labor_office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "是正勧告への対応を見守る", "next": "continue_improved_company" },
-      { "text": "弁護士を雇って和解交渉", "next": "consult_lawyer_first" },
-      { "text": "労働組合を結成して交渉", "next": "form_union_three" }
     ]
   },
 
