@@ -154,9 +154,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "新しい会社でキャリアを積む", "next": "new_company_start" },
+      { "text": "新しい会社でキャリアを積む", "next": "parting_and_cry_then_jobhunt" },
       { "text": "引き止めにあって悩む", "next": "clean_resignation" },
-      { "text": "部長に辞意を伝える", "next": "new_company_start" }
+      { "text": "部長に辞意を伝える", "next": "parting_and_cry_then_jobhunt" }
     ]
   },
 
@@ -176,9 +176,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "新しい会社でスタートする", "next": "new_company_start" },
+      { "text": "新しい会社でスタートする", "next": "parting_and_cry_then_jobhunt" },
       { "text": "退職交渉が難航する", "next": "clean_resignation" },
-      { "text": "最後の挨拶を済ませる", "next": "new_company_start" }
+      { "text": "最後の挨拶を済ませる", "next": "parting_and_cry_then_jobhunt" }
     ]
   },
 
@@ -187,7 +187,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "新しい会社でスタートする", "next": "new_company_start" }
+      { "text": "新しい会社でスタートする", "next": "parting_and_cry_then_jobhunt" }
     ]
   },
 
@@ -348,7 +348,7 @@ export const storyData: StoryDataType = {
   },
 
   "parting_and_cry_then_jobhunt": {
-    "text": "「お互い頑張ろうな」\n\n後輩が角を曲がって見えなくなった。\n\nその瞬間俺は泣き崩れた。\n\n限界だった。この会社にいては、自分も後輩も潰れてしまう。\n\n何日か経った後、決断した。もう、この会社には居られない。\n\n転職活動を本格的に始めることにした。書類作成、面接の準備、企業研究……。後輩のためにも、自分のためにも、やり抜くしかない。\n\n【グッドエンド：転職決意】",
+    "text": "「お互い頑張ろうな」\n\n後輩が角を曲がって見えなくなった。\n\nその瞬間俺は泣き崩れた。\n\n限界だった。この会社にいては、自分も後輩も潰れてしまう。\n\n何日か経った後、決断した。もう、この会社には居られない。\n\n転職活動を本格的に始めた。書類作成、面接の準備、企業研究……。後輩のためにも、自分のためにも、やり抜くしかない。\n\n数ヶ月後、面接の結果が返ってきた。\n\n「当社で働いていただきたいのですが......」\n\nついに、新しい職場への内定を手にした。今度こそ、働きやすい環境で、人間らしく働けるはずだ。\n\n退職届を出すときの部長の顔は、自分の記憶から消してしまった。\n\n新しい会社での初出勤。朝日が眩しく感じた。\n\n「やっと......自由になれた」\n\n深く息を吸った。新しい人生の始まりだ。\n\n【グッドエンド：転職成功で新たな人生へ】",
     "background": "/images/bg/beach.jpg",
     "bgm": "/bgm/n99.mp3",
     "choices": []
@@ -560,7 +560,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "和解金を受け取る", "next": "receive_settlement_money" },
-      { "text": "その後のキャリアについて考える", "next": "new_company_start" }
+      { "text": "その後のキャリアについて考える", "next": "parting_and_cry_then_jobhunt" }
     ]
   },
 
@@ -698,7 +698,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "和解金を受け取る", "next": "receive_settlement_money" },
-      { "text": "和解金で新しいキャリアを", "next": "new_company_start" },
+      { "text": "和解金で新しいキャリアを", "next": "parting_and_cry_then_jobhunt" },
       { "text": "改善された会社に残る", "next": "continue_improved_company" }
     ]
   },
@@ -727,7 +727,7 @@ export const storyData: StoryDataType = {
     "choices": [
       { "text": "和解金を受け取る", "next": "receive_settlement_money" },
       { "text": "さらなる請求を検討する", "next": "lawyer_demand_full_amount" },
-      { "text": "和解して新しい人生へ", "next": "new_company_start" }
+      { "text": "和解して新しい人生へ", "next": "parting_and_cry_then_jobhunt" }
     ]
   },
 
@@ -800,7 +800,7 @@ export const storyData: StoryDataType = {
     "choices": [
       { "text": "改善された会社で新しいキャリアを築く", "next": "company_wide_union" },
       { "text": "労働組合活動に専念する", "next": "company_wide_union" },
-      { "text": "この経験を活かして転職", "next": "new_company_start" }
+      { "text": "この経験を活かして転職", "next": "parting_and_cry_then_jobhunt" }
     ]
   },
 
@@ -894,13 +894,6 @@ export const storyData: StoryDataType = {
     "text": "「あ〜そうなのか。お前もそんな若くないんだなw」\n\nその一言で、堪忍袋の緒が切れた。\n\n衝動に駆られて、部長の顔面に拳を叩きつける。\n\n部長「ぐあ！」\n\nそれは一瞬の満足感だったが、すぐに現実が打ちつけた。\n\n翌日、警察から連絡があった。暴行罪で訴えると。\n\n弁護士費用、示談金、そして職場での立場......全てが失われた。\n\n【バッドエンド：衝動的暴行で人生破綻】",
     "background": "/images/bg/bad_end_office.jpg",
     "bgm": "/bgm/d6.mp3",
-    "choices": []
-  },
-
-  "new_company_start": {
-    "text": "面接は成功した。\n\n「当社で働いていただきたいのですが......」\n\nついに、新しい職場への内定を手にした。\n\n今度こそ、働きやすい環境で、人間らしく働けるはずだ。\n\n退職届を出すときの部長の顔は、自分の記憶から消してしまった。\n\n新しい会社での初出勤。朝日が眩しく感じた。\n\n「やっと......」\n\n深く息を吸った。新しい人生の始まりだ。\n\n【グッドエンド：新会社で新たな人生へ】",
-    "background": "/images/bg/beach.jpg",
-    "bgm": "/bgm/n99.mp3",
     "choices": []
   },
 
