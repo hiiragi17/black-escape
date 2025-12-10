@@ -369,6 +369,21 @@ export const endingConfig: Record<string, EndingConfig> = {
     }
   },
 
+  'moderate_improvement_ending': {
+    title: '中途半端な改善で妥協... - ブラック企業からの脱出',
+    description: 'ある程度の改善で満足してしまいました...😐 半年後また新しい問題が💔 根本的な改革をしなかったため会社の体質は変わらず😢',
+    shareText: 'ある程度の改善で満足してしまいました...😐\n半年後また新しい問題が💔\n根本的な改革をしなかったため会社の体質は変わらず😢\n\n#中途半端 #妥協',
+    emoji: '😐',
+    shareMessage: {
+      icon: '😐',
+      title: '誰かが中途半端な改善で妥協しました...',
+      subtitle: '徹底的に戦う重要性を感じたようです💦',
+      color: 'text-orange-300',
+      bgColor: 'from-orange-900/20 to-yellow-900/20',
+      borderColor: 'border-orange-500'
+    }
+  },
+
   // 弁護士関連のバッドエンド
   'incompetent_lawyer': {
     title: '無能な弁護士で大損失... - ブラック企業からの脱出',
@@ -511,6 +526,7 @@ export const allEndings = {
     'union_info_leak', 'union_legal_mistake', 'union_crushed_early', 'informal_group_failure',
     'violent_confrontation', 'union_dissolution', 'union_split', 'union_internal_conflict',
     'weak_union_settlement', 'evidence_backfire', 'premature_expansion', 'small_union_success',
+    'moderate_improvement_ending',
     'incompetent_lawyer', 'lawyer_refuses_case', 'lawyer_initial_consultation_bad',
     'client_lawyer_conflict', 'intimidation_success', 'quick_low_settlement', 'unfair_contract_terms'
   ]

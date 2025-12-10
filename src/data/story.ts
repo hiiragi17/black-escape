@@ -44,19 +44,17 @@ export const storyData: StoryDataType = {
     "choices": [
       { "text": "今日こそ定時で帰る", "next": "leave_on_time" },
       { "text": "残業パンを食べながら耐える", "next": "eat_overtime_bread" },
-      { "text": "同期に愚痴る", "next": "complain_to_colleague" },
-      { "text": "しばらくして部長に呼ばれる", "next": "talk_to_boss_first_encounter" }
+      { "text": "同期に愚痴る", "next": "complain_to_colleague" }
     ]
   },
 
   "sarcastic_reply": {
-    "text": "「部長こそお疲れ様です」と皮肉を込めて言う。部長の顔が一瞬固まった。「なんだそれは？」空気が凍りつく。やばい、言い過ぎた。",
+    "text": "思わず口から出てしまった。\n\n「部長こそお疲れ様です」\n\n皮肉を込めて言ったつもりだったが、部長の顔が一瞬固まった。\n\n「...なんだそれは？」\n\n低い声で聞き返される。周囲の空気が凍りつく。同僚たちの視線が一斉にこちらを向く。\n\nやばい、言い過ぎた。完全に地雷を踏んでしまった。部長の機嫌を損ねたら、後が怖い。\n\n心臓がバクバクと音を立てている。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "そのまま逃げる", "next": "run_away_quickly" },
       { "text": "「冗談です」と取り繕う", "next": "awkward_smile" },
-      { "text": "「何でもありません」と下を向く", "next": "awkward_smile" },
       { "text": "部長の元へ呼ばれる", "next": "talk_to_boss_ignore" }
     ]
   },
@@ -84,12 +82,11 @@ export const storyData: StoryDataType = {
   },
 
   "eat_overtime_bread": {
-    "text": "コンビニで買った残業パンを食べながら仕事を続ける。窓の外はもう真っ暗だ。時計を見ると22時を回っている。「今日も遅くなるな...」",
+    "text": "コンビニで買った残業パンを食べながら、黙々と仕事を続ける。\n\n窓の外はもう真っ暗だ。オフィスの蛍光灯だけが白々しく光っている。\n\n時計を見ると22時を回っている。定時から既に5時間も経過している。\n\n「今日も遅くなるな...」\n\n周りを見渡すと、まだ働いている同僚が数人いる。みんな疲れ切った顔をしている。\n\nこれが普通なのか？いや、絶対におかしい。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "タクシーで帰る（自腹）", "next": "taxi_home" },
-      { "text": "終電で帰る", "next": "taxi_home" },
       { "text": "同期に愚痴をこぼす", "next": "complain_to_colleague" },
       { "text": "部長に呼ばれる", "next": "talk_to_boss_comment_break" }
     ]
@@ -128,19 +125,8 @@ export const storyData: StoryDataType = {
     ]
   },
 
-  "talk_to_boss_first_encounter": {
-    "text": "渋々部長の元へ行く。どうせいつもの無茶振りだ。自分はいつも遅れてくるくせに、社員の遅刻は許さなくて。それでいて出社したと思ったらすぐ煙草休憩だ。この人は仕事をしていないのに、部長職でいばり散らかしている。こんなんだからこの会社は良くならないんだよ。",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "資料作成の仕事を受ける", "next": "receive_document_task" },
-      { "text": "暑気払いの準備を手伝う", "next": "procrastinate" },
-      { "text": "書類提出について話を聞く", "next": "procrastinate" }
-    ]
-  },
-
   "talk_to_boss_comment_break": {
-    "text": "渋々部長の元へ行く。どうせいつもの無茶振りだ。",
+    "text": "渋々部長の元へ行く。どうせいつもの無茶振りだ。\n\n部長の席に近づくと、煙草の臭いが漂ってくる。また煙草休憩から戻ってきたばかりなのか。\n\n「おお、来たか。ちょうどいいところだ」\n\n部長の「ちょうどいい」は、こちらにとって「最悪のタイミング」を意味する。\n\n溜息を飲み込んで、部長の指示を待つ。どうせろくな話じゃない。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
@@ -151,7 +137,7 @@ export const storyData: StoryDataType = {
   },
 
   "talk_to_boss_ignore": {
-    "text": "渋々部長の元へ行く。どうせいつもの無茶振りだ。",
+    "text": "渋々部長の元へ行く。どうせいつもの無茶振りだ。\n\n自分はいつも遅刻してくるくせに、社員の遅刻は許さない。それでいて出社したと思ったらすぐ煙草休憩。\n\n「お、ちょうどよかった」\n\n部長がニヤリと笑う。この笑顔を見るたびに嫌な予感しかしない。\n\n案の定、部長の手元には大量の書類が積まれている。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
@@ -206,7 +192,7 @@ export const storyData: StoryDataType = {
   },
 
   "ask_colleague_for_help": {
-    "text": "同期に相談する。「一緒にやるか」「そうしよう」と、同期も手伝ってくれることになった。",
+    "text": "同期に相談することにした。\n\n「ちょっと、手伝ってくれないか？この量は一人じゃ無理だ」\n\n同期は自分の仕事の手を止めて、こちらの資料を見た。\n\n「...またかよ、部長の無茶振り。わかった、一緒にやろう」\n\n同期も疲れているはずなのに、快く引き受けてくれた。\n\n「ありがとう。本当に助かる」\n\n一人じゃないと思うだけで、少し気が楽になった。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
@@ -752,13 +738,13 @@ export const storyData: StoryDataType = {
   },
 
   "multi_person_report": {
-    "text": "複数人での申告で力を強めることにした。\n\n同期の他に、後輩も申告に参加することにした。\n\n3人での申告により、労働基準監督署も全社調査に乗り出した。\n\n「複数人だと説得力が違う」",
+    "text": "複数人での申告で力を強めることにした。\n\n同期の他に、後輩も申告に参加することにした。\n\n3人での申告により、労働基準監督署も全社調査に乗り出した。\n\n「複数人だと説得力が違う」\n\nさらに行動を起こすべきか？",
     "background": "/images/bg/labor_office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "全社調査の結果を待つ", "next": "company_wide_union" },
-      { "text": "この機会に労働組合を結成", "next": "form_union_three" },
-      { "text": "弁護士を立てて団体交渉", "next": "lawyer_group_negotiation" }
+      { "text": "この機会に労働組合を正式に結成", "next": "form_union_three" },
+      { "text": "弁護士を立てて団体交渉", "next": "lawyer_group_negotiation" },
+      { "text": "調査結果だけで満足する", "next": "moderate_improvement_ending" }
     ]
   },
 
@@ -784,12 +770,12 @@ export const storyData: StoryDataType = {
   },
 
   "lawyer_gradual_success": {
-    "text": "段階的改善を受け入れることにした。\n\n第1段階：残業代の適正支払い開始\n第2段階（3ヶ月後）：パワハラ対策の強化\n第3段階（6ヶ月後）：有給取得率80%以上を実現\n\n実際に改善が進み始めた。段階的ですが、確実な前進だ。",
+    "text": "段階的改善を受け入れることにした。\n\n第1段階：残業代の適正支払い開始\n第2段階（3ヶ月後）：パワハラ対策の強化\n第3段階（6ヶ月後）：有給取得率80%以上を実現\n\n実際に改善が進み始めた。段階的ですが、確実な前進だ。\n\nこの勢いでさらなる改革を進めるべきか？",
     "background": "/images/bg/new_office.jpg",
     "bgm": "/bgm/n99.mp3",
     "choices": [
-      { "text": "会社の改善を見守る", "next": "continue_improved_company" },
-      { "text": "労働組合を全社に拡大する", "next": "company_wide_union" },
+      { "text": "労働組合を結成して全社改革を目指す", "next": "union_member_recruitment" },
+      { "text": "この改善で満足する", "next": "moderate_improvement_ending" },
       { "text": "改善の進捗を監視し続ける", "next": "monitor_company_improvement" }
     ]
   },
@@ -872,24 +858,24 @@ export const storyData: StoryDataType = {
   },
 
   "wait_investigation_results": {
-    "text": "労働基準監督署の調査が進んだ。\n\n2週間後、是正勧告が会社に届いた。\n\n「残業代の支払い、パワハラの改善、有給取得の推進」\n\n会社側も改善にようやく動き始めた。\n\n「組合の力、本当にすごいな」",
+    "text": "労働基準監督署の調査が進んだ。\n\n2週間後、是正勧告が会社に届いた。\n\n「残業代の支払い、パワハラの改善、有給取得の推進」\n\n会社側も改善にようやく動き始めた。\n\nただし、これだけでは不十分かもしれない。さらに行動するべきか？",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "さらに改善を監視する", "next": "monitor_company_improvement" },
-      { "text": "労働組合を全社に拡大", "next": "company_wide_union" },
-      { "text": "改善された会社で働き続ける", "next": "continue_improved_company" }
+      { "text": "労働組合を結成して本格的に改革する", "next": "union_member_recruitment" },
+      { "text": "弁護士に依頼して個人で戦う", "next": "consult_lawyer_first" },
+      { "text": "この程度の改善で満足する", "next": "moderate_improvement_ending" }
     ]
   },
 
   "monitor_company_improvement": {
-    "text": "会社の改善状況を監視することにした。\n\n・残業代の支払い: 完全に支払われるように改善\n・パワハラの相談窓口: 設置完了\n・有給取得率: 80%以上に改善\n\nようやく普通の労働環境になり始めた。\n\n「長い戦いだったけど、やっと勝った」",
+    "text": "会社の改善状況を監視することにした。\n\n・残業代の支払い: 完全に支払われるように改善\n・パワハラの相談窓口: 設置完了\n・有給取得率: 80%以上に改善\n\nようやく普通の労働環境になり始めた。\n\nしかし、これで本当に十分だろうか？",
     "background": "/images/bg/new_office.jpg",
     "bgm": "/bgm/n99.mp3",
     "choices": [
-      { "text": "改善された会社で働き続ける", "next": "company_wide_union" },
-      { "text": "組合活動を全社に拡大", "next": "company_wide_union" },
-      { "text": "新しい環境を求めて転職", "next": "job_search_burnout" }
+      { "text": "さらに組合を全社に拡大して根本改革", "next": "union_member_recruitment" },
+      { "text": "この改善で満足して働き続ける", "next": "moderate_improvement_ending" },
+      { "text": "改善された経験を活かして転職", "next": "job_search_burnout" }
     ]
   },
 
@@ -898,8 +884,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/new_office.jpg",
     "bgm": "/bgm/n99.mp3",
     "choices": [
-      { "text": "改善された会社で新しいキャリアを築く", "next": "company_wide_union" },
-      { "text": "労働組合活動に専念する", "next": "company_wide_union" }
+      { "text": "この改善に満足する", "next": "moderate_improvement_ending" }
     ]
   },
 
@@ -1061,6 +1046,13 @@ export const storyData: StoryDataType = {
 
   "small_union_success": {
     "text": "3人だけの小さな組合のままで満足することにした。\n\n「俺たちは残業代をもらえたし、これでいいか」\n\n他の部署の労働環境は何も変わらないまま。\n\n後輩が過労で倒れたという噂も聞こえてくるが、もう関わらないことにした。\n\n「結局、自分たちだけ助かればいいのか...」\n\n心のどこかで罪悪感を感じながら、毎日を過ごしている。\n\n【バッドエンド：小さな成功に満足して全社改革を放棄】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "moderate_improvement_ending": {
+    "text": "ある程度の改善が見られたので、これで満足することにした。\n\n・残業代は一部支払われるようになった（ただし法定基準には届かず）\n・パワハラは多少マシになった（完全には無くならず）\n・有給は年に数回取れるようになった（取りづらい空気は残る）\n\n半年後、また新しい問題が出てきた。\n根本的な改革をしなかったため、会社の体質は変わらないまま。\n\n「もっと徹底的に戦えば良かったのかな...」\n\n中途半端な改善で妥協してしまった自分に、後悔が残る。\n\n【バッドエンド：中途半端な改善で妥協】",
     "background": "/images/bg/bad_end_office.jpg",
     "bgm": "/bgm/d6.mp3",
     "choices": []
