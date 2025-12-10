@@ -183,13 +183,11 @@ export const storyData: StoryDataType = {
   },
 
   "clean_resignation": {
-    "text": "きっぱりと退職届を提出した。部長は何か言いたそうだったが、もう関係ない。「お世話になりました」そう言って会社を後にした。",
+    "text": "きっぱりと退職届を提出した。部長は何か言いたそうだったが、もう関係ない。「お世話になりました」そう言って会社を後にした。\n\n引き継ぎを済ませ、有給消化期間を過ごした後、いよいよ新しい人生が始まる。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "新しい会社でスタートする", "next": "new_company_start" },
-      { "text": "引き継ぎに専念する", "next": "new_company_start" },
-      { "text": "有給消化期間を楽しむ", "next": "new_company_start" }
+      { "text": "新しい会社でスタートする", "next": "new_company_start" }
     ]
   },
 
@@ -220,9 +218,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "今日中にこの資料をまとめろ", "next": "receive_document_task" },
-      { "text": "夏の忘年会の準備、手伝ってやれ", "next": "procrastinate" },
-      { "text": "お前まだ書類提出してないぞ", "next": "procrastinate" }
+      { "text": "資料作成の仕事を受ける", "next": "receive_document_task" },
+      { "text": "暑気払いの準備を手伝う", "next": "procrastinate" },
+      { "text": "書類提出について話を聞く", "next": "procrastinate" }
     ]
   },
 
@@ -231,9 +229,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "今日中にこの資料をまとめろ", "next": "receive_document_task" },
-      { "text": "夏の忘年会の準備を手伝え", "next": "receive_document_task" },
-      { "text": "お前まだ書類提出してない", "next": "receive_document_task" }
+      { "text": "資料作成の仕事を受ける", "next": "receive_document_task" },
+      { "text": "暑気払いの準備を手伝う", "next": "receive_document_task" },
+      { "text": "書類提出について話を聞く", "next": "receive_document_task" }
     ]
   },
 
@@ -242,9 +240,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "今日中にこの資料をまとめろ", "next": "receive_document_task" },
-      { "text": "急ぎのプレゼン資料作れ", "next": "receive_document_task" },
-      { "text": "週末出社して仕事しろ", "next": "receive_document_task" }
+      { "text": "資料作成の仕事を受ける", "next": "receive_document_task" },
+      { "text": "プレゼン資料の作成を受ける", "next": "receive_document_task" },
+      { "text": "週末出社の指示を受ける", "next": "receive_document_task" }
     ]
   },
 
