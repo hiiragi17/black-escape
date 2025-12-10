@@ -78,7 +78,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "労働基準監督署に相談する", "next": "labor_inspection" },
-      { "text": "そのまま転職活動を始める", "next": "serious_job_hunting" },
+      { "text": "そのまま転職活動を始める", "next": "job_search_burnout" },
       { "text": "今日の解放感を噛み締める", "next": "eat_overtime_bread" }
     ]
   },
@@ -100,94 +100,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "転職活動を本格化する", "next": "serious_job_hunting" },
+      { "text": "転職活動を本格化する", "next": "job_search_burnout" },
       { "text": "労働組合について調べる", "next": "research_union" },
       { "text": "このまま我慢し続ける", "next": "procrastinate" }
-    ]
-  },
-
-  "serious_job_hunting": {
-    "text": "本格的に転職活動を始めることにした。転職サイトに登録し、履歴書を書き、面接の準備をする。「今度こそ、まともな会社に...」",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "内定をもらう", "next": "get_job_offer" },
-      { "text": "面接が上手くいかない（運が悪い）", "next": "interview_failure" },
-      { "text": "転職活動に疲れ始めている", "next": "job_search_burnout" }
-    ]
-  },
-
-  "get_job_offer": {
-    "text": "いくつかの企業から内定をもらうことができた。「やった！これで脱出できる！」どの企業を選ぶか悩む。",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "最初の内定企業に決める（安定重視）", "next": "choose_first_offer" },
-      { "text": "年収が最も高い企業を選ぶ（収入重視）", "next": "choose_highest_salary" },
-      { "text": "ワークライフバランスが最高の企業を選ぶ（生活重視）", "next": "choose_best_worklife" }
-    ]
-  },
-
-  "choose_first_offer": {
-    "text": "最初に内定をくれた企業に決めた。「ここなら安定してそうだ」退職届を出す準備を始める。",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "きっぱりと退職する", "next": "clean_resignation" },
-      { "text": "内定企業の突然の連絡を待つ", "next": "offer_retracted" }
-    ]
-  },
-
-  "choose_highest_salary": {
-    "text": "年収が最も高い企業を選んだ。「これで生活が楽になる」退職届を出す準備を始める。",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "新しい会社でキャリアを積む", "next": "high_salary_resignation" },
-      { "text": "他の企業と比較し直す", "next": "choose_first_offer" },
-      { "text": "労働条件を再確認する", "next": "high_salary_resignation" }
-    ]
-  },
-
-  "high_salary_resignation": {
-    "text": "高年収の企業への転職が決まった。退職届を提出し、新しい職場へ。「やっと人間らしい生活ができる」",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "新しい会社でキャリアを積む", "next": "parting_and_cry_then_jobhunt" },
-      { "text": "引き止めにあって悩む", "next": "clean_resignation" },
-      { "text": "部長に辞意を伝える", "next": "parting_and_cry_then_jobhunt" }
-    ]
-  },
-
-  "choose_best_worklife": {
-    "text": "ワークライフバランスが最高の企業を選んだ。「定時退社、有給取得率90%...夢のようだ」退職届を出す準備を始める。",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "新しい環境でリスタートする", "next": "worklife_balance_resignation" },
-      { "text": "年収面で不安になる", "next": "choose_highest_salary" },
-      { "text": "すぐに退職届を出す", "next": "worklife_balance_resignation" }
-    ]
-  },
-
-  "worklife_balance_resignation": {
-    "text": "ワークライフバランスを重視した企業への転職が決まった。退職届を提出し、新しい職場へ。「これで人生が変わる」",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "新しい会社でスタートする", "next": "parting_and_cry_then_jobhunt" },
-      { "text": "退職交渉が難航する", "next": "clean_resignation" },
-      { "text": "最後の挨拶を済ませる", "next": "parting_and_cry_then_jobhunt" }
-    ]
-  },
-
-  "clean_resignation": {
-    "text": "きっぱりと退職届を提出した。部長は何か言いたそうだったが、もう関係ない。「お世話になりました」そう言って会社を後にした。\n\n引き継ぎを済ませ、有給消化期間を過ごした後、いよいよ新しい人生が始まる。",
-    "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n43.mp3",
-    "choices": [
-      { "text": "新しい会社でスタートする", "next": "parting_and_cry_then_jobhunt" }
     ]
   },
 
@@ -198,7 +113,7 @@ export const storyData: StoryDataType = {
     "choices": [
       { "text": "一緒に転職活動をする", "next": "joint_job_hunting" },
       { "text": "労働組合について調べる", "next": "research_union" },
-      { "text": "まずは自分だけで行動する", "next": "serious_job_hunting" }
+      { "text": "まずは自分だけで行動する", "next": "job_search_burnout" }
     ]
   },
 
@@ -207,8 +122,8 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "本格的に転職活動を開始する", "next": "serious_job_hunting" },
-      { "text": "転職エージェントに相談する", "next": "serious_job_hunting" },
+      { "text": "本格的に転職活動を開始する", "next": "job_search_burnout" },
+      { "text": "転職エージェントに相談する", "next": "job_search_burnout" },
       { "text": "まず労働環境改善を試みる", "next": "research_union" }
     ]
   },
@@ -360,7 +275,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "3人で組合を結成する", "next": "form_union_three" },
-      { "text": "やっぱり転職の方が安全かも", "next": "serious_job_hunting" },
+      { "text": "やっぱり転職の方が安全かも", "next": "job_search_burnout" },
       { "text": "労基署に相談してみる", "next": "labor_inspection" }
     ]
   },
@@ -559,8 +474,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "和解金を受け取る", "next": "receive_settlement_money" },
-      { "text": "その後のキャリアについて考える", "next": "parting_and_cry_then_jobhunt" }
+      { "text": "和解金を受け取る", "next": "receive_settlement_money" }
     ]
   },
 
@@ -612,7 +526,7 @@ export const storyData: StoryDataType = {
     "choices": [
       { "text": "会社の改善状況を見守る", "next": "continue_improved_company" },
       { "text": "弁護士を雇って追加請求する", "next": "lawyer_additional_claim" },
-      { "text": "この機会に転職活動を始める", "next": "serious_job_hunting" }
+      { "text": "この機会に転職活動を始める", "next": "job_search_burnout" }
     ]
   },
 
@@ -655,7 +569,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "和解金を受け取る", "next": "receive_settlement_money" },
-      { "text": "和解金で転職活動を始める", "next": "serious_job_hunting" },
+      { "text": "和解金で転職活動を始める", "next": "job_search_burnout" },
       { "text": "改善された会社で働き続ける", "next": "continue_improved_company" }
     ]
   },
@@ -688,7 +602,7 @@ export const storyData: StoryDataType = {
     "choices": [
       { "text": "改善の進捗を確認する", "next": "lawyer_gradual_success" },
       { "text": "毎月の監視体制を整える", "next": "monitor_company_improvement" },
-      { "text": "期限を待つ間に転職も検討", "next": "serious_job_hunting" }
+      { "text": "期限を待つ間に転職も検討", "next": "job_search_burnout" }
     ]
   },
 
@@ -698,7 +612,6 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "和解金を受け取る", "next": "receive_settlement_money" },
-      { "text": "和解金で新しいキャリアを", "next": "parting_and_cry_then_jobhunt" },
       { "text": "改善された会社に残る", "next": "continue_improved_company" }
     ]
   },
@@ -726,8 +639,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "和解金を受け取る", "next": "receive_settlement_money" },
-      { "text": "さらなる請求を検討する", "next": "lawyer_demand_full_amount" },
-      { "text": "和解して新しい人生へ", "next": "parting_and_cry_then_jobhunt" }
+      { "text": "さらなる請求を検討する", "next": "lawyer_demand_full_amount" }
     ]
   },
 
@@ -766,7 +678,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n99.mp3",
     "choices": [
       { "text": "和解金で新しい人生をスタート", "next": "receive_settlement_money" },
-      { "text": "転職活動を本格的に始める", "next": "serious_job_hunting" },
+      { "text": "転職活動を本格的に始める", "next": "job_search_burnout" },
       { "text": "改善された会社に残る", "next": "continue_improved_company" }
     ]
   },
@@ -789,7 +701,7 @@ export const storyData: StoryDataType = {
     "choices": [
       { "text": "改善された会社で働き続ける", "next": "company_wide_union" },
       { "text": "組合活動を全社に拡大", "next": "company_wide_union" },
-      { "text": "新しい環境を求めて転職", "next": "serious_job_hunting" }
+      { "text": "新しい環境を求めて転職", "next": "job_search_burnout" }
     ]
   },
 
@@ -799,8 +711,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n99.mp3",
     "choices": [
       { "text": "改善された会社で新しいキャリアを築く", "next": "company_wide_union" },
-      { "text": "労働組合活動に専念する", "next": "company_wide_union" },
-      { "text": "この経験を活かして転職", "next": "parting_and_cry_then_jobhunt" }
+      { "text": "労働組合活動に専念する", "next": "company_wide_union" }
     ]
   },
 
@@ -810,7 +721,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "毎日残業を続ける", "next": "accept_overtime_daily" },
-      { "text": "今からでも転職活動を始める", "next": "serious_job_hunting" },
+      { "text": "今からでも転職活動を始める", "next": "job_search_burnout" },
       { "text": "労働組合を作ろうと決意", "next": "research_union" }
     ]
   },
@@ -821,7 +732,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "限界を感じる", "next": "health_breakdown" },
-      { "text": "今すぐ転職活動を始める", "next": "serious_job_hunting" },
+      { "text": "今すぐ転職活動を始める", "next": "job_search_burnout" },
       { "text": "労働基準監督署に相談", "next": "labor_inspection" }
     ]
   },
@@ -839,7 +750,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "労働組合について調べる", "next": "research_union" },
-      { "text": "転職した方が早いかも", "next": "serious_job_hunting" },
+      { "text": "転職した方が早いかも", "next": "job_search_burnout" },
       { "text": "まず労基署に相談", "next": "labor_inspection" }
     ]
   },
@@ -851,7 +762,7 @@ export const storyData: StoryDataType = {
     "choices": [
       { "text": "精神的に追い詰められる", "next": "mental_breakdown" },
       { "text": "不当処分として弁護士に相談", "next": "consult_lawyer_first" },
-      { "text": "この機に転職を決意", "next": "serious_job_hunting" }
+      { "text": "この機に転職を決意", "next": "job_search_burnout" }
     ]
   },
 
