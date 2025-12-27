@@ -128,12 +128,15 @@ export default function Home() {
           >
             ⚙️ 設定
           </Link>
-          <Link
-            href="/story-visualizer"
-            className="block mx-auto w-64 py-3 px-8 bg-gradient-to-r from-purple-800/70 to-indigo-800/70 hover:from-purple-700/80 hover:to-indigo-700/80 text-white text-lg font-semibold rounded-lg shadow-xl transform hover:scale-105 transition-all duration-300 border border-purple-500/50 hover:border-purple-400/70 backdrop-blur-sm"
-          >
-            🌳 ストーリーマップ
-          </Link>
+          {/* 開発環境のみ表示 */}
+          {process.env.NODE_ENV === 'development' && (
+            <Link
+              href="/story-visualizer"
+              className="block mx-auto w-64 py-3 px-8 bg-gradient-to-r from-purple-800/70 to-indigo-800/70 hover:from-purple-700/80 hover:to-indigo-700/80 text-white text-lg font-semibold rounded-lg shadow-xl transform hover:scale-105 transition-all duration-300 border border-purple-500/50 hover:border-purple-400/70 backdrop-blur-sm"
+            >
+              🌳 ストーリーマップ (開発用)
+            </Link>
+          )}
           {/* 音楽の注意書き */}
           <div className="mt-6 bg-amber-900/20 border border-amber-500/30 rounded-lg p-3 backdrop-blur-sm">
             <div className="flex items-center justify-center space-x-2 text-amber-200">

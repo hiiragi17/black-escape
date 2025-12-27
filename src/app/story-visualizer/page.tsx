@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import ReactFlow, {
   Background,
   Controls,
@@ -29,9 +30,17 @@ const nodeTypes = {
 };
 
 export default function StoryVisualizerPage() {
+  const router = useRouter();
   const [selectedNode, setSelectedNode] = useState<Node | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [filterType, setFilterType] = useState<'all' | 'goodEnding' | 'badEnding'>('all');
+
+  // 本番環境ではアクセス不可
+  useEffect(() => {
+    if (process.env.NODE_ENV !== 'development') {
+      router.push('/');
+    }
+  }, [router]);
 
   // ストーリーデータを解析
   const storyNodes = useMemo(() => analyzeStoryData(), []);
