@@ -13,9 +13,11 @@
     "story:chart": "tsx scripts/generate-story-chart.ts"
   },
   "dependencies": {
+    "dagre": "^0.8.5",
     "next": "^15.5.9",
     "react": "^19.1.4",
-    "react-dom": "^19.1.4"
+    "react-dom": "^19.1.4",
+    "reactflow": "^11.11.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
