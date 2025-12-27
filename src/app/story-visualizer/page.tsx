@@ -10,7 +10,6 @@ import ReactFlow, {
   useEdgesState,
   Panel,
   Node,
-  Edge,
 } from 'reactflow';
 import 'reactflow/dist/style.css';
 import StoryNode from '@/components/StoryNode';
@@ -56,8 +55,8 @@ export default function StoryVisualizerPage() {
     return getLayoutedElements(elements.nodes, elements.edges);
   }, [storyNodes]);
 
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  const [nodes, , onNodesChange] = useNodesState(initialNodes);
+  const [edges, , onEdgesChange] = useEdgesState(initialEdges);
 
   // エンディングへのルートを表示
   const handleShowPath = useCallback((endingId: string) => {
@@ -391,7 +390,7 @@ export default function StoryVisualizerPage() {
                     選択肢 ({selectedNode.data.choices.length}個)
                   </div>
                   <div className="space-y-2">
-                    {selectedNode.data.choices.map((choice: any, index: number) => (
+                    {selectedNode.data.choices.map((choice: { text: string; next: string }, index: number) => (
                       <div
                         key={index}
                         className="bg-gray-900 px-3 py-2 rounded text-sm"
