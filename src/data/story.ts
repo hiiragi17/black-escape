@@ -545,8 +545,8 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/labor_office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "証拠を集める（慎重に進める）", "next": "gather_evidence_carefully" },
-      { "text": "給与明細だけで申告する（急ぐ）", "next": "report_with_minimal_evidence" },
+      { "text": "証拠を集める", "next": "gather_evidence_carefully" },
+      { "text": "給与明細だけで申告する", "next": "report_with_minimal_evidence" },
       { "text": "同期にも証拠集めを手伝ってもらう", "next": "gather_evidence_with_colleague" }
     ]
   },
