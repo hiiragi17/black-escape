@@ -19,6 +19,8 @@ import {
   convertToReactFlowElements,
   getLayoutedElements,
   calculateStatistics,
+  findPathToEnding,
+  getEndingsList,
 } from '@/lib/storyGraphUtils';
 import Link from 'next/link';
 
@@ -34,6 +36,7 @@ export default function StoryVisualizerPage() {
   const [selectedNode, setSelectedNode] = useState<Node | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [filterType, setFilterType] = useState<'all' | 'goodEnding' | 'badEnding'>('all');
+  const [highlightedPath, setHighlightedPath] = useState<string[]>([]);
 
   // 本番環境ではアクセス不可
   useEffect(() => {
@@ -45,6 +48,7 @@ export default function StoryVisualizerPage() {
   // ストーリーデータを解析
   const storyNodes = useMemo(() => analyzeStoryData(), []);
   const statistics = useMemo(() => calculateStatistics(storyNodes), [storyNodes]);
+  const endingsList = useMemo(() => getEndingsList(storyNodes), [storyNodes]);
 
   // React Flowの要素を生成
   const { nodes: initialNodes, edges: initialEdges } = useMemo(() => {
@@ -55,37 +59,89 @@ export default function StoryVisualizerPage() {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
-  // フィルタリング
+  // エンディングへのルートを表示
+  const handleShowPath = useCallback((endingId: string) => {
+    const path = findPathToEnding(storyNodes, endingId);
+    if (path) {
+      setHighlightedPath(path);
+      // 検索とフィルターをリセット
+      setSearchQuery('');
+      setFilterType('all');
+    }
+  }, [storyNodes]);
+
+  // ハイライトをクリア
+  const handleClearPath = useCallback(() => {
+    setHighlightedPath([]);
+  }, []);
+
+  // フィルタリングとハイライト
   const filteredElements = useMemo(() => {
     let filteredNodes = nodes;
     let filteredEdges = edges;
 
-    // タイプフィルター
-    if (filterType !== 'all') {
-      filteredNodes = nodes.filter(
-        (node) => node.type === filterType || node.id === 'start'
-      );
-      const nodeIds = new Set(filteredNodes.map((n) => n.id));
-      filteredEdges = edges.filter(
-        (edge) => nodeIds.has(edge.source) && nodeIds.has(edge.target)
-      );
-    }
+    // ハイライトパスがある場合
+    if (highlightedPath.length > 0) {
+      const pathSet = new Set(highlightedPath);
 
-    // 検索フィルター
-    if (searchQuery) {
-      filteredNodes = filteredNodes.filter((node) =>
-        node.id.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        node.data.label?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        node.data.preview?.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-      const nodeIds = new Set(filteredNodes.map((n) => n.id));
-      filteredEdges = filteredEdges.filter(
-        (edge) => nodeIds.has(edge.source) && nodeIds.has(edge.target)
-      );
+      // ノードをハイライト
+      filteredNodes = nodes.map((node) => ({
+        ...node,
+        style: pathSet.has(node.id)
+          ? {
+              ...node.style,
+              opacity: 1,
+              boxShadow: '0 0 20px 5px rgba(59, 130, 246, 0.8)',
+              border: '3px solid #3b82f6',
+            }
+          : { ...node.style, opacity: 0.2 },
+      }));
+
+      // エッジをハイライト
+      const pathEdges = new Set<string>();
+      for (let i = 0; i < highlightedPath.length - 1; i++) {
+        pathEdges.add(`${highlightedPath[i]}-${highlightedPath[i + 1]}`);
+      }
+
+      filteredEdges = edges.map((edge) => ({
+        ...edge,
+        animated: pathEdges.has(edge.id),
+        style: pathEdges.has(edge.id)
+          ? {
+              ...edge.style,
+              stroke: '#3b82f6',
+              strokeWidth: 3,
+            }
+          : { ...edge.style, opacity: 0.1 },
+      }));
+    } else {
+      // タイプフィルター
+      if (filterType !== 'all') {
+        filteredNodes = nodes.filter(
+          (node) => node.type === filterType || node.id === 'start'
+        );
+        const nodeIds = new Set(filteredNodes.map((n) => n.id));
+        filteredEdges = edges.filter(
+          (edge) => nodeIds.has(edge.source) && nodeIds.has(edge.target)
+        );
+      }
+
+      // 検索フィルター
+      if (searchQuery) {
+        filteredNodes = filteredNodes.filter((node) =>
+          node.id.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          node.data.label?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          node.data.preview?.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+        const nodeIds = new Set(filteredNodes.map((n) => n.id));
+        filteredEdges = filteredEdges.filter(
+          (edge) => nodeIds.has(edge.source) && nodeIds.has(edge.target)
+        );
+      }
     }
 
     return { nodes: filteredNodes, edges: filteredEdges };
-  }, [nodes, edges, filterType, searchQuery]);
+  }, [nodes, edges, filterType, searchQuery, highlightedPath]);
 
   // ノードクリック
   const onNodeClick = useCallback((_: React.MouseEvent, node: Node) => {
@@ -212,6 +268,59 @@ export default function StoryVisualizerPage() {
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded bg-gray-600"></div>
                   <span>通常シーン</span>
+                </div>
+              </div>
+            </Panel>
+
+            {/* エンディングへのルート表示パネル */}
+            <Panel position="top-right" className="bg-gray-800 rounded-lg shadow-lg p-4 w-80 max-h-96 overflow-y-auto">
+              <div className="mb-3 flex items-center justify-between">
+                <h3 className="text-white font-bold text-sm">エンディングへのルート</h3>
+                {highlightedPath.length > 0 && (
+                  <button
+                    onClick={handleClearPath}
+                    className="text-xs px-2 py-1 bg-red-600 hover:bg-red-700 text-white rounded transition-colors"
+                  >
+                    クリア
+                  </button>
+                )}
+              </div>
+
+              {highlightedPath.length > 0 && (
+                <div className="mb-3 p-2 bg-blue-900/30 border border-blue-500/50 rounded text-xs text-blue-200">
+                  {highlightedPath.length}シーンのルートを表示中
+                </div>
+              )}
+
+              <div className="space-y-2">
+                {/* グッドエンド */}
+                <div>
+                  <div className="text-green-400 text-xs font-bold mb-1">グッドエンド</div>
+                  {endingsList.filter(e => e.type === 'good').map((ending) => (
+                    <button
+                      key={ending.id}
+                      onClick={() => handleShowPath(ending.id)}
+                      className="w-full text-left px-2 py-1.5 mb-1 bg-green-900/30 hover:bg-green-800/50 border border-green-600/30 hover:border-green-500/50 rounded text-xs text-green-100 transition-colors"
+                    >
+                      ✨ {ending.name}
+                    </button>
+                  ))}
+                </div>
+
+                {/* バッドエンド */}
+                <div>
+                  <div className="text-red-400 text-xs font-bold mb-1">バッドエンド</div>
+                  <div className="space-y-1 max-h-48 overflow-y-auto">
+                    {endingsList.filter(e => e.type === 'bad').map((ending) => (
+                      <button
+                        key={ending.id}
+                        onClick={() => handleShowPath(ending.id)}
+                        className="w-full text-left px-2 py-1.5 bg-red-900/30 hover:bg-red-800/50 border border-red-600/30 hover:border-red-500/50 rounded text-xs text-red-100 transition-colors"
+                      >
+                        💀 {ending.name}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
             </Panel>

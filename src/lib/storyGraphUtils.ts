@@ -148,3 +148,66 @@ export function calculateStatistics(storyNodes: Map<string, StoryNode>) {
     totalEndings,
   };
 }
+
+/**
+ * 特定のエンディングへのパスを検索（BFS）
+ */
+export function findPathToEnding(
+  storyNodes: Map<string, StoryNode>,
+  targetId: string
+): string[] | null {
+  const queue: Array<{ id: string; path: string[] }> = [{ id: 'start', path: ['start'] }];
+  const visited = new Set<string>();
+
+  while (queue.length > 0) {
+    const { id, path } = queue.shift()!;
+
+    if (id === targetId) {
+      return path;
+    }
+
+    if (visited.has(id)) continue;
+    visited.add(id);
+
+    const node = storyNodes.get(id);
+    if (!node) continue;
+
+    for (const choice of node.choices) {
+      queue.push({
+        id: choice.next,
+        path: [...path, choice.next],
+      });
+    }
+  }
+
+  return null;
+}
+
+/**
+ * エンディング一覧を取得
+ */
+export function getEndingsList(storyNodes: Map<string, StoryNode>) {
+  const endings: Array<{
+    id: string;
+    name: string;
+    type: 'good' | 'bad';
+  }> = [];
+
+  for (const [id, node] of storyNodes.entries()) {
+    if (node.isGoodEnding || node.isBadEnding) {
+      const endingMatch = node.text.match(/【(グッド|バッド)エンド[：:]\s*([^】]+)】/);
+      const name = endingMatch ? endingMatch[2] : id;
+
+      endings.push({
+        id,
+        name,
+        type: node.isGoodEnding ? 'good' : 'bad',
+      });
+    }
+  }
+
+  return endings.sort((a, b) => {
+    if (a.type !== b.type) return a.type === 'good' ? -1 : 1;
+    return a.name.localeCompare(b.name);
+  });
+}
