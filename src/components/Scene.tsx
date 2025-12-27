@@ -63,6 +63,11 @@ export default function Scene({ scene, setScene }: SceneProps) {
     setTextDisplayed('');
     setIsTyping(true);
 
+    // E2Eテスト環境では高速化（1ms間隔、遅延100ms）
+    const isE2ETest = process.env.NEXT_PUBLIC_E2E_TEST === 'true';
+    const typingInterval = isE2ETest ? 1 : 40;
+    const choicesDelay = isE2ETest ? 100 : 800;
+
     // タイピング効果
     let index = 0;
     const typingTimer = setInterval(() => {
@@ -72,9 +77,9 @@ export default function Scene({ scene, setScene }: SceneProps) {
       } else {
         clearInterval(typingTimer);
         setIsTyping(false);
-        setTimeout(() => setShowChoices(true), 800);
+        setTimeout(() => setShowChoices(true), choicesDelay);
       }
-    }, 40);
+    }, typingInterval);
 
     return () => {
       clearInterval(typingTimer);
