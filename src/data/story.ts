@@ -243,8 +243,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "お互い頑張ろうな", "next": "parting_and_cry_then_jobhunt" },
-      { "text": "こんな会社もう嫌だ", "next": "procrastinate" }
+      { "text": "お互い転職活動しようか", "next": "parting_and_cry_then_jobhunt" },
+      { "text": "お互い頑張ろうな", "next": "work_alone_suffer" },
+      { "text": "もう限界だ...", "next": "mental_breakdown" }
     ]
   },
 
