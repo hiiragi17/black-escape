@@ -86,7 +86,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "タクシーで帰る（自腹）", "next": "taxi_home" },
+      { "text": "タクシーで帰る", "next": "taxi_home" },
       { "text": "同期に愚痴をこぼす", "next": "complain_to_colleague" },
       { "text": "部長に呼ばれる", "next": "talk_to_boss_comment_break" }
     ]
