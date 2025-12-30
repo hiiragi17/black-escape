@@ -86,7 +86,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "タクシーで帰る（自腹）", "next": "taxi_home" },
+      { "text": "タクシーで帰る", "next": "taxi_home" },
       { "text": "同期に愚痴をこぼす", "next": "complain_to_colleague" },
       { "text": "部長に呼ばれる", "next": "talk_to_boss_comment_break" }
     ]
@@ -243,8 +243,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "お互い頑張ろうな", "next": "parting_and_cry_then_jobhunt" },
-      { "text": "こんな会社もう嫌だ", "next": "procrastinate" }
+      { "text": "お互い転職活動しようか", "next": "parting_and_cry_then_jobhunt" },
+      { "text": "お互い頑張ろうな", "next": "work_alone_suffer" },
+      { "text": "もう限界だ...", "next": "mental_breakdown" }
     ]
   },
 
@@ -544,8 +545,8 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/labor_office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "証拠を集める（慎重に進める）", "next": "gather_evidence_carefully" },
-      { "text": "給与明細だけで申告する（急ぐ）", "next": "report_with_minimal_evidence" },
+      { "text": "証拠を集める", "next": "gather_evidence_carefully" },
+      { "text": "給与明細だけで申告する", "next": "report_with_minimal_evidence" },
       { "text": "同期にも証拠集めを手伝ってもらう", "next": "gather_evidence_with_colleague" }
     ]
   },

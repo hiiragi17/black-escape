@@ -9,23 +9,28 @@
     "lint": "next lint",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
-    "test:e2e:headed": "playwright test --headed"
+    "test:e2e:headed": "playwright test --headed",
+    "story:chart": "tsx scripts/generate-story-chart.ts"
   },
   "dependencies": {
+    "dagre": "^0.8.5",
     "next": "^15.5.9",
     "react": "^19.1.4",
-    "react-dom": "^19.1.4"
+    "react-dom": "^19.1.4",
+    "reactflow": "^11.11.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@playwright/test": "^1.49.0",
     "@tailwindcss/postcss": "^4",
+    "@types/dagre": "^0.7.53",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.7",
     "tailwindcss": "^4",
+    "tsx": "^4.19.2",
     "typescript": "^5"
   }
 }
