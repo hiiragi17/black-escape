@@ -119,7 +119,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "準備不足のまま転職活動を開始する", "next": "job_search_burnout" },
+      { "text": "勢いで本格的に転職活動を始める", "next": "job_search_burnout" },
       { "text": "焦って転職エージェントに駆け込む", "next": "job_search_burnout" },
       { "text": "まず労働環境改善を試みる", "next": "research_union" }
     ]
@@ -912,7 +912,7 @@ export const storyData: StoryDataType = {
   },
 
   "accept_overtime_daily": {
-    "text": "毎日の残業を受け入れることにした。\n\n「残業は当たり前。これがサラリーマンの人生か」\n\n毎晩23時まで仕事。コンビニのパン、カップ麺が夕食。\n\n体は疲弊し始める。\n\n「肩も凝るし、頭痛も毎日...」\n\n健康診断では要検査判定が出た。",
+    "text": "毎日の残業を受け入れることにした。\n\n「残業は当たり前。これがサラリーマンの人生か」\n\nそうして数ヶ月が過ぎた。\n\n毎晩23時まで仕事。コンビニのパン、カップ麺が夕食。土日も気が休まらず、月曜の朝にはまた憂鬱が押し寄せる。\n\n気付けば、体は確実に蝕まれていた。\n\n「肩も凝るし、頭痛も毎日...」\n\n直近の健康診断では、要検査判定が出ていた。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
