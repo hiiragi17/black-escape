@@ -5,8 +5,8 @@
 
 ## ストーリー統計
 
-- **総シーン数**: 113
-- **到達可能シーン数**: 113
+- **総シーン数**: 114
+- **到達可能シーン数**: 114
 - **到達不可能シーン数**: 0
 - **総エンディング数**: 31
   - グッドエンド: 3 (到達可能: 3)
@@ -75,6 +75,7 @@ graph TD
   talk_to_boss_comment_break{"渋々部長の元へ行く。どうせいつもの無茶振"}
   talk_to_boss_ignore{"渋々部長の元へ行く。どうせいつもの無茶振"}
   receive_document_task{"「……えっ」渡されたのは大量の資料。もう"}
+  refuse_boss_task{"勇気を振り絞って、部長に逆らった。  そ"}
   accept_task_reluctantly{"とはいえ自分に拒否権などあるわけがない。"}
   laugh_off_and_work{"「ははは……そうですね」と適当に笑って誤"}
   ask_junior_for_help{"今年入ったばかりの新人で、気立てが良い。"}
@@ -195,7 +196,7 @@ graph TD
   leave_confidently -->|"労働基準監督署に相談する"| labor_inspection
   leave_confidently -->|"そのまま転職活動を始める"| job_search_burnout
   leave_confidently -->|"今日の解放感を噛み締める"| eat_overtime_bread
-  eat_overtime_bread -->|"タクシーで帰る（自腹）"| taxi_home
+  eat_overtime_bread -->|"タクシーで帰る"| taxi_home
   eat_overtime_bread -->|"同期に愚痴をこぼす"| complain_to_colleague
   eat_overtime_bread -->|"部長に呼ばれる"| talk_to_boss_comment_break
   taxi_home -->|"転職活動を本格化する"| job_search_burnout
@@ -204,8 +205,8 @@ graph TD
   complain_to_colleague -->|"一緒に転職活動をする"| joint_job_hunting
   complain_to_colleague -->|"労働組合について調べる"| research_union
   complain_to_colleague -->|"まずは自分だけで行動する"| job_search_burnout
-  joint_job_hunting -->|"本格的に転職活動を開始する"| job_search_burnout
-  joint_job_hunting -->|"転職エージェントに相談する"| job_search_burnout
+  joint_job_hunting -->|"準備不足のまま転職活動を開始す..."| job_search_burnout
+  joint_job_hunting -->|"焦って転職エージェントに駆け込..."| job_search_burnout
   joint_job_hunting -->|"まず労働環境改善を試みる"| research_union
   talk_to_boss_comment_break -->|"資料作成の仕事を受ける"| receive_document_task
   talk_to_boss_comment_break -->|"暑気払いの準備を手伝う"| receive_document_task
@@ -214,8 +215,11 @@ graph TD
   talk_to_boss_ignore -->|"プレゼン資料の作成を受ける"| receive_document_task
   talk_to_boss_ignore -->|"週末出社の指示を受ける"| receive_document_task
   receive_document_task -->|"わかりました……"| accept_task_reluctantly
-  receive_document_task -->|"なぜ今日中なんですか？"| procrastinate
-  receive_document_task -->|"無理です"| procrastinate
+  receive_document_task -->|"なぜ今日中なんですか？"| refuse_boss_task
+  receive_document_task -->|"無理です"| refuse_boss_task
+  refuse_boss_task -->|"弁護士に相談して法的に戦う"| consult_lawyer_first
+  refuse_boss_task -->|"労働組合の結成を検討する"| research_union
+  refuse_boss_task -->|"労働基準監督署に駆け込む"| labor_inspection
   accept_task_reluctantly -->|"よし殴ろう"| punch_boss
   accept_task_reluctantly -->|"適当に笑って誤魔化す"| laugh_off_and_work
   accept_task_reluctantly -->|"無視して仕事に戻る"| laugh_off_and_work
@@ -228,14 +232,15 @@ graph TD
   ask_colleague_for_help -->|"一緒に作業して仕上げる"| work_with_junior
   ask_colleague_for_help -->|"後輩も巻き込んで3人で仕上げる"| work_with_junior
   ask_colleague_for_help -->|"やっぱり迷惑かけたくない"| work_alone_suffer
-  work_with_junior -->|"断固として断る"| procrastinate
+  work_with_junior -->|"断固として断る"| refuse_boss_task
   work_with_junior -->|"仕方なく付き合う"| attend_drinking_with_boss
   work_with_junior -->|"30分だけなら"| thirty_minutes_condition
-  attend_drinking_with_boss -->|"反論する"| procrastinate
+  attend_drinking_with_boss -->|"反論する"| refuse_boss_task
   attend_drinking_with_boss -->|"黙って聞く"| listen_silently_to_lecture
-  attend_drinking_with_boss -->|"席を立つ"| procrastinate
-  listen_silently_to_lecture -->|"お互い頑張ろうな"| parting_and_cry_then_jobhunt
-  listen_silently_to_lecture -->|"こんな会社もう嫌だ"| procrastinate
+  attend_drinking_with_boss -->|"席を立つ"| refuse_boss_task
+  listen_silently_to_lecture -->|"お互い転職活動しようか"| parting_and_cry_then_jobhunt
+  listen_silently_to_lecture -->|"一人で頑張るしかない"| work_alone_suffer
+  listen_silently_to_lecture -->|"もう限界だ..."| mental_breakdown
   research_union -->|"慎重にメンバーを集める"| union_member_recruitment
   research_union -->|"やっぱり転職の方が安全かも"| job_search_burnout
   research_union -->|"労基署に相談してみる"| labor_inspection
@@ -305,8 +310,8 @@ graph TD
   lawyer_strategy_meeting -->|"自分の意見を強く主張する"| client_lawyer_conflict
   lawyer_strategy_meeting -->|"消極的で任せきりにする"| lawyer_strategy_meeting_rushed
   lawyer_strategy_meeting_rushed -->|"この条件で交渉開始"| lawyer_individual_negotiation
-  plan_anonymous_report -->|"証拠を集める（慎重に進める）"| gather_evidence_carefully
-  plan_anonymous_report -->|"給与明細だけで申告する（急ぐ）"| report_with_minimal_evidence
+  plan_anonymous_report -->|"証拠を集める"| gather_evidence_carefully
+  plan_anonymous_report -->|"給与明細だけで申告する"| report_with_minimal_evidence
   plan_anonymous_report -->|"同期にも証拠集めを手伝ってもら..."| gather_evidence_with_colleague
   lawyer_group_negotiation -->|"強気で全面的な改善を要求"| lawyer_demanding_negotiation
   lawyer_group_negotiation -->|"段階的改善案を提示"| lawyer_gradual_plan
@@ -360,7 +365,7 @@ graph TD
   lawyer_push_further -->|"最終提案を受け入れる"| lawyer_accept_compromise
   lawyer_push_further -->|"裁判を決行する"| lawyer_litigation_threat
   lawyer_gradual_success -->|"労働組合を結成して全社改革を目..."| union_member_recruitment
-  lawyer_gradual_success -->|"この改善で満足する"| moderate_improvement_ending
+  lawyer_gradual_success -->|"ここで戦いを終える"| moderate_improvement_ending
   lawyer_gradual_success -->|"改善の進捗を監視し続ける"| monitor_company_improvement
   lawyer_set_deadlines -->|"改善の進捗を確認する"| lawyer_gradual_success
   lawyer_set_deadlines -->|"毎月の監視体制を整える"| monitor_company_improvement
@@ -381,9 +386,9 @@ graph TD
   wait_investigation_results -->|"弁護士に依頼して個人で戦う"| consult_lawyer_first
   wait_investigation_results -->|"この程度の改善で満足する"| moderate_improvement_ending
   monitor_company_improvement -->|"さらに組合を全社に拡大して根本..."| union_member_recruitment
-  monitor_company_improvement -->|"この改善で満足して働き続ける"| moderate_improvement_ending
-  monitor_company_improvement -->|"改善された経験を活かして転職"| job_search_burnout
-  continue_improved_company -->|"この改善に満足する"| moderate_improvement_ending
+  monitor_company_improvement -->|"この成果で妥協する"| moderate_improvement_ending
+  monitor_company_improvement -->|"せっかくの改善を捨てて転職に踏..."| job_search_burnout
+  continue_improved_company -->|"ここでひと区切りつける"| moderate_improvement_ending
   procrastinate -->|"毎日残業を続ける"| accept_overtime_daily
   procrastinate -->|"今からでも転職活動を始める"| job_search_burnout
   procrastinate -->|"労働組合を作ろうと決意"| research_union

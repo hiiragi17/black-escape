@@ -119,8 +119,8 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "本格的に転職活動を開始する", "next": "job_search_burnout" },
-      { "text": "転職エージェントに相談する", "next": "job_search_burnout" },
+      { "text": "準備不足のまま転職活動を開始する", "next": "job_search_burnout" },
+      { "text": "焦って転職エージェントに駆け込む", "next": "job_search_burnout" },
       { "text": "まず労働環境改善を試みる", "next": "research_union" }
     ]
   },
@@ -153,8 +153,19 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "わかりました……", "next": "accept_task_reluctantly" },
-      { "text": "なぜ今日中なんですか？", "next": "procrastinate" },
-      { "text": "無理です", "next": "procrastinate" }
+      { "text": "なぜ今日中なんですか？", "next": "refuse_boss_task" },
+      { "text": "無理です", "next": "refuse_boss_task" }
+    ]
+  },
+
+  "refuse_boss_task": {
+    "text": "勇気を振り絞って、部長に逆らった。\n\nその瞬間、部長の顔から笑いが消えた。\n\n「……ふーん。お前、そういうスタンスなんだ」\n\n短く返されただけだったが、空気が凍るのが分かった。何か嫌な予感がする。\n\n翌週から、部長の態度はあからさまに変わった。\n\n大事な会議には呼ばれない。評価面談では「協調性に欠ける」と書かれる。誰でもできる雑用ばかり押し付けられ、本来の業務からは外された。隣の席の同期も、部長を恐れて目を合わせなくなった。\n\n「これ、完全に閑職に追いやられてるよな……」\n\nだが、冷静に振り返れば、これは典型的なパワハラの手口だ。報復人事、無視、過小評価——全部、立派な不当労働行為と言える。\n\n泣き寝入りする義理はない。むしろ、ここからが反撃の始まりだ。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": [
+      { "text": "弁護士に相談して法的に戦う", "next": "consult_lawyer_first" },
+      { "text": "労働組合の結成を検討する", "next": "research_union" },
+      { "text": "労働基準監督署に駆け込む", "next": "labor_inspection" }
     ]
   },
 
@@ -214,7 +225,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "断固として断る", "next": "procrastinate" },
+      { "text": "断固として断る", "next": "refuse_boss_task" },
       { "text": "仕方なく付き合う", "next": "attend_drinking_with_boss" },
       { "text": "30分だけなら", "next": "thirty_minutes_condition" }
     ]
@@ -225,9 +236,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "反論する", "next": "procrastinate" },
+      { "text": "反論する", "next": "refuse_boss_task" },
       { "text": "黙って聞く", "next": "listen_silently_to_lecture" },
-      { "text": "席を立つ", "next": "procrastinate" }
+      { "text": "席を立つ", "next": "refuse_boss_task" }
     ]
   },
 
@@ -244,13 +255,13 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "お互い転職活動しようか", "next": "parting_and_cry_then_jobhunt" },
-      { "text": "お互い頑張ろうな", "next": "work_alone_suffer" },
+      { "text": "一人で頑張るしかない", "next": "work_alone_suffer" },
       { "text": "もう限界だ...", "next": "mental_breakdown" }
     ]
   },
 
   "parting_and_cry_then_jobhunt": {
-    "text": "「お互い頑張ろうな」\n\n後輩が角を曲がって見えなくなった。\n\nその瞬間俺は泣き崩れた。\n\n限界だった。この会社にいては、自分も後輩も潰れてしまう。\n\n何日か経った後、決断した。もう、この会社には居られない。\n\n転職活動を本格的に始めた。書類作成、面接の準備、企業研究……。後輩のためにも、自分のためにも、やり抜くしかない。\n\n数ヶ月後、面接の結果が返ってきた。\n\n「当社で働いていただきたいのですが......」\n\nついに、新しい職場への内定を手にした。今度こそ、働きやすい環境で、人間らしく働けるはずだ。\n\n退職届を出すときの部長の顔は、自分の記憶から消してしまった。\n\n新しい会社での初出勤。朝日が眩しく感じた。\n\n「やっと......自由になれた」\n\n深く息を吸った。新しい人生の始まりだ。\n\n【グッドエンド：転職成功で新たな人生へ】",
+    "text": "「お互い、転職活動しようか」\n\n後輩は驚いた顔をしたあと、ゆっくりと頷いた。\n\n「……はい、そうですね。先輩」\n\n短く返事をして、後輩が角を曲がって見えなくなった。\n\nその瞬間俺は泣き崩れた。\n\n限界だった。この会社にいては、自分も後輩も潰れてしまう。\n\n何日か経った後、決断した。もう、この会社には居られない。\n\n転職活動を本格的に始めた。書類作成、面接の準備、企業研究……。後輩のためにも、自分のためにも、やり抜くしかない。\n\n数ヶ月後、面接の結果が返ってきた。\n\n「当社で働いていただきたいのですが......」\n\nついに、新しい職場への内定を手にした。今度こそ、働きやすい環境で、人間らしく働けるはずだ。\n\n退職届を出すときの部長の顔は、自分の記憶から消してしまった。\n\n新しい会社での初出勤。朝日が眩しく感じた。\n\n「やっと......自由になれた」\n\n深く息を吸った。新しい人生の始まりだ。\n\n【グッドエンド：転職成功で新たな人生へ】",
     "background": "/images/bg/beach.jpg",
     "bgm": "/bgm/n99.mp3",
     "choices": []
@@ -776,7 +787,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n99.mp3",
     "choices": [
       { "text": "労働組合を結成して全社改革を目指す", "next": "union_member_recruitment" },
-      { "text": "この改善で満足する", "next": "moderate_improvement_ending" },
+      { "text": "ここで戦いを終える", "next": "moderate_improvement_ending" },
       { "text": "改善の進捗を監視し続ける", "next": "monitor_company_improvement" }
     ]
   },
@@ -875,8 +886,8 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n99.mp3",
     "choices": [
       { "text": "さらに組合を全社に拡大して根本改革", "next": "union_member_recruitment" },
-      { "text": "この改善で満足して働き続ける", "next": "moderate_improvement_ending" },
-      { "text": "改善された経験を活かして転職", "next": "job_search_burnout" }
+      { "text": "この成果で妥協する", "next": "moderate_improvement_ending" },
+      { "text": "せっかくの改善を捨てて転職に踏み切る", "next": "job_search_burnout" }
     ]
   },
 
@@ -885,7 +896,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/new_office.jpg",
     "bgm": "/bgm/n99.mp3",
     "choices": [
-      { "text": "この改善に満足する", "next": "moderate_improvement_ending" }
+      { "text": "ここでひと区切りつける", "next": "moderate_improvement_ending" }
     ]
   },
 
