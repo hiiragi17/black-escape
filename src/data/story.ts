@@ -473,7 +473,7 @@ export const storyData: StoryDataType = {
 
   "company_wide_union": {
     "text": "1年間の戦いが、ついに実を結んだ。\n\n労働組合は全社に拡大し、従業員の8割が加入。会社との交渉を重ね、包括的な労働環境改革が実現した。\n\n残業代は法定通り支払われ、月給が平均5万円アップ。タバコ休憩は15分以内に制限され、飲み会の強制参加は完全に禁止。セクハラ・パワハラの相談窓口が設置され、有給取得率は90%以上に改善した。\n\n「あの時、一人で耐えずに声を上げて良かった」\n\n後輩が笑顔で定時退社する姿を見て、心から思う。\n\n組合委員長として、仲間と共に会社を変えることができた。これが、本当の勝利だ。\n\n【グッドエンド：労働組合で会社改革成功】",
-    "background": "/images/bg/new_office.jpg",
+    "background": "/images/bg/beach.jpg",
     "bgm": "/bgm/n99.mp3",
     "choices": []
   },
@@ -553,7 +553,7 @@ export const storyData: StoryDataType = {
 
   "plan_anonymous_report": {
     "text": "匿名申告について考えることにした。\n\n署員「申告者の特定は不要です。ただし、できれば証拠があると調査が進みやすくなります」\n\n「どんな証拠が必要ですか？」\n\n署員「給与明細、勤務時間の記録、パワハラの録音など、違反を証明するものなら何でもいいです」\n\n「準備して来月申告します」",
-    "background": "/images/bg/labor_office.jpg",
+    "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "証拠を集める", "next": "gather_evidence_carefully" },
@@ -648,7 +648,7 @@ export const storyData: StoryDataType = {
 
   "report_with_minimal_evidence": {
     "text": "給与明細だけで申告することにした。\n\n「早く動いた方が得策だ」\n\n労働基準監督署に申告を提出。\n\n署員「証拠は給与明細だけですか？」\n「はい。他の証拠は...」\n\n「少し弱いですが、調査は開始します」\n\n会社への調査は始まったが、強制力は弱いかもしれない。",
-    "background": "/images/bg/labor_office.jpg",
+    "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "追加の証拠をすぐに送る", "next": "rush_evidence_submission" },
@@ -718,7 +718,7 @@ export const storyData: StoryDataType = {
 
   "submit_evidence_report": {
     "text": "十分な証拠を集めて申告書を提出した。\n\n署員「このような詳しい記録はいいですね。調査が進みやすくなります」\n\n2週間後、会社に是正勧告が届いた。\n\n会社側も無視できない状況になった。",
-    "background": "/images/bg/labor_office.jpg",
+    "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "会社の改善状況を見守る", "next": "continue_improved_company" },
@@ -740,7 +740,7 @@ export const storyData: StoryDataType = {
 
   "rush_evidence_submission": {
     "text": "追加の証拠をすぐに労働基準監督署に送ることにした。\n\n署員「ああ、これで強制力が出てきますね」\n\n追加の録音やメール記録で、会社の違法性が明確になった。\n\n署員「これは指導だけでは済みませんね。最低でも是正勧告を出します」",
-    "background": "/images/bg/labor_office.jpg",
+    "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "是正勧告を見守る", "next": "continue_improved_company" },
@@ -751,7 +751,7 @@ export const storyData: StoryDataType = {
 
   "multi_person_report": {
     "text": "複数人での申告で力を強めることにした。\n\n同期の他に、後輩も申告に参加することにした。\n\n3人での申告により、労働基準監督署も全社調査に乗り出した。\n\n「複数人だと説得力が違う」\n\nさらに行動を起こすべきか？",
-    "background": "/images/bg/labor_office.jpg",
+    "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "この機会に労働組合を正式に結成", "next": "form_union_three" },
@@ -783,7 +783,7 @@ export const storyData: StoryDataType = {
 
   "lawyer_gradual_success": {
     "text": "段階的改善を受け入れることにした。\n\n第1段階：残業代の適正支払い開始\n第2段階（3ヶ月後）：パワハラ対策の強化\n第3段階（6ヶ月後）：有給取得率80%以上を実現\n\n実際に改善が進み始めた。段階的ですが、確実な前進だ。\n\nこの勢いでさらなる改革を進めるべきか？",
-    "background": "/images/bg/new_office.jpg",
+    "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n99.mp3",
     "choices": [
       { "text": "労働組合を結成して全社改革を目指す", "next": "union_member_recruitment" },
@@ -882,7 +882,7 @@ export const storyData: StoryDataType = {
 
   "monitor_company_improvement": {
     "text": "会社の改善状況を監視することにした。\n\n・残業代の支払い: 完全に支払われるように改善\n・パワハラの相談窓口: 設置完了\n・有給取得率: 80%以上に改善\n\nようやく普通の労働環境になり始めた。\n\nしかし、これで本当に十分だろうか？",
-    "background": "/images/bg/new_office.jpg",
+    "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n99.mp3",
     "choices": [
       { "text": "さらに組合を全社に拡大して根本改革", "next": "union_member_recruitment" },
@@ -893,7 +893,7 @@ export const storyData: StoryDataType = {
 
   "continue_improved_company": {
     "text": "改善された会社で働き続けることにした。\n\n・月給が5万円アップ（適正な残業代支払い）\n・定時退社が当たり前に\n・有給取得率90%以上\n・ハラスメント防止体制の確立\n・働きやすい職場環境\n\n部長「お前のおかげで、この会社は良くなったな」\n\n「当たり前のことをしただけです」",
-    "background": "/images/bg/new_office.jpg",
+    "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n99.mp3",
     "choices": [
       { "text": "ここでひと区切りつける", "next": "moderate_improvement_ending" }
