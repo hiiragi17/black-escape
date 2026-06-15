@@ -632,11 +632,11 @@ export const storyData: StoryDataType = {
   },
 
   "settlement_agreement_review": {
-    "text": "弁護士と一緒に和解契約書を細かくチェックした。\n\n弁護士「不利な条項はありません。これで署名して大丈夫です」\n\n「本当に...終わるんですね」\n\n契約書に署名する段になり、ふと手が止まる。",
+    "text": "和解契約書が届いた。\n\n弁護士「署名の前に、契約書の中身をしっかり確認しておきましょう。不利な条項が紛れていないか、一緒に見ていきます」\n\n分厚い契約書を前に、早く解放されたいという気持ちもよぎる。",
     "background": "/images/bg/office.jpg",
-    "bgm": "/bgm/n99.mp3",
+    "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "細部まで納得し、署名して和解金を受け取る", "next": "receive_settlement_money" },
+      { "text": "弁護士と一条ずつ精査し、納得してから署名する", "next": "receive_settlement_money" },
       { "text": "早く終わらせたくて確認を切り上げ署名する", "next": "unfair_contract_terms" }
     ]
   },
