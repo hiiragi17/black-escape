@@ -232,12 +232,11 @@ graph TD
   ask_colleague_for_help -->|"一緒に作業して仕上げる"| work_with_junior
   ask_colleague_for_help -->|"後輩も巻き込んで3人で仕上げる"| work_with_junior
   ask_colleague_for_help -->|"やっぱり迷惑かけたくない"| work_alone_suffer
-  work_with_junior -->|"断固として断る"| refuse_boss_task
   work_with_junior -->|"仕方なく付き合う"| attend_drinking_with_boss
   work_with_junior -->|"30分だけなら"| thirty_minutes_condition
-  attend_drinking_with_boss -->|"反論する"| refuse_boss_task
+  attend_drinking_with_boss -->|"酔った部長に本音で反論する"| mental_breakdown
   attend_drinking_with_boss -->|"黙って聞く"| listen_silently_to_lecture
-  attend_drinking_with_boss -->|"席を立つ"| refuse_boss_task
+  attend_drinking_with_boss -->|"我慢できず席を立つ"| mental_breakdown
   listen_silently_to_lecture -->|"お互い転職活動しようか"| parting_and_cry_then_jobhunt
   listen_silently_to_lecture -->|"一人で頑張るしかない"| work_alone_suffer
   listen_silently_to_lecture -->|"もう限界だ..."| mental_breakdown
@@ -371,7 +370,6 @@ graph TD
   lawyer_accept_compromise -->|"改善された会社で働き続ける"| continue_improved_company
   lawyer_push_further -->|"最終提案を受け入れる"| lawyer_accept_compromise
   lawyer_push_further -->|"裁判を決行する"| lawyer_litigation_threat
-  lawyer_gradual_success -->|"労働組合を結成して全社改革を目..."| union_member_recruitment
   lawyer_gradual_success -->|"ここで戦いを終える"| moderate_improvement_ending
   lawyer_gradual_success -->|"改善の進捗を監視し続ける"| monitor_company_improvement
   lawyer_set_deadlines -->|"改善の進捗を確認する"| lawyer_gradual_success
@@ -388,13 +386,10 @@ graph TD
   lawyer_low_settlement -->|"諦めてこれで終わりにする"| lawyer_low_settlement_accept
   lawyer_low_settlement_accept -->|"転職活動を本格的に始める"| job_search_burnout
   lawyer_low_settlement_accept -->|"改善された会社に残る"| continue_improved_company
-  wait_investigation_results -->|"労働組合を結成して本格的に改革..."| union_member_recruitment
   wait_investigation_results -->|"弁護士に依頼して個人で戦う"| consult_lawyer_first
   wait_investigation_results -->|"この程度の改善で満足する"| moderate_improvement_ending
-  monitor_company_improvement -->|"労働組合を結成して根本から改革..."| union_member_recruitment
   monitor_company_improvement -->|"この成果で妥協する"| moderate_improvement_ending
   monitor_company_improvement -->|"せっかくの改善を捨てて転職に踏..."| job_search_burnout
-  continue_improved_company -->|"労働組合を結成し、全社的な改革..."| union_member_recruitment
   continue_improved_company -->|"今の改善で十分だと、ここで区切..."| moderate_improvement_ending
   continue_improved_company -->|"安定した今のうちに、より良い会..."| job_search_burnout
   procrastinate -->|"毎日残業を続ける"| accept_overtime_daily

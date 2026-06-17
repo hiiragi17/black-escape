@@ -224,7 +224,6 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "断固として断る", "next": "refuse_boss_task" },
       { "text": "仕方なく付き合う", "next": "attend_drinking_with_boss" },
       { "text": "30分だけなら", "next": "thirty_minutes_condition" }
     ]
@@ -235,9 +234,9 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "反論する", "next": "refuse_boss_task" },
+      { "text": "酔った部長に本音で反論する", "next": "mental_breakdown" },
       { "text": "黙って聞く", "next": "listen_silently_to_lecture" },
-      { "text": "席を立つ", "next": "refuse_boss_task" }
+      { "text": "我慢できず席を立つ", "next": "mental_breakdown" }
     ]
   },
 
@@ -800,7 +799,6 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n99.mp3",
     "choices": [
-      { "text": "労働組合を結成して全社改革を目指す", "next": "union_member_recruitment" },
       { "text": "ここで戦いを終える", "next": "moderate_improvement_ending" },
       { "text": "改善の進捗を監視し続ける", "next": "monitor_company_improvement" }
     ]
@@ -887,7 +885,6 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "労働組合を結成して本格的に改革する", "next": "union_member_recruitment" },
       { "text": "弁護士に依頼して個人で戦う", "next": "consult_lawyer_first" },
       { "text": "この程度の改善で満足する", "next": "moderate_improvement_ending" }
     ]
@@ -898,7 +895,6 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n99.mp3",
     "choices": [
-      { "text": "労働組合を結成して根本から改革する", "next": "union_member_recruitment" },
       { "text": "この成果で妥協する", "next": "moderate_improvement_ending" },
       { "text": "せっかくの改善を捨てて転職に踏み切る", "next": "job_search_burnout" }
     ]
@@ -909,7 +905,6 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "労働組合を結成し、全社的な改革まで成し遂げる", "next": "union_member_recruitment" },
       { "text": "今の改善で十分だと、ここで区切りをつける", "next": "moderate_improvement_ending" },
       { "text": "安定した今のうちに、より良い会社へ転職する", "next": "job_search_burnout" }
     ]

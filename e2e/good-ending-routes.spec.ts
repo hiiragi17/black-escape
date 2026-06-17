@@ -94,15 +94,10 @@ test.describe('ルート接続性の静的検証', () => {
 // 物語上の矛盾がない（許可済み）合流エッジ。新たな逆行が増えたら
 // このテストが失敗するので、その都度本文の整合性を確認すること。
 const ALLOWED_REGRESSIONS = new Set<string>([
-  'monitor_company_improvement->union_member_recruitment', // 「組合を結成して根本改革」＝新規結成を明示
-  'lawyer_gradual_success->union_member_recruitment',      // 「組合を結成して全社改革」＝新規結成を明示
-  'continue_improved_company->union_member_recruitment',   // 「組合を結成し全社改革」＝新規結成を明示
-  'attend_drinking_with_boss->refuse_boss_task',           // 飲み会で「反論/席を立つ」＝上司に逆らう beat
-  'lawyer_low_settlement_accept->continue_improved_company',// 和解後「改善された会社に残る」
-  'taxi_home->procrastinate',                              // 「このまま我慢し続ける」＝現状維持で年月が経過
-  'refuse_boss_task->research_union',                      // 上司を拒否→組合を検討
-  'refuse_boss_task->labor_inspection',                   // 上司を拒否→労基署へ
-  'work_with_junior->refuse_boss_task',                   // 「断固として断る」＝上司に逆らう beat
+  'lawyer_low_settlement_accept->continue_improved_company', // 和解後「改善された会社に残る」＝整合的
+  'taxi_home->procrastinate',                               // 「このまま我慢し続ける」＝現状維持で年月が経過
+  'refuse_boss_task->research_union',                       // 上司を拒否→組合を検討（前進）
+  'refuse_boss_task->labor_inspection',                    // 上司を拒否→労基署へ（前進）
 ]);
 
 test.describe('物語整合性リント', () => {
