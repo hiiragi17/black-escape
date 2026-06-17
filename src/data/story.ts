@@ -593,8 +593,18 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "ひるまず粘り強く交渉を続ける", "next": "negotiation_pressure_tactics" },
+      { "text": "ひるまず粘り強く交渉を続ける", "next": "labor_tribunal" },
       { "text": "提示された額で早期に和解してしまう", "next": "quick_low_settlement" }
+    ]
+  },
+
+  "labor_tribunal": {
+    "text": "会社が和解額を渋り、交渉は平行線をたどった。\n\n弁護士「ここは労働審判を申し立てましょう。裁判所を通せば、会社も本気で向き合わざるを得ません」\n\n「お願いします」\n\n数週間後、労働審判の第一回期日。調停委員を前に、双方の主張がぶつかる。\n\n会社側「現実的な金額での解決を望みます」\n弁護士「こちらは証拠に基づいた正当な請求をしているだけです」\n\n審判の場で、交渉はいよいよ大詰めを迎える。",
+    "background": "/images/bg/office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": [
+      { "text": "弁護士とともに証拠を示して堂々と主張する", "next": "negotiation_pressure_tactics" },
+      { "text": "場の空気に飲まれて会社の提示額で妥協する", "next": "quick_low_settlement" }
     ]
   },
 
@@ -704,21 +714,21 @@ export const storyData: StoryDataType = {
   },
 
   "lawyer_demand_full_amount": {
-    "text": "全額請求を貫くことにした。\n\n弁護士「未払い残業代の全額の支払いを要求します」\n\n会社「そんなに払える訳ない」\n\n弁護士「では裁判ですね」\n\n会社が折れるまで交渉を続けた結果、最終的に満額に近い金額での和解に至った。",
+    "text": "全額請求を貫くことにした。\n\n弁護士「未払い残業代の全額の支払いを要求します」\n\n会社「そんなに払える訳ない」\n\n弁護士「では正式な手続きで決着をつけましょう」\n\n会社が折れ、満額に近い金額での和解案がテーブルに乗った。あとは弁護士に任せて、正式な交渉で詰めていくだけだ。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "潔く和解金を受け取り、区切りをつける", "next": "receive_settlement_money" },
+      { "text": "弁護士に正式な交渉を一任して詰めてもらう", "next": "company_initial_response" },
       { "text": "それでも足りないと最後までゴネ続ける", "next": "lawyer_negotiation_breakdown" }
     ]
   },
 
   "lawyer_litigation_threat": {
-    "text": "裁判を辞さない姿勢を見せて交渉することにした。\n\n弁護士「これは明らかな労基法違反です。裁判になれば、会社は敗訴します」\n\n会社側弁護士「...了解しました。協議させてください」\n\n数日後、会社からは相応の金額での和解提案があった。\n\n「やった...」",
+    "text": "裁判を辞さない姿勢を見せて交渉することにした。\n\n弁護士「これは明らかな労基法違反です。裁判になれば、会社は敗訴します」\n\n会社側弁護士「...了解しました。協議させてください」\n\n数日後、会社からは相応の金額での和解提案があった。\n\n「やった...あとは正式に詰めるだけだ」",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "和解を受け入れる", "next": "receive_settlement_money" },
+      { "text": "弁護士に正式な交渉を一任する", "next": "company_initial_response" },
       { "text": "さらに交渉を続ける", "next": "lawyer_demand_full_amount" }
     ]
   },
@@ -768,12 +778,12 @@ export const storyData: StoryDataType = {
   },
 
   "lawyer_accept_compromise": {
-    "text": "会社の妥協案を受け入れることにした。\n\n弁護士「未払い残業代に加え、パワハラ被害の慰謝料、今後の労働環境改善でいかがでしょうか」\n\n会社側「それで」\n\n最終的に現実的な金額での和解が成立した。完全な勝利ではないが、納得のいく解決だ。",
+    "text": "会社の妥協案を軸に進めることにした。\n\n弁護士「未払い残業代に加え、パワハラ被害の慰謝料、今後の労働環境改善でいかがでしょうか」\n\n会社側「それで」\n\n現実的な金額での和解の大枠が見えてきた。完全な勝利ではないが、納得のいく方向だ。あとは弁護士が正式な交渉で条件を詰めていく。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "和解金を受け取る", "next": "receive_settlement_money" },
-      { "text": "和解金で転職活動を始める", "next": "job_search_burnout" },
+      { "text": "弁護士に正式な交渉を一任して詰めてもらう", "next": "company_initial_response" },
+      { "text": "ここで打ち切って転職活動を始める", "next": "job_search_burnout" },
       { "text": "改善された会社で働き続ける", "next": "continue_improved_company" }
     ]
   },
@@ -811,11 +821,11 @@ export const storyData: StoryDataType = {
   },
 
   "follow_lawyer_advice": {
-    "text": "弁護士の指示で交渉を進めることにした。\n\n弁護士「法定賃金での全額支払い、これが最低条件です」\n\n交渉が何度も行われたが、最終的に納得のいく金額での和解が成立した。\n\n弁護士の専門的なアドバイスが功を奏した。",
+    "text": "弁護士の指示で交渉を進めることにした。\n\n弁護士「法定賃金での全額支払い、これが最低条件です」\n\n交渉が何度も行われ、会社もようやく態度を軟化させてきた。\n\n弁護士の専門的なアドバイスが功を奏し、和解への道筋が見えてきた。あとは正式な交渉で詰めていくだけだ。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "和解金を受け取る", "next": "receive_settlement_money" },
+      { "text": "弁護士に正式な交渉を一任して詰めてもらう", "next": "company_initial_response" },
       { "text": "改善された会社に残る", "next": "continue_improved_company" }
     ]
   },
@@ -870,7 +880,6 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/beach.jpg",
     "bgm": "/bgm/n99.mp3",
     "choices": [
-      { "text": "和解金で新しい人生をスタート", "next": "receive_settlement_money" },
       { "text": "転職活動を本格的に始める", "next": "job_search_burnout" },
       { "text": "改善された会社に残る", "next": "continue_improved_company" }
     ]

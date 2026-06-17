@@ -5,8 +5,8 @@
 
 ## ストーリー統計
 
-- **総シーン数**: 114
-- **到達可能シーン数**: 114
+- **総シーン数**: 115
+- **到達可能シーン数**: 115
 - **到達不可能シーン数**: 0
 - **総エンディング数**: 31
   - グッドエンド: 3 (到達可能: 3)
@@ -117,6 +117,7 @@ graph TD
   lawyer_group_negotiation{"弁護士に団体交渉を依頼することにした。 "}
   lawyer_individual_negotiation{"弁護士「会社に内容証明郵便で、未払い残業"}
   company_initial_response{"弁護士が追加の証拠を会社に送付した。  "}
+  labor_tribunal{"会社が和解額を渋り、交渉は平行線をたどっ"}
   negotiation_pressure_tactics{"交渉が進む中、会社側が圧力をかけてきた。"}
   settlement_amount_negotiation{"脅迫を記録したことで、会社側の態度が軟化"}
   company_counteroffer{"弁護士「この金額で合意しましょう。これ以"}
@@ -133,7 +134,7 @@ graph TD
   gather_more_evidence{"さらに追加で証拠を集めることにした。  "}
   rush_evidence_submission{"追加の証拠をすぐに労働基準監督署に送るこ"}
   multi_person_report{"複数人での申告で力を強めることにした。 "}
-  lawyer_accept_compromise{"会社の妥協案を受け入れることにした。  "}
+  lawyer_accept_compromise{"会社の妥協案を軸に進めることにした。  "}
   lawyer_push_further{"さらに厳しい条件を要求することにした。 "}
   lawyer_gradual_success{"段階的改善を受け入れることにした。  第"}
   lawyer_set_deadlines{"各段階の期限を明記させることにした。  "}
@@ -323,8 +324,10 @@ graph TD
   lawyer_individual_negotiation -->|"追加証拠を冷静に提示"| company_initial_response
   lawyer_individual_negotiation -->|"感情的に反論する"| lawyer_negotiation_breakdown
   lawyer_individual_negotiation -->|"引き下がって妥協する"| quick_low_settlement
-  company_initial_response -->|"ひるまず粘り強く交渉を続ける"| negotiation_pressure_tactics
+  company_initial_response -->|"ひるまず粘り強く交渉を続ける"| labor_tribunal
   company_initial_response -->|"提示された額で早期に和解してし..."| quick_low_settlement
+  labor_tribunal -->|"弁護士とともに証拠を示して堂々..."| negotiation_pressure_tactics
+  labor_tribunal -->|"場の空気に飲まれて会社の提示額..."| quick_low_settlement
   negotiation_pressure_tactics -->|"脅迫として記録し交渉継続"| settlement_amount_negotiation
   negotiation_pressure_tactics -->|"怖くなって妥協する"| intimidation_success
   negotiation_pressure_tactics -->|"激怒して交渉打ち切り"| lawyer_negotiation_breakdown
@@ -350,9 +353,9 @@ graph TD
   lawyer_gradual_plan -->|"各段階の期限を明記させる"| lawyer_set_deadlines
   lawyer_listen_first -->|"弁護士の指示で交渉を進める"| follow_lawyer_advice
   lawyer_listen_first -->|"自分の主張を強く出す"| assert_own_demands
-  lawyer_demand_full_amount -->|"潔く和解金を受け取り、区切りを..."| receive_settlement_money
+  lawyer_demand_full_amount -->|"弁護士に正式な交渉を一任して詰..."| company_initial_response
   lawyer_demand_full_amount -->|"それでも足りないと最後までゴネ..."| lawyer_negotiation_breakdown
-  lawyer_litigation_threat -->|"和解を受け入れる"| receive_settlement_money
+  lawyer_litigation_threat -->|"弁護士に正式な交渉を一任する"| company_initial_response
   lawyer_litigation_threat -->|"さらに交渉を続ける"| lawyer_demand_full_amount
   submit_evidence_report -->|"会社の改善状況を見守る"| continue_improved_company
   submit_evidence_report -->|"弁護士を雇って追加請求する"| lawyer_additional_claim
@@ -366,8 +369,8 @@ graph TD
   multi_person_report -->|"この機会に労働組合を正式に結成"| form_union_three
   multi_person_report -->|"弁護士を立てて団体交渉"| lawyer_group_negotiation
   multi_person_report -->|"調査結果だけで満足する"| moderate_improvement_ending
-  lawyer_accept_compromise -->|"和解金を受け取る"| receive_settlement_money
-  lawyer_accept_compromise -->|"和解金で転職活動を始める"| job_search_burnout
+  lawyer_accept_compromise -->|"弁護士に正式な交渉を一任して詰..."| company_initial_response
+  lawyer_accept_compromise -->|"ここで打ち切って転職活動を始め..."| job_search_burnout
   lawyer_accept_compromise -->|"改善された会社で働き続ける"| continue_improved_company
   lawyer_push_further -->|"最終提案を受け入れる"| lawyer_accept_compromise
   lawyer_push_further -->|"裁判を決行する"| lawyer_litigation_threat
@@ -377,7 +380,7 @@ graph TD
   lawyer_set_deadlines -->|"改善の進捗を確認する"| lawyer_gradual_success
   lawyer_set_deadlines -->|"毎月の監視体制を整える"| monitor_company_improvement
   lawyer_set_deadlines -->|"期限を待つ間に転職も検討"| job_search_burnout
-  follow_lawyer_advice -->|"和解金を受け取る"| receive_settlement_money
+  follow_lawyer_advice -->|"弁護士に正式な交渉を一任して詰..."| company_initial_response
   follow_lawyer_advice -->|"改善された会社に残る"| continue_improved_company
   assert_own_demands -->|"低額の和解を受け入れる"| lawyer_low_settlement
   assert_own_demands -->|"交渉を打ち切る"| lawyer_negotiation_breakdown
@@ -386,7 +389,6 @@ graph TD
   lawyer_low_settlement -->|"低額の和解金を受け取る"| lawyer_low_settlement_accept
   lawyer_low_settlement -->|"最後にもう一度交渉を試みる"| lawyer_demand_full_amount
   lawyer_low_settlement -->|"諦めてこれで終わりにする"| lawyer_low_settlement_accept
-  lawyer_low_settlement_accept -->|"和解金で新しい人生をスタート"| receive_settlement_money
   lawyer_low_settlement_accept -->|"転職活動を本格的に始める"| job_search_burnout
   lawyer_low_settlement_accept -->|"改善された会社に残る"| continue_improved_company
   wait_investigation_results -->|"労働組合を結成して本格的に改革..."| union_member_recruitment
