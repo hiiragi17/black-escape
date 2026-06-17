@@ -838,12 +838,12 @@ export const storyData: StoryDataType = {
   },
 
   "lawyer_additional_claim": {
-    "text": "是正勧告に基づいて、追加の慰謝料を請求することにした。\n\n弁護士「報復人事、セクハラ、パワハラ...それぞれに慰謝料請求ができます」\n\n追加の慰謝料請求を会社に送付。\n\n会社「その他の要求は...」\n\n最終的に追加分も上乗せした和解。合計で大きな金額を獲得した。",
+    "text": "是正勧告だけでは終わらせない。正式に弁護士を雇い、未払い残業代に加えて、報復人事やパワハラへの慰謝料も含めた追加請求をすることにした。\n\n弁護士「これだけ証拠が揃っていれば、慰謝料もしっかり請求できます。ただ、会社は簡単には認めないでしょう。粘り強くいきましょう」\n\n「お願いします。とことん戦います」\n\nいよいよ、弁護士を立てた本格的な交渉が始まる。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
-      { "text": "和解金を受け取る", "next": "receive_settlement_money" },
-      { "text": "さらなる請求を検討する", "next": "lawyer_demand_full_amount" }
+      { "text": "弁護士に交渉を一任して進める", "next": "lawyer_individual_negotiation" },
+      { "text": "焦って自分から会社に金額を提示してしまう", "next": "quick_low_settlement" }
     ]
   },
 

@@ -99,35 +99,35 @@ graph TD
   first_negotiation_tactics{"弁護士「労働基準法第37条に基づき、時間"}
   company_divide_strategy{"休憩時間、人事部長が後輩を別室に呼び出し"}
   cut_executive_pay{"「赤字経営なら、まず役員報酬を削減すべき"}
-  recording_evidence_timing["交渉は膠着状態に。会社は150万円の一部"]
+  recording_evidence_timing{"交渉は膠着状態に。会社は一部支払いでお茶"}
   negotiation_final_stage{"録音証拠の威力は絶大だった。  会社側弁"}
-  win_overtime_pay{"ついに残業代全額300万円の支払いを勝ち"}
-  union_expansion_planning["他部署に慎重にアプローチした。  営業部"]
+  win_overtime_pay{"ついに残業代全額の支払いを勝ち取った！ "}
+  union_expansion_planning{"他部署に慎重にアプローチした。  営業部"}
   management_resistance{"管理職たちが組合拡大に激しく抵抗し始めた"}
   company_reform_negotiation{"労基署と連携し、不当労働行為として正式に"}
   company_wide_union["労働組合で会社改革成功"]
   labor_inspection{"労働基準監督署に相談することにした。  "}
   consult_lawyer_first{"弁護士に相談することにした。  でも、ど"}
-  research_lawyers["労働問題専門の弁護士事務所を慎重にリサー"]
+  research_lawyers{"労働問題専門の弁護士事務所を慎重にリサー"}
   lawyer_initial_consultation{"弁護士事務所を訪れた。落ち着いた雰囲気の"}
   evidence_collection_phase{"弁護士「まずは徹底的に証拠を集めましょう"}
   lawyer_strategy_meeting{"1ヶ月後、十分な証拠を集めて再び弁護士事"}
-  lawyer_strategy_meeting_rushed["2週間で集めた証拠を弁護士に見せた。  "]
+  lawyer_strategy_meeting_rushed{"2週間で集めた証拠を弁護士に見せた。  "}
   plan_anonymous_report{"匿名申告について考えることにした。  署"}
   lawyer_group_negotiation{"弁護士に団体交渉を依頼することにした。 "}
   lawyer_individual_negotiation{"弁護士「会社に内容証明郵便で、未払い残業"}
-  company_initial_response["弁護士が追加の証拠を会社に送付した。  "]
+  company_initial_response{"弁護士が追加の証拠を会社に送付した。  "}
   negotiation_pressure_tactics{"交渉が進む中、会社側が圧力をかけてきた。"}
   settlement_amount_negotiation{"脅迫を記録したことで、会社側の態度が軟化"}
-  company_counteroffer{"弁護士「450万円で合意しましょう。これ"}
-  settlement_agreement_review["弁護士と一緒に和解契約書を細かくチェック"]
+  company_counteroffer{"弁護士「この金額で合意しましょう。これ以"}
+  settlement_agreement_review{"和解契約書が届いた。  弁護士「署名の前"}
   gather_evidence_carefully{"慎重に証拠を集めることにした。  ・給与"}
   report_with_minimal_evidence{"給与明細だけで申告することにした。  「"}
   gather_evidence_with_colleague{"同期に証拠集めを手伝ってもらうことにした"}
   lawyer_demanding_negotiation{"強気で全面的な改善を要求することにした。"}
   lawyer_gradual_plan{"段階的改善案を提示することにした。  弁"}
   lawyer_listen_first{"会社の最初の提案を聞くことにした。  会"}
-  lawyer_demand_full_amount["全額請求を貫くことにした。  弁護士「未"]
+  lawyer_demand_full_amount{"全額請求を貫くことにした。  弁護士「未"}
   lawyer_litigation_threat{"裁判を辞さない姿勢を見せて交渉することに"}
   submit_evidence_report{"十分な証拠を集めて申告書を提出した。  "}
   gather_more_evidence{"さらに追加で証拠を集めることにした。  "}
@@ -138,15 +138,15 @@ graph TD
   lawyer_gradual_success{"段階的改善を受け入れることにした。  第"}
   lawyer_set_deadlines{"各段階の期限を明記させることにした。  "}
   follow_lawyer_advice{"弁護士の指示で交渉を進めることにした。 "}
-  assert_own_demands{"自分の主張を強く出すことにした。  「月"}
+  assert_own_demands{"自分の主張を強く出すことにした。  「こ"}
   receive_settlement_money["弁護士による和解成功"]
-  lawyer_additional_claim{"是正勧告に基づいて、追加の慰謝料を請求す"}
-  lawyer_low_settlement{"低額の和解を受け入れることにした。  2"}
+  lawyer_additional_claim{"是正勧告だけでは終わらせない。正式に弁護"}
+  lawyer_low_settlement{"低額の和解を受け入れることにした。  こ"}
   lawyer_negotiation_breakdown["交渉破裂で退職勧告"]
-  lawyer_low_settlement_accept{"200万円の和解金を受け取った。  「少"}
+  lawyer_low_settlement_accept{"低額の和解金を受け取った。  「少ないけ"}
   wait_investigation_results{"労働基準監督署の調査が進んだ。  2週間"}
   monitor_company_improvement{"会社の改善状況を監視することにした。  "}
-  continue_improved_company["改善された会社で働き続けることにした。 "]
+  continue_improved_company{"改善された会社で、しばらく働き続けること"}
   procrastinate{"転職活動は面倒だから、後回しにすることに"}
   accept_overtime_daily{"毎日の残業を受け入れることにした。  「"}
   health_breakdown["過労で体調崩して強制退職"]
@@ -205,7 +205,7 @@ graph TD
   complain_to_colleague -->|"一緒に転職活動をする"| joint_job_hunting
   complain_to_colleague -->|"労働組合について調べる"| research_union
   complain_to_colleague -->|"まずは自分だけで行動する"| job_search_burnout
-  joint_job_hunting -->|"準備不足のまま転職活動を開始す..."| job_search_burnout
+  joint_job_hunting -->|"勢いで本格的に転職活動を始める"| job_search_burnout
   joint_job_hunting -->|"焦って転職エージェントに駆け込..."| job_search_burnout
   joint_job_hunting -->|"まず労働環境改善を試みる"| research_union
   talk_to_boss_comment_break -->|"資料作成の仕事を受ける"| receive_document_task
@@ -279,14 +279,16 @@ graph TD
   cut_executive_pay -->|"交渉が膠着した時まで待つ"| recording_evidence_timing
   cut_executive_pay -->|"今すぐ録音を提示して優位に立つ"| evidence_backfire
   cut_executive_pay -->|"録音を隠したまま交渉継続"| union_legal_mistake
-  recording_evidence_timing -->|"この機会に全額支払いを要求"| negotiation_final_stage
-  negotiation_final_stage -->|"全額300万円まで粘る"| win_overtime_pay
-  negotiation_final_stage -->|"妥協して250万円で合意"| weak_union_settlement
+  recording_evidence_timing -->|"この機会に冷静に全額支払いを要..."| negotiation_final_stage
+  recording_evidence_timing -->|"勢いに任せて慰謝料まで一気に上..."| lawyer_negotiation_breakdown
+  negotiation_final_stage -->|"満額の支払いまで粘る"| win_overtime_pay
+  negotiation_final_stage -->|"妥協して一部の支払いで合意"| weak_union_settlement
   negotiation_final_stage -->|"さらに慰謝料も請求する"| lawyer_negotiation_breakdown
   win_overtime_pay -->|"慎重に他部署に声をかける"| union_expansion_planning
   win_overtime_pay -->|"勢いで全社に呼びかける"| premature_expansion
   win_overtime_pay -->|"3人のままで満足する"| small_union_success
-  union_expansion_planning -->|"管理職の動きを警戒する"| management_resistance
+  union_expansion_planning -->|"管理職の動きを警戒し、慎重に足..."| management_resistance
+  union_expansion_planning -->|"勢いそのままに一気に全社へ呼び..."| premature_expansion
   management_resistance -->|"労基署と連携して不当労働行為で..."| company_reform_negotiation
   management_resistance -->|"管理職と直接対決する"| union_internal_conflict
   management_resistance -->|"引き下がって3人体制に戻る"| small_union_success
@@ -299,7 +301,8 @@ graph TD
   consult_lawyer_first -->|"労働問題専門の弁護士を探す"| research_lawyers
   consult_lawyer_first -->|"安い弁護士を選ぶ"| incompetent_lawyer
   consult_lawyer_first -->|"知人の紹介で適当に決める"| lawyer_initial_consultation_bad
-  research_lawyers -->|"初回相談に行く"| lawyer_initial_consultation
+  research_lawyers -->|"実績重視で初回相談に行く"| lawyer_initial_consultation
+  research_lawyers -->|"やはり費用が惜しくなり、安い事..."| incompetent_lawyer
   lawyer_initial_consultation -->|"詳細に状況を説明し証拠も見せる"| evidence_collection_phase
   lawyer_initial_consultation -->|"曖昧な説明だけにする"| lawyer_refuses_case
   lawyer_initial_consultation -->|"感情的に訴える"| lawyer_initial_consultation_bad
@@ -309,7 +312,8 @@ graph TD
   lawyer_strategy_meeting -->|"弁護士の戦略に完全に従う"| lawyer_individual_negotiation
   lawyer_strategy_meeting -->|"自分の意見を強く主張する"| client_lawyer_conflict
   lawyer_strategy_meeting -->|"消極的で任せきりにする"| lawyer_strategy_meeting_rushed
-  lawyer_strategy_meeting_rushed -->|"この条件で交渉開始"| lawyer_individual_negotiation
+  lawyer_strategy_meeting_rushed -->|"この条件のまま交渉を開始する"| lawyer_individual_negotiation
+  lawyer_strategy_meeting_rushed -->|"やはり不安なので、追加で証拠を..."| gather_more_evidence
   plan_anonymous_report -->|"証拠を集める"| gather_evidence_carefully
   plan_anonymous_report -->|"給与明細だけで申告する"| report_with_minimal_evidence
   plan_anonymous_report -->|"同期にも証拠集めを手伝ってもら..."| gather_evidence_with_colleague
@@ -319,17 +323,19 @@ graph TD
   lawyer_individual_negotiation -->|"追加証拠を冷静に提示"| company_initial_response
   lawyer_individual_negotiation -->|"感情的に反論する"| lawyer_negotiation_breakdown
   lawyer_individual_negotiation -->|"引き下がって妥協する"| quick_low_settlement
-  company_initial_response -->|"交渉を続ける"| negotiation_pressure_tactics
+  company_initial_response -->|"ひるまず粘り強く交渉を続ける"| negotiation_pressure_tactics
+  company_initial_response -->|"提示された額で早期に和解してし..."| quick_low_settlement
   negotiation_pressure_tactics -->|"脅迫として記録し交渉継続"| settlement_amount_negotiation
   negotiation_pressure_tactics -->|"怖くなって妥協する"| intimidation_success
   negotiation_pressure_tactics -->|"激怒して交渉打ち切り"| lawyer_negotiation_breakdown
-  settlement_amount_negotiation -->|"弁護士と相談して450万円で合..."| company_counteroffer
-  settlement_amount_negotiation -->|"すぐに300万円で受け入れる"| quick_low_settlement
-  settlement_amount_negotiation -->|"絶対に600万円を譲らない"| lawyer_negotiation_breakdown
+  settlement_amount_negotiation -->|"弁護士と相談して妥当な金額で合..."| company_counteroffer
+  settlement_amount_negotiation -->|"すぐに会社の提示額で受け入れる"| quick_low_settlement
+  settlement_amount_negotiation -->|"絶対に満額を譲らない"| lawyer_negotiation_breakdown
   company_counteroffer -->|"弁護士と一緒に契約書を精査"| settlement_agreement_review
   company_counteroffer -->|"ざっと読んで即座に署名"| unfair_contract_terms
   company_counteroffer -->|"契約に不満で拒否する"| lawyer_negotiation_breakdown
-  settlement_agreement_review -->|"和解金を受け取り新しい人生へ"| receive_settlement_money
+  settlement_agreement_review -->|"弁護士と一条ずつ精査し、納得し..."| receive_settlement_money
+  settlement_agreement_review -->|"早く終わらせたくて確認を切り上..."| unfair_contract_terms
   gather_evidence_carefully -->|"申告書を提出する"| submit_evidence_report
   gather_evidence_carefully -->|"さらに追加で証拠を集める"| gather_more_evidence
   gather_evidence_carefully -->|"証拠集めがバレてしまう"| evidence_discovered
@@ -344,7 +350,8 @@ graph TD
   lawyer_gradual_plan -->|"各段階の期限を明記させる"| lawyer_set_deadlines
   lawyer_listen_first -->|"弁護士の指示で交渉を進める"| follow_lawyer_advice
   lawyer_listen_first -->|"自分の主張を強く出す"| assert_own_demands
-  lawyer_demand_full_amount -->|"和解金を受け取る"| receive_settlement_money
+  lawyer_demand_full_amount -->|"潔く和解金を受け取り、区切りを..."| receive_settlement_money
+  lawyer_demand_full_amount -->|"それでも足りないと最後までゴネ..."| lawyer_negotiation_breakdown
   lawyer_litigation_threat -->|"和解を受け入れる"| receive_settlement_money
   lawyer_litigation_threat -->|"さらに交渉を続ける"| lawyer_demand_full_amount
   submit_evidence_report -->|"会社の改善状況を見守る"| continue_improved_company
@@ -374,8 +381,8 @@ graph TD
   follow_lawyer_advice -->|"改善された会社に残る"| continue_improved_company
   assert_own_demands -->|"低額の和解を受け入れる"| lawyer_low_settlement
   assert_own_demands -->|"交渉を打ち切る"| lawyer_negotiation_breakdown
-  lawyer_additional_claim -->|"和解金を受け取る"| receive_settlement_money
-  lawyer_additional_claim -->|"さらなる請求を検討する"| lawyer_demand_full_amount
+  lawyer_additional_claim -->|"弁護士に交渉を一任して進める"| lawyer_individual_negotiation
+  lawyer_additional_claim -->|"焦って自分から会社に金額を提示..."| quick_low_settlement
   lawyer_low_settlement -->|"低額の和解金を受け取る"| lawyer_low_settlement_accept
   lawyer_low_settlement -->|"最後にもう一度交渉を試みる"| lawyer_demand_full_amount
   lawyer_low_settlement -->|"諦めてこれで終わりにする"| lawyer_low_settlement_accept
@@ -388,7 +395,9 @@ graph TD
   monitor_company_improvement -->|"さらに組合を全社に拡大して根本..."| union_member_recruitment
   monitor_company_improvement -->|"この成果で妥協する"| moderate_improvement_ending
   monitor_company_improvement -->|"せっかくの改善を捨てて転職に踏..."| job_search_burnout
-  continue_improved_company -->|"ここでひと区切りつける"| moderate_improvement_ending
+  continue_improved_company -->|"労働組合を結成し、全社的な改革..."| union_member_recruitment
+  continue_improved_company -->|"今の改善で十分だと、ここで区切..."| moderate_improvement_ending
+  continue_improved_company -->|"安定した今のうちに、より良い会..."| job_search_burnout
   procrastinate -->|"毎日残業を続ける"| accept_overtime_daily
   procrastinate -->|"今からでも転職活動を始める"| job_search_burnout
   procrastinate -->|"労働組合を作ろうと決意"| research_union
