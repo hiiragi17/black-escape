@@ -65,8 +65,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "堂々と帰る", "next": "leave_confidently" },
-      { "text": "部長の顔色を伺う", "next": "awkward_smile" },
-      { "text": "「ちょっと用事が」と言い訳する", "next": "leave_confidently" }
+      { "text": "やっぱり気が引けて残業を続ける", "next": "eat_overtime_bread" }
     ]
   },
 
@@ -317,8 +316,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "様子を見る", "next": "company_union_busting" },
-      { "text": "すぐに団体交渉を申し入れる", "next": "company_union_busting" },
-      { "text": "労基署に相談してから動く", "next": "labor_inspection" }
+      { "text": "すぐに団体交渉を申し入れる", "next": "company_union_busting" }
     ]
   },
 
@@ -750,7 +748,6 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "完全な証拠とともに申告", "next": "submit_evidence_report" },
-      { "text": "弁護士に相談して提出する", "next": "consult_lawyer_first" },
       { "text": "同僚と共に複数人で申告", "next": "multi_person_report" }
     ]
   },

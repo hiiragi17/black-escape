@@ -116,7 +116,7 @@ graph TD
   plan_anonymous_report{"匿名申告について考えることにした。  署"}
   lawyer_group_negotiation{"弁護士に団体交渉を依頼することにした。 "}
   lawyer_individual_negotiation{"弁護士「会社に内容証明郵便で、未払い残業"}
-  company_initial_response{"弁護士が追加の証拠を会社に送付した。  "}
+  company_initial_response{"弁護士を交えた正式な交渉が始まった。  "}
   labor_tribunal{"会社が和解額を渋り、交渉は平行線をたどっ"}
   negotiation_pressure_tactics{"交渉が進む中、会社側が圧力をかけてきた。"}
   settlement_amount_negotiation{"脅迫を記録したことで、会社側の態度が軟化"}
@@ -192,8 +192,7 @@ graph TD
   sarcastic_reply -->|"「冗談です」と取り繕う"| awkward_smile
   sarcastic_reply -->|"部長の元へ呼ばれる"| talk_to_boss_ignore
   leave_on_time -->|"堂々と帰る"| leave_confidently
-  leave_on_time -->|"部長の顔色を伺う"| awkward_smile
-  leave_on_time -->|"「ちょっと用事が」と言い訳する"| leave_confidently
+  leave_on_time -->|"やっぱり気が引けて残業を続ける"| eat_overtime_bread
   leave_confidently -->|"労働基準監督署に相談する"| labor_inspection
   leave_confidently -->|"そのまま転職活動を始める"| job_search_burnout
   leave_confidently -->|"今日の解放感を噛み締める"| eat_overtime_bread
@@ -256,7 +255,6 @@ graph TD
   union_registration_process -->|"登録は後回しにして先に行動"| company_union_busting
   form_union_three -->|"様子を見る"| company_union_busting
   form_union_three -->|"すぐに団体交渉を申し入れる"| company_union_busting
-  form_union_three -->|"労基署に相談してから動く"| labor_inspection
   company_union_busting -->|"不当労働行為として詳細に記録す..."| union_member_wavering
   company_union_busting -->|"怒って人事部長に詰め寄る"| violent_confrontation
   company_union_busting -->|"怖くなって組合を解散する"| union_dissolution
@@ -361,7 +359,6 @@ graph TD
   submit_evidence_report -->|"弁護士を雇って追加請求する"| lawyer_additional_claim
   submit_evidence_report -->|"この機会に転職活動を始める"| job_search_burnout
   gather_more_evidence -->|"完全な証拠とともに申告"| submit_evidence_report
-  gather_more_evidence -->|"弁護士に相談して提出する"| consult_lawyer_first
   gather_more_evidence -->|"同僚と共に複数人で申告"| multi_person_report
   rush_evidence_submission -->|"是正勧告を見守る"| continue_improved_company
   rush_evidence_submission -->|"弁護士に依頼して慰謝料請求"| consult_lawyer_first
