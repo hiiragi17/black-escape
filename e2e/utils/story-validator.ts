@@ -208,6 +208,69 @@ export function validateStoryData(): ValidationResult {
 }
 
 /**
+ * グッドエンドのシーンキーを取得（本文に「グッドエンド」を含む終端シーン）
+ */
+export function getGoodEndingScenes(): string[] {
+  return getEndingScenes().filter((key) => {
+    const scene = storyData[key as keyof typeof storyData];
+    return typeof scene?.text === 'string' && scene.text.includes('グッドエンド');
+  });
+}
+
+export interface RouteStep {
+  scene: string;
+  choiceText: string;
+  next: string;
+}
+
+/**
+ * start から target までの最短ルートを、クリックすべき選択肢の列として返す。
+ * 幅優先探索を使い、各ステップで「どのシーンでどの選択肢を押すか」を返す。
+ * 到達不可能な場合は null。
+ */
+export function getShortestRoute(
+  target: string,
+  start: string = 'start'
+): RouteStep[] | null {
+  if (target === start) return [];
+
+  // BFS で各シーンへの最短到達時の「直前の選択」を記録
+  const prev = new Map<string, RouteStep>();
+  const visited = new Set<string>([start]);
+  const queue: string[] = [start];
+
+  while (queue.length > 0) {
+    const current = queue.shift()!;
+    const scene = storyData[current as keyof typeof storyData];
+    if (!scene || !scene.choices) continue;
+
+    for (const choice of scene.choices) {
+      if (!choice.next || visited.has(choice.next)) continue;
+      visited.add(choice.next);
+      prev.set(choice.next, {
+        scene: current,
+        choiceText: choice.text,
+        next: choice.next,
+      });
+      if (choice.next === target) {
+        // 経路を復元
+        const route: RouteStep[] = [];
+        let node = target;
+        while (node !== start) {
+          const step = prev.get(node)!;
+          route.unshift(step);
+          node = step.scene;
+        }
+        return route;
+      }
+      queue.push(choice.next);
+    }
+  }
+
+  return null;
+}
+
+/**
  * 選択肢のテキストから対応するボタンを探すヘルパー
  */
 export function getChoiceTexts(sceneKey: string): string[] {
