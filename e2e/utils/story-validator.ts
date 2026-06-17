@@ -208,6 +208,219 @@ export function validateStoryData(): ValidationResult {
 }
 
 /**
+ * グッドエンドのシーンキーを取得（本文に「グッドエンド」を含む終端シーン）
+ */
+export function getGoodEndingScenes(): string[] {
+  return getEndingScenes().filter((key) => {
+    const scene = storyData[key as keyof typeof storyData];
+    return typeof scene?.text === 'string' && scene.text.includes('グッドエンド');
+  });
+}
+
+export interface RouteStep {
+  scene: string;
+  choiceText: string;
+  next: string;
+}
+
+/**
+ * start から target までの最短ルートを、クリックすべき選択肢の列として返す。
+ * 幅優先探索を使い、各ステップで「どのシーンでどの選択肢を押すか」を返す。
+ * 到達不可能な場合は null。
+ */
+export function getShortestRoute(
+  target: string,
+  start: string = 'start'
+): RouteStep[] | null {
+  if (target === start) return [];
+
+  // BFS で各シーンへの最短到達時の「直前の選択」を記録
+  const prev = new Map<string, RouteStep>();
+  const visited = new Set<string>([start]);
+  const queue: string[] = [start];
+
+  while (queue.length > 0) {
+    const current = queue.shift()!;
+    const scene = storyData[current as keyof typeof storyData];
+    if (!scene || !scene.choices) continue;
+
+    for (const choice of scene.choices) {
+      if (!choice.next || visited.has(choice.next)) continue;
+      visited.add(choice.next);
+      prev.set(choice.next, {
+        scene: current,
+        choiceText: choice.text,
+        next: choice.next,
+      });
+      if (choice.next === target) {
+        // 経路を復元
+        const route: RouteStep[] = [];
+        let node = target;
+        while (node !== start) {
+          const step = prev.get(node)!;
+          route.unshift(step);
+          node = step.scene;
+        }
+        return route;
+      }
+      queue.push(choice.next);
+    }
+  }
+
+  return null;
+}
+
+/**
+ * target に到達できるシーンの集合（逆方向の到達可能性）を返す。
+ */
+function getScenesThatReach(target: string): Set<string> {
+  // 逆向き隣接リストを構築
+  const rev = new Map<string, string[]>();
+  for (const [key, scene] of Object.entries(storyData)) {
+    for (const choice of scene.choices ?? []) {
+      if (!choice.next) continue;
+      if (!rev.has(choice.next)) rev.set(choice.next, []);
+      rev.get(choice.next)!.push(key);
+    }
+  }
+  const canReach = new Set<string>([target]);
+  const stack = [target];
+  while (stack.length > 0) {
+    const cur = stack.pop()!;
+    for (const p of rev.get(cur) ?? []) {
+      if (!canReach.has(p)) {
+        canReach.add(p);
+        stack.push(p);
+      }
+    }
+  }
+  return canReach;
+}
+
+/**
+ * start から target までの「最長ルート」を返す。
+ * ループ除去済み（DAG）のため、各ノードから target までの最長距離を
+ * メモ化再帰で求めて経路を復元する。到達不可能なら null。
+ */
+export function getLongestRoute(
+  target: string,
+  start: string = 'start'
+): RouteStep[] | null {
+  const memo = new Map<string, number>(); // node -> target までの最長エッジ数（-Infで不達）
+  function longest(node: string): number {
+    if (node === target) return 0;
+    if (memo.has(node)) return memo.get(node)!;
+    memo.set(node, -Infinity); // DAG前提（再入はしない想定）
+    const scene = storyData[node as keyof typeof storyData];
+    let best = -Infinity;
+    for (const choice of scene?.choices ?? []) {
+      if (!choice.next) continue;
+      const sub = longest(choice.next);
+      if (sub + 1 > best) best = sub + 1;
+    }
+    memo.set(node, best);
+    return best;
+  }
+  if (longest(start) === -Infinity) return null;
+
+  // 最長になる子を辿って経路を復元
+  const route: RouteStep[] = [];
+  let node = start;
+  while (node !== target) {
+    const scene = storyData[node as keyof typeof storyData];
+    let pick: { text: string; next: string } | null = null;
+    let pickLen = -Infinity;
+    for (const choice of scene?.choices ?? []) {
+      if (!choice.next) continue;
+      const l = longest(choice.next);
+      if (l + 1 > pickLen) {
+        pickLen = l + 1;
+        pick = { text: choice.text, next: choice.next };
+      }
+    }
+    if (!pick) return null;
+    route.push({ scene: node, choiceText: pick.text, next: pick.next });
+    node = pick.next;
+  }
+  return route;
+}
+
+/**
+ * start から target へ到達する「ランダムな」ルートを1本返す（seedで決定的）。
+ * 各シーンで target に到達できる選択肢の中からseed依存で1つ選ぶため、
+ * 必ず target にたどり着く。最短とは限らない（回り道を含みうる）。
+ */
+export function getRandomRoute(
+  target: string,
+  seed: number,
+  start: string = 'start'
+): RouteStep[] | null {
+  const canReach = getScenesThatReach(target);
+  if (!canReach.has(start)) return null;
+
+  // 決定的な擬似乱数（線形合同法）
+  let state = (seed * 2654435761) >>> 0;
+  const rand = () => {
+    state = (state * 1664525 + 1013904223) >>> 0;
+    return state / 0xffffffff;
+  };
+
+  const route: RouteStep[] = [];
+  const visited = new Set<string>([start]);
+  let node = start;
+  while (node !== target) {
+    const scene = storyData[node as keyof typeof storyData];
+    // target に到達でき、かつ未訪問の選択肢に限定（DAGなので未訪問制約で十分）
+    const options = (scene?.choices ?? []).filter(
+      (c) => c.next && canReach.has(c.next) && !visited.has(c.next)
+    );
+    if (options.length === 0) return null;
+    const choice = options[Math.floor(rand() * options.length) % options.length];
+    route.push({ scene: node, choiceText: choice.text, next: choice.next });
+    visited.add(choice.next);
+    node = choice.next;
+  }
+  return route;
+}
+
+/**
+ * 「ストーリー時間が逆行する」エッジを検出する。
+ * source の最短深さが target の最短深さより gap 以上大きいエッジは、
+ * 物語上あとで到達するはずのシーンから前段のシーンへ戻る合流であり、
+ * 文章の整合性（巻き戻り矛盾）を要確認の候補となる。
+ */
+export function getStoryTimeRegressions(
+  minGap: number = 3
+): Array<{ from: string; to: string; choiceText: string; gap: number }> {
+  // 最短深さ（BFS）
+  const depth = new Map<string, number>([['start', 0]]);
+  const queue = ['start'];
+  while (queue.length > 0) {
+    const n = queue.shift()!;
+    for (const c of storyData[n as keyof typeof storyData]?.choices ?? []) {
+      if (c.next && !depth.has(c.next)) {
+        depth.set(c.next, depth.get(n)! + 1);
+        queue.push(c.next);
+      }
+    }
+  }
+  const out: Array<{ from: string; to: string; choiceText: string; gap: number }> = [];
+  for (const [k, scene] of Object.entries(storyData)) {
+    for (const c of scene.choices ?? []) {
+      if (!c.next) continue;
+      const target = storyData[c.next as keyof typeof storyData];
+      if (!target || (target.choices?.length ?? 0) === 0) continue; // エンディングは除外
+      const ds = depth.get(k);
+      const dt = depth.get(c.next);
+      if (ds != null && dt != null && ds - dt >= minGap) {
+        out.push({ from: k, to: c.next, choiceText: c.text, gap: ds - dt });
+      }
+    }
+  }
+  return out.sort((a, b) => b.gap - a.gap);
+}
+
+/**
  * 選択肢のテキストから対応するボタンを探すヘルパー
  */
 export function getChoiceTexts(sceneKey: string): string[] {
