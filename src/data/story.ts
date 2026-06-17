@@ -898,7 +898,7 @@ export const storyData: StoryDataType = {
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n99.mp3",
     "choices": [
-      { "text": "さらに組合を全社に拡大して根本改革", "next": "union_member_recruitment" },
+      { "text": "労働組合を結成して根本から改革する", "next": "union_member_recruitment" },
       { "text": "この成果で妥協する", "next": "moderate_improvement_ending" },
       { "text": "せっかくの改善を捨てて転職に踏み切る", "next": "job_search_burnout" }
     ]

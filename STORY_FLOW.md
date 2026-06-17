@@ -391,7 +391,7 @@ graph TD
   wait_investigation_results -->|"労働組合を結成して本格的に改革..."| union_member_recruitment
   wait_investigation_results -->|"弁護士に依頼して個人で戦う"| consult_lawyer_first
   wait_investigation_results -->|"この程度の改善で満足する"| moderate_improvement_ending
-  monitor_company_improvement -->|"さらに組合を全社に拡大して根本..."| union_member_recruitment
+  monitor_company_improvement -->|"労働組合を結成して根本から改革..."| union_member_recruitment
   monitor_company_improvement -->|"この成果で妥協する"| moderate_improvement_ending
   monitor_company_improvement -->|"せっかくの改善を捨てて転職に踏..."| job_search_burnout
   continue_improved_company -->|"労働組合を結成し、全社的な改革..."| union_member_recruitment
