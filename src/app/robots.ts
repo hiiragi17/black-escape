@@ -6,8 +6,9 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
-      allow: '/',
-      // 開発用ページ・APIはクロール対象外
+      // OGP画像エンドポイントはSNSプレビュー用に明示的に許可（/api/ より優先）
+      allow: ['/', '/api/og'],
+      // 開発用ページ・その他APIはクロール対象外
       disallow: ['/story-visualizer', '/api/'],
     },
     sitemap: `${baseUrl}/sitemap.xml`,
