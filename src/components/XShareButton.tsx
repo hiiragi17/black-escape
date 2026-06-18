@@ -17,8 +17,8 @@ export const XShareButton = ({ endingId, customText }: ShareButtonProps) => {
     
     const fullText = `${config.emoji} ${shareText}\n\n#ブラック企業からの脱出\n\nあなたも挑戦してみませんか？`;
     
-    // 新しい構造のURL
-    const shareUrl = `${baseUrl}/share/${endingId}`;
+    // エンディングIDをクエリに付与してトップページへ（動的OGP/Twitterカード対応）
+    const shareUrl = `${baseUrl}/?ending=${endingId}`;
     
     const encodedText = encodeURIComponent(fullText);
     const encodedUrl = encodeURIComponent(shareUrl);

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { readFile } from 'fs/promises'
 import { join } from 'path'
+import { allEndings } from '@/data/metadata-config'
 
 export const runtime = 'nodejs'
 
@@ -27,17 +28,12 @@ const getContentType = (filename: string): string => {
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
   const ending = searchParams.get('ending') || 'default'
-  const route = searchParams.get('route') || 'overwork'
 
   const getImageFileName = () => {
-    const key = `${route}-${ending}`
-    
-    const imageMap: Record<string, string> = {
-      'freedom-good': 'og_good_end_beach.jpg',
-      'overwork-bad': 'og_bad_end_office.jpg',
-    }
-    
-    return imageMap[key] || 'og-image.jpg'
+    // endingId からグッド/バッドを判定して専用OGP画像を返す
+    if (allEndings.good.includes(ending)) return 'og_good_end_beach.jpg'
+    if (allEndings.bad.includes(ending)) return 'og_bad_end_office.jpg'
+    return 'og-image.jpg'
   }
 
   try {
