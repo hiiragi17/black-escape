@@ -39,9 +39,7 @@ export async function GET(request: NextRequest) {
   try {
     const imageFileName = getImageFileName()
     const imagePath = join(process.cwd(), 'public', 'images', 'bg', imageFileName)
-    
-    console.log(`Loading OGP image: ${imagePath}`)
-    
+
     const imageBuffer = await readFile(imagePath)
     const contentType = getContentType(imageFileName)
     
@@ -57,9 +55,7 @@ export async function GET(request: NextRequest) {
     try {
       const defaultPath = join(process.cwd(), 'public', 'images', 'bg', 'og-image.jpg')
       const defaultBuffer = await readFile(defaultPath)
-      
-      console.log('デフォルト画像を使用:', defaultPath)
-      
+
       return new NextResponse(defaultBuffer, {
         headers: {
           'Content-Type': getContentType('og-image.jpg'),

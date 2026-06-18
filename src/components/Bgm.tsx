@@ -27,10 +27,8 @@ export function Bgm({ src }: { src: string }) {
     const playAudio = async () => {
       try {
         await audioRef.current?.play();
-        console.log(`BGM started: ${src}`);
       } catch (error) {
         console.error("BGM再生エラー:", error);
-        console.log("ユーザーがページをクリックした後に音声が再生されます");
       }
     };
 
