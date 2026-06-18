@@ -17,8 +17,6 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     const config = getEndingConfig(ending)
     const ogImageUrl = `${baseUrl}/api/og?ending=${ending}`
 
-    console.log('🏠 Homepage dynamic metadata:', { ending, ogImageUrl })
-
     return {
       title: config.title,
       description: config.description,
@@ -50,7 +48,6 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   }
 
   // デフォルトメタデータ
-  console.log('🏠 Homepage default metadata')
   return {
     title: 'ブラック企業からの脱出',
     description: '逃げ切って自由を手に入れろ！ブラック企業から脱出するノベルゲーム',
