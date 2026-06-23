@@ -903,7 +903,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n99.mp3",
     "choices": [
       { "text": "この成果で妥協する", "next": "moderate_improvement_ending" },
-      { "text": "せっかくの改善を捨てて転職に踏み切る", "next": "mental_breakdown" }
+      { "text": "せっかくの改善を捨てて転職に踏み切る", "next": "transfer_regret" }
     ]
   },
 
@@ -913,7 +913,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "今の改善で十分だと、ここで区切りをつける", "next": "moderate_improvement_ending" },
-      { "text": "安定した今のうちに、より良い会社へ転職する", "next": "health_breakdown" }
+      { "text": "安定した今のうちに、より良い会社へ転職する", "next": "transfer_regret" }
     ]
   },
 
@@ -977,6 +977,13 @@ export const storyData: StoryDataType = {
 
   "job_search_burnout": {
     "text": "転職活動を3ヶ月続けた。面接、筆記試験、経歴書の修正...\n\n「疲れた...」\n\nモチベーションが完全に消えてしまった。\n\n「どんな仕事でもいい。今の会社で我慢するしかない」\n\n転職活動を放棄。結局、何も変わらないまま、毎日の残業地獄に戻った。\n\n現状に対する怒りも薄れ、諦めだけが残った。\n\n【バッドエンド：転職活動に疲弊して諦める】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
+  "transfer_regret": {
+    "text": "せっかく改善されてきた職場を、自ら手放すことにした。\n\n「もっと良い会社が、どこかにあるはずだ」\n\nそう信じて退職し、転職活動に踏み切った。だが、現実は甘くなかった。\n\n書類選考はなかなか通らず、面接でも前職への不満ばかりが口をついて出てしまう。手応えのないまま、時間と貯金だけが減っていく。\n\n気づけば、ようやく変わり始めていたあの職場は、もう戻れない場所になっていた。\n\n「あの時、せっかく良くなりかけていたのに……」\n\n隣の芝生を求めて足場を手放した後悔だけが、静かに残った。\n\n【バッドエンド：改善された職場を手放して後悔】",
     "background": "/images/bg/bad_end_office.jpg",
     "bgm": "/bgm/d6.mp3",
     "choices": []
