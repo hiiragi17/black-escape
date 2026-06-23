@@ -76,7 +76,7 @@ export const storyData: StoryDataType = {
     "choices": [
       { "text": "労働基準監督署に相談する", "next": "labor_inspection" },
       { "text": "そのまま転職活動を始める", "next": "job_search_burnout" },
-      { "text": "今日の解放感を噛み締める", "next": "eat_overtime_bread" }
+      { "text": "結局また残業漬けの日々に戻ってしまう", "next": "eat_overtime_bread" }
     ]
   },
 
@@ -130,7 +130,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "資料作成の仕事を受ける", "next": "receive_document_task" },
-      { "text": "暑気払いの準備を手伝う", "next": "receive_document_task" },
+      { "text": "山積みの資料整理を押し付けられる", "next": "receive_document_task" },
       { "text": "書類提出について話を聞く", "next": "receive_document_task" }
     ]
   },
@@ -142,7 +142,7 @@ export const storyData: StoryDataType = {
     "choices": [
       { "text": "資料作成の仕事を受ける", "next": "receive_document_task" },
       { "text": "プレゼン資料の作成を受ける", "next": "receive_document_task" },
-      { "text": "週末出社の指示を受ける", "next": "receive_document_task" }
+      { "text": "大量の書類作成を押し付けられる", "next": "receive_document_task" }
     ]
   },
 
@@ -538,7 +538,7 @@ export const storyData: StoryDataType = {
     "choices": [
       { "text": "弁護士の戦略に完全に従う", "next": "lawyer_individual_negotiation" },
       { "text": "自分の意見を強く主張する", "next": "client_lawyer_conflict" },
-      { "text": "消極的で任せきりにする", "next": "lawyer_strategy_meeting_rushed" }
+      { "text": "弁護士にすべてを任せて交渉に進む", "next": "lawyer_individual_negotiation" }
     ]
   },
 
@@ -983,7 +983,7 @@ export const storyData: StoryDataType = {
   },
 
   "punch_boss": {
-    "text": "「あ〜そうなのか。お前もそんな若くないんだなw」\n\nその一言で、堪忍袋の緒が切れた。\n\n衝動に駆られて、部長の顔面に拳を叩きつける。\n\n部長「ぐあ！」\n\nそれは一瞬の満足感だったが、すぐに現実が打ちつけた。\n\n翌日、警察から連絡があった。暴行罪で訴えると。\n\n弁護士費用、示談金、そして職場での立場......全てが失われた。\n\n【バッドエンド：衝動的暴行で人生破綻】",
+    "text": "積もりに積もった苛立ちが、ついに限界を超えた。\n\nその瞬間、堪忍袋の緒が切れた。\n\n衝動に駆られて、部長の顔面に拳を叩きつける。\n\n部長「ぐあ！」\n\nそれは一瞬の満足感だったが、すぐに現実が打ちつけた。\n\n翌日、警察から連絡があった。暴行罪で訴えると。\n\n弁護士費用、示談金、そして職場での立場......全てが失われた。\n\n【バッドエンド：衝動的暴行で人生破綻】",
     "background": "/images/bg/bad_end_office.jpg",
     "bgm": "/bgm/d6.mp3",
     "choices": []
