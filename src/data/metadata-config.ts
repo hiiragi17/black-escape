@@ -189,6 +189,21 @@ export const endingConfig: Record<string, EndingConfig> = {
   },
 
   // 労働組合関連のバッドエンド
+  'union_solo_failure': {
+    title: '一人では組合が成立せず空回り... - ブラック企業からの脱出',
+    description: '一人で組合を作ろうとしたけど…😢 労働組合は2人以上いないと団体交渉の力を持てず、会社に相手にされませんでした💔 仲間の大切さを痛感😭',
+    shareText: '一人で組合を作ろうとしたけど…😢\n2人以上いないと団体交渉の力を持てず、会社に相手にされませんでした💔\n仲間の大切さを痛感😭\n\n#労働組合 #一人では限界',
+    emoji: '😢',
+    shareMessage: {
+      icon: '😢',
+      title: '誰かが一人で組合を作ろうとして空回りしました...',
+      subtitle: '仲間と団結する大切さを学んだようです💦',
+      color: 'text-yellow-300',
+      bgColor: 'from-yellow-900/20 to-orange-900/20',
+      borderColor: 'border-yellow-500'
+    }
+  },
+
   'union_info_leak': {
     title: '情報漏洩で組合が潰される... - ブラック企業からの脱出',
     description: '大人数に声をかけてスパイに情報が漏れました...😱 組合結成前に全員バラバラの部署に飛ばされました💔 信頼できる人選びが重要ですね😢',
@@ -523,7 +538,7 @@ export const allEndings = {
   bad: [
     'work_alone_suffer', 'thirty_minutes_condition', 'punch_boss', 'health_breakdown',
     'mental_breakdown', 'job_search_burnout', 'evidence_discovered', 'lawyer_negotiation_breakdown',
-    'union_info_leak', 'union_legal_mistake', 'union_crushed_early', 'informal_group_failure',
+    'union_solo_failure', 'union_info_leak', 'union_legal_mistake', 'union_crushed_early', 'informal_group_failure',
     'violent_confrontation', 'union_dissolution', 'union_split', 'union_internal_conflict',
     'weak_union_settlement', 'evidence_backfire', 'premature_expansion', 'small_union_success',
     'moderate_improvement_ending',
