@@ -136,7 +136,7 @@ export const storyData: StoryDataType = {
   },
 
   "talk_to_boss_ignore": {
-    "text": "渋々部長の元へ行く。どうせいつもの無茶振りだ。\n\n自分はいつも遅刻してくるくせに、社員の遅刻は許さない。それでいて出社したと思ったらすぐ煙草休憩。\n\n「お、ちょうどよかった」\n\n部長がニヤリと笑う。この笑顔を見るたびに嫌な予感しかしない。\n\n案の定、部長の手元には大量の書類が積まれている。",
+    "text": "渋々部長の元へ行く。さっきの皮肉が気に障ったのか、部長は不機嫌そうな顔をしている。\n\n「お前、さっきのはなんだ？……まあいい。ちょうどよかった」\n\n部長がニヤリと笑う。この笑顔を見るたびに嫌な予感しかしない。\n\n案の定、部長の手元には大量の書類が積まれている。まるで嫌がらせのように、それをこちらへ押しやってきた。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
@@ -253,7 +253,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "お互い転職活動しようか", "next": "parting_and_cry_then_jobhunt" },
-      { "text": "一人で頑張るしかない", "next": "work_alone_suffer" },
+      { "text": "一人で頑張るしかない", "next": "health_breakdown" },
       { "text": "もう限界だ...", "next": "mental_breakdown" }
     ]
   },
@@ -283,8 +283,15 @@ export const storyData: StoryDataType = {
     "choices": [
       { "text": "信頼できる3人だけで始める", "next": "union_preparation_meeting" },
       { "text": "すぐに大人数を集めて力を見せる", "next": "union_info_leak" },
-      { "text": "一人で始めるのが一番安全", "next": "work_alone_suffer" }
+      { "text": "一人で始めるのが一番安全", "next": "union_solo_failure" }
     ]
+  },
+
+  "union_solo_failure": {
+    "text": "「一人なら、会社にバレるリスクも少ない」\n\nそう考えて、誰にも相談せず一人で組合結成の準備を進めた。\n\nだが、労働組合は最低でも2人以上いなければ団体交渉の力を持てない。一人きりの「組合」に、会社が耳を貸すはずもなかった。\n\n人事部「組合？一人で何を言ってるんだ」\n\nまともに取り合ってもらえないまま、声を上げる気力も少しずつ尽きていった。\n\n結局、何も変えられないまま、また同じ毎日が続いていく。\n\n【バッドエンド：一人では組合が成立せず空回り】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
   },
 
   "union_preparation_meeting": {
@@ -858,7 +865,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "低額の和解金を受け取る", "next": "lawyer_low_settlement_accept" },
-      { "text": "最後にもう一度交渉を試みる", "next": "lawyer_demand_full_amount" },
+      { "text": "納得できず、交渉を打ち切ってしまう", "next": "lawyer_negotiation_breakdown" },
       { "text": "諦めてこれで終わりにする", "next": "lawyer_low_settlement_accept" }
     ]
   },
