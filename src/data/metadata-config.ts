@@ -158,6 +158,21 @@ export const endingConfig: Record<string, EndingConfig> = {
     }
   },
 
+  'transfer_regret': {
+    title: '改善された職場を手放して後悔... - ブラック企業からの脱出',
+    description: 'せっかく良くなりかけた職場を捨てて転職に走ったけど…😢 転職活動は思うように進まず、戻れる場所も失いました💔 隣の芝生は青く見えるものですね😭',
+    shareText: 'せっかく良くなりかけた職場を捨てて転職に走ったけど…😢\n転職活動は思うように進まず、戻れる場所も失いました💔\n隣の芝生は青く見えるものですね😭\n\n#転職 #隣の芝生 #後悔',
+    emoji: '😢',
+    shareMessage: {
+      icon: '😢',
+      title: '誰かが改善された職場を手放してしまいました...',
+      subtitle: '足元の変化を見極める大切さを学んだようです💦',
+      color: 'text-blue-300',
+      bgColor: 'from-blue-900/20 to-indigo-900/20',
+      borderColor: 'border-blue-500'
+    }
+  },
+
   'evidence_discovered': {
     title: '証拠集めがバレて退職勧告... - ブラック企業からの脱出',
     description: '証拠集めが会社にバレてしまいました...📱 退職勧告を突きつけられました😱 慎重さが足りませんでした💦',
@@ -189,6 +204,21 @@ export const endingConfig: Record<string, EndingConfig> = {
   },
 
   // 労働組合関連のバッドエンド
+  'union_solo_failure': {
+    title: '一人で抱え込み組合が成立せず空回り... - ブラック企業からの脱出',
+    description: '賛同してくれた仲間がいたのに、一人で組合を作ろうとしたけど…😢 たった一人の組合では会社に相手にされませんでした💔 仲間と束になる大切さを痛感😭',
+    shareText: '賛同してくれた仲間がいたのに、一人で組合を作ろうとしたけど…😢\nたった一人の組合では会社に何の圧力もかけられませんでした💔\n仲間と束になる大切さを痛感😭\n\n#労働組合 #一人では限界',
+    emoji: '😢',
+    shareMessage: {
+      icon: '😢',
+      title: '誰かが一人で組合を作ろうとして空回りしました...',
+      subtitle: '仲間と団結する大切さを学んだようです💦',
+      color: 'text-yellow-300',
+      bgColor: 'from-yellow-900/20 to-orange-900/20',
+      borderColor: 'border-yellow-500'
+    }
+  },
+
   'union_info_leak': {
     title: '情報漏洩で組合が潰される... - ブラック企業からの脱出',
     description: '大人数に声をかけてスパイに情報が漏れました...😱 組合結成前に全員バラバラの部署に飛ばされました💔 信頼できる人選びが重要ですね😢',
@@ -522,8 +552,8 @@ export const allEndings = {
   good: ['parting_and_cry_then_jobhunt', 'company_wide_union', 'receive_settlement_money'],
   bad: [
     'work_alone_suffer', 'thirty_minutes_condition', 'punch_boss', 'health_breakdown',
-    'mental_breakdown', 'job_search_burnout', 'evidence_discovered', 'lawyer_negotiation_breakdown',
-    'union_info_leak', 'union_legal_mistake', 'union_crushed_early', 'informal_group_failure',
+    'mental_breakdown', 'job_search_burnout', 'transfer_regret', 'evidence_discovered', 'lawyer_negotiation_breakdown',
+    'union_solo_failure', 'union_info_leak', 'union_legal_mistake', 'union_crushed_early', 'informal_group_failure',
     'violent_confrontation', 'union_dissolution', 'union_split', 'union_internal_conflict',
     'weak_union_settlement', 'evidence_backfire', 'premature_expansion', 'small_union_success',
     'moderate_improvement_ending',

@@ -76,7 +76,7 @@ export const storyData: StoryDataType = {
     "choices": [
       { "text": "労働基準監督署に相談する", "next": "labor_inspection" },
       { "text": "そのまま転職活動を始める", "next": "job_search_burnout" },
-      { "text": "今日の解放感を噛み締める", "next": "eat_overtime_bread" }
+      { "text": "結局また残業漬けの日々に戻ってしまう", "next": "eat_overtime_bread" }
     ]
   },
 
@@ -130,19 +130,19 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "資料作成の仕事を受ける", "next": "receive_document_task" },
-      { "text": "暑気払いの準備を手伝う", "next": "receive_document_task" },
+      { "text": "山積みの資料整理を押し付けられる", "next": "receive_document_task" },
       { "text": "書類提出について話を聞く", "next": "receive_document_task" }
     ]
   },
 
   "talk_to_boss_ignore": {
-    "text": "渋々部長の元へ行く。どうせいつもの無茶振りだ。\n\n自分はいつも遅刻してくるくせに、社員の遅刻は許さない。それでいて出社したと思ったらすぐ煙草休憩。\n\n「お、ちょうどよかった」\n\n部長がニヤリと笑う。この笑顔を見るたびに嫌な予感しかしない。\n\n案の定、部長の手元には大量の書類が積まれている。",
+    "text": "渋々部長の元へ行く。さっきの皮肉が気に障ったのか、部長は不機嫌そうな顔をしている。\n\n「お前、さっきのはなんだ？……まあいい。ちょうどよかった」\n\n部長がニヤリと笑う。この笑顔を見るたびに嫌な予感しかしない。\n\n案の定、部長の手元には大量の書類が積まれている。まるで嫌がらせのように、それをこちらへ押しやってきた。",
     "background": "/images/bg/office.jpg",
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "資料作成の仕事を受ける", "next": "receive_document_task" },
       { "text": "プレゼン資料の作成を受ける", "next": "receive_document_task" },
-      { "text": "週末出社の指示を受ける", "next": "receive_document_task" }
+      { "text": "大量の書類作成を押し付けられる", "next": "receive_document_task" }
     ]
   },
 
@@ -253,7 +253,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "お互い転職活動しようか", "next": "parting_and_cry_then_jobhunt" },
-      { "text": "一人で頑張るしかない", "next": "work_alone_suffer" },
+      { "text": "一人で頑張るしかない", "next": "health_breakdown" },
       { "text": "もう限界だ...", "next": "mental_breakdown" }
     ]
   },
@@ -283,8 +283,15 @@ export const storyData: StoryDataType = {
     "choices": [
       { "text": "信頼できる3人だけで始める", "next": "union_preparation_meeting" },
       { "text": "すぐに大人数を集めて力を見せる", "next": "union_info_leak" },
-      { "text": "一人で始めるのが一番安全", "next": "work_alone_suffer" }
+      { "text": "一人で始めるのが一番安全", "next": "union_solo_failure" }
     ]
+  },
+
+  "union_solo_failure": {
+    "text": "同期も後輩も「やろう」と言ってくれていた。それでも――\n\n「巻き込んで、もし二人まで潰されたら申し訳ない。一人なら、会社にバレるリスクも少ないはずだ」\n\nそう考えて、賛同してくれた二人にもあえて声をかけず、たった一人で組合結成の準備を進めることにした。\n\nだが、たった一人の「組合」では、会社に何の圧力もかけられない。仲間と束になってこそ交渉の力は生まれるのに、一人きりの声は、あっさり黙殺された。\n\n人事部「組合？一人で何を言ってるんだ」\n\nまともに取り合ってもらえないまま、声を上げる気力も少しずつ尽きていった。\n\n「やっぱり、あの二人を頼ればよかったのかな……」\n\n結局、何も変えられないまま、また同じ毎日が続いていく。\n\n【バッドエンド：一人で抱え込み組合が成立せず空回り】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
   },
 
   "union_preparation_meeting": {
@@ -538,7 +545,7 @@ export const storyData: StoryDataType = {
     "choices": [
       { "text": "弁護士の戦略に完全に従う", "next": "lawyer_individual_negotiation" },
       { "text": "自分の意見を強く主張する", "next": "client_lawyer_conflict" },
-      { "text": "消極的で任せきりにする", "next": "lawyer_strategy_meeting_rushed" }
+      { "text": "弁護士にすべてを任せて交渉に進む", "next": "lawyer_individual_negotiation" }
     ]
   },
 
@@ -858,7 +865,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "低額の和解金を受け取る", "next": "lawyer_low_settlement_accept" },
-      { "text": "最後にもう一度交渉を試みる", "next": "lawyer_demand_full_amount" },
+      { "text": "納得できず、交渉を打ち切ってしまう", "next": "lawyer_negotiation_breakdown" },
       { "text": "諦めてこれで終わりにする", "next": "lawyer_low_settlement_accept" }
     ]
   },
@@ -896,7 +903,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n99.mp3",
     "choices": [
       { "text": "この成果で妥協する", "next": "moderate_improvement_ending" },
-      { "text": "せっかくの改善を捨てて転職に踏み切る", "next": "job_search_burnout" }
+      { "text": "せっかくの改善を捨てて転職に踏み切る", "next": "transfer_regret" }
     ]
   },
 
@@ -906,7 +913,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "今の改善で十分だと、ここで区切りをつける", "next": "moderate_improvement_ending" },
-      { "text": "安定した今のうちに、より良い会社へ転職する", "next": "job_search_burnout" }
+      { "text": "安定した今のうちに、より良い会社へ転職する", "next": "transfer_regret" }
     ]
   },
 
@@ -975,6 +982,13 @@ export const storyData: StoryDataType = {
     "choices": []
   },
 
+  "transfer_regret": {
+    "text": "せっかく改善されてきた職場を、自ら手放すことにした。\n\n「もっと良い会社が、どこかにあるはずだ」\n\nそう信じて退職し、転職活動に踏み切った。だが、現実は甘くなかった。\n\n書類選考はなかなか通らず、面接でも前職への不満ばかりが口をついて出てしまう。手応えのないまま、時間と貯金だけが減っていく。\n\n気づけば、ようやく変わり始めていたあの職場は、もう戻れない場所になっていた。\n\n「あの時、せっかく良くなりかけていたのに……」\n\n隣の芝生を求めて足場を手放した後悔だけが、静かに残った。\n\n【バッドエンド：改善された職場を手放して後悔】",
+    "background": "/images/bg/bad_end_office.jpg",
+    "bgm": "/bgm/d6.mp3",
+    "choices": []
+  },
+
   "evidence_discovered": {
     "text": "証拠集めをしていたことが、ついに会社にバレた。\n\n人事部「給与明細のコピー、勤務記録、録音...何のつもりだ？」\n\n「...それは...」\n\n人事部長「君は我が社の秘密を外部に漏らそうとしている。もう来なくていい」\n\n退職勧告を突きつけられた。証拠を集めようとしたことが、逆に自分の首を締めた。\n\n【バッドエンド：証拠集めがバレて退職勧告】",
     "background": "/images/bg/bad_end_office.jpg",
@@ -983,7 +997,7 @@ export const storyData: StoryDataType = {
   },
 
   "punch_boss": {
-    "text": "「あ〜そうなのか。お前もそんな若くないんだなw」\n\nその一言で、堪忍袋の緒が切れた。\n\n衝動に駆られて、部長の顔面に拳を叩きつける。\n\n部長「ぐあ！」\n\nそれは一瞬の満足感だったが、すぐに現実が打ちつけた。\n\n翌日、警察から連絡があった。暴行罪で訴えると。\n\n弁護士費用、示談金、そして職場での立場......全てが失われた。\n\n【バッドエンド：衝動的暴行で人生破綻】",
+    "text": "積もりに積もった苛立ちが、ついに限界を超えた。\n\nその瞬間、堪忍袋の緒が切れた。\n\n衝動に駆られて、部長の顔面に拳を叩きつける。\n\n部長「ぐあ！」\n\nそれは一瞬の満足感だったが、すぐに現実が打ちつけた。\n\n翌日、警察から連絡があった。暴行罪で訴えると。\n\n弁護士費用、示談金、そして職場での立場......全てが失われた。\n\n【バッドエンド：衝動的暴行で人生破綻】",
     "background": "/images/bg/bad_end_office.jpg",
     "bgm": "/bgm/d6.mp3",
     "choices": []
