@@ -903,7 +903,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n99.mp3",
     "choices": [
       { "text": "この成果で妥協する", "next": "moderate_improvement_ending" },
-      { "text": "せっかくの改善を捨てて転職に踏み切る", "next": "job_search_burnout" }
+      { "text": "せっかくの改善を捨てて転職に踏み切る", "next": "mental_breakdown" }
     ]
   },
 
@@ -913,7 +913,7 @@ export const storyData: StoryDataType = {
     "bgm": "/bgm/n43.mp3",
     "choices": [
       { "text": "今の改善で十分だと、ここで区切りをつける", "next": "moderate_improvement_ending" },
-      { "text": "安定した今のうちに、より良い会社へ転職する", "next": "job_search_burnout" }
+      { "text": "安定した今のうちに、より良い会社へ転職する", "next": "health_breakdown" }
     ]
   },
 
