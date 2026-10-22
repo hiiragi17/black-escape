@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "dagre": "^0.8.5",
-    "next": "15.5.28",
+    "next": "16.4.2",
     "react": "^19.1.4",
     "react-dom": "^19.3.1",
     "reactflow": "^11.11.4"
