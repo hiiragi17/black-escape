@@ -28,6 +28,8 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
       if (savedSettings) {
         try {
           const parsed = JSON.parse(savedSettings);
+          // localStorage は SSR で読めないため、マウント後に一度だけ取り込む
+          // eslint-disable-next-line react-hooks/set-state-in-effect
           setSettings(parsed);
         } catch (error) {
           console.error('音声設定の読み込みエラー:', error);
