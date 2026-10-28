@@ -59,6 +59,8 @@ export default function Scene({ scene, setScene }: SceneProps) {
 
   // タイピングアニメーション
   useEffect(() => {
+    // シーンが変わるたびにタイピング表示を先頭からやり直す
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setShowChoices(false);
     setTextDisplayed('');
     setIsTyping(true);
