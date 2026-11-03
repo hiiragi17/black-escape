@@ -29,7 +29,8 @@ jobs:
 
   e2e:
     name: E2E (Playwright)
-    runs-on: ubuntu-latest
+    # Playwright が ubuntu 26.04 (ubuntu-latest) の chromium 依存解決に未対応のため固定する
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
 
